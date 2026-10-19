@@ -10,6 +10,7 @@ The five standard views of a topology export (T75), with ParaView's own Python:
     3 Elmer EM result             rated.pvd: |B| with flux lines (contours of A_z), animated over the rotor positions
     4 Torque and torque ripple    torque.csv: torque over the electrical angle, its mean, ripple in the title
     5 Back-EMF                    back_emf.csv: no-load EMF of phases A, B, C over one electrical period
+                                  (left out when the export has no no-load sweep)
 
 The files are written by `python -m emachine.analysis.topology_export` (with `--refresh` for an older export).
 Uses only paraview.simple and the standard library, so that it runs in ParaView's Python.
@@ -56,8 +57,9 @@ def check_inputs(export):
     if not os.path.isfile(os.path.join(export, "summary.json")):
         return ["summary.json is missing: not a topology export"]
     summary = load_summary(export)
-    needed = {"rated.pvd": None, "torque.csv": ["angle_el_deg", "torque_Nm", "mean_Nm"],
-              "back_emf.csv": ["angle_el_deg", "emf_a_V", "emf_b_V", "emf_c_V"]}
+    needed = {"rated.pvd": None, "torque.csv": ["angle_el_deg", "torque_Nm", "mean_Nm"]}
+    if os.path.isfile(os.path.join(export, "back_emf.csv")):     # optional: only with a no-load sweep (T78)
+        needed["back_emf.csv"] = ["angle_el_deg", "emf_a_V", "emf_b_V", "emf_c_V"]
     if summary.get("kind", "radial") == "radial":
         needed["machine_3d.vtu"] = None
     for name, columns in needed.items():
@@ -400,8 +402,11 @@ def view_torque(export, summary, out):
 
 
 def view_back_emf(export, summary, out):
-    """5: no-load EMF of the three phases over one electrical period."""
+    """5: no-load EMF of the three phases over one electrical period (left out without a no-load sweep)."""
     path = os.path.join(export, "back_emf.csv")
+    if not os.path.isfile(path):
+        print("  no back_emf.csv (no no-load sweep in this export): view 5 left out")
+        return
     data = read_columns(path)
     peak = max(abs(v) for k in PHASE_COLOURS for v in data[k])
     rms = math.sqrt(sum(v * v for v in data["emf_a_V"]) / len(data["emf_a_V"]))
@@ -429,7 +434,9 @@ def main(argv=None):
         for problem in problems:
             print("missing:", problem)
         if not problems:
-            print("all inputs of the five views are there:", export)
+            print("all inputs of the views are there:", export)
+            if not os.path.isfile(os.path.join(export, "back_emf.csv")):
+                print("note: no back_emf.csv, view 5 (back-EMF) will be left out")
         return 1 if problems else 0
     INTERACTIVE = args.interactive
     out = os.path.abspath(args.out or os.path.join(export, "views"))

@@ -120,11 +120,16 @@ class ViewFilesTest(unittest.TestCase):
         result = subprocess.run([sys.executable, os.path.join(self.tmp, "section_views.py"), "--export", self.tmp,
                                  "--check"], capture_output=True, text=True)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
-        os.remove(os.path.join(self.tmp, "back_emf.csv"))
+        os.remove(os.path.join(self.tmp, "back_emf.csv"))         # optional (T78): view 5 is left out
+        result = subprocess.run([sys.executable, os.path.join(self.tmp, "section_views.py"), "--export", self.tmp,
+                                 "--check"], capture_output=True, text=True)
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("view 5", result.stdout)
+        os.remove(os.path.join(self.tmp, "torque.csv"))           # required
         result = subprocess.run([sys.executable, os.path.join(self.tmp, "section_views.py"), "--export", self.tmp,
                                  "--check"], capture_output=True, text=True)
         self.assertNotEqual(result.returncode, 0)
-        self.assertIn("back_emf.csv", result.stdout + result.stderr)
+        self.assertIn("torque.csv", result.stdout + result.stderr)
 
     def test_without_stack_length_the_3d_file_is_left_out(self):
         tmp = tempfile.mkdtemp(prefix="t75_")

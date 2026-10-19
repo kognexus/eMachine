@@ -5,6 +5,8 @@ Changes to the code and the progress of the restructuring tickets. Newest first.
 
 ## 2026-10-19 (T75: standard views of a topology export)
 
+- T78: the back-EMF view is optional; an export without a no-load sweep gets the other four views.
+  Report and views of the dual-rotor samples (study folder, outside the repository).
 - `emachine.analysis.topology_export` also writes `machine_3d.vtu` (the section extruded to the stack
   length), `torque.csv`, `back_emf.csv`, `section_views.py` and `open_in_paraview.py`; `--refresh` adds them to
   an existing export without solving. `emachine/io/section_views.py` builds the five views (3D geometry,
