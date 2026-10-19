@@ -3,6 +3,13 @@
 Changes to the code and the progress of the restructuring tickets. Newest first. Ticket details: the
 [GitHub issues](https://github.com/kognexus/eMachine/issues?q=is%3Aissue), titled by ticket ID; architecture: `docs/architecture.md`.
 
+## 2026-10-19 (T75: standard views of a topology export)
+
+- `emachine.analysis.topology_export` also writes `machine_3d.vtu` (the section extruded to the stack
+  length), `torque.csv`, `back_emf.csv`, `section_views.py` and `open_in_paraview.py`; `--refresh` adds them to
+  an existing export without solving. `emachine/io/section_views.py` builds the five views (3D geometry,
+  section mesh, EM field with flux lines, torque and ripple, back-EMF) as GUI tabs or pictures.
+
 ## 2026-10-18 (cleanup for publication)
 
 - The tickets moved from `tickets/` to the GitHub issues of the repository (one issue per ticket,

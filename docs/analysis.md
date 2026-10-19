@@ -74,6 +74,15 @@ angle is chosen for most torque; SRM uses a flux map and a dynamic model. The re
 `python -m emachine.analysis.topology_postprocess --config <study.json>`. Ranges and ripple methods
 are in [design_principles.md](design_principles.md).
 
+The ParaView export of a verified design (`python -m emachine.analysis.topology_export --run <study>/runs/<key>
+--pick optimal --out DIR --config <study.json>`) holds the rated and no-load sweeps, the peak-current solution
+and, for the five standard views, `machine_3d.vtu`, `torque.csv`, `back_emf.csv`, `section_views.py` and
+`open_in_paraview.py` (T75). In the ParaView GUI, *View → Python Shell → Run Script →
+`open_in_paraview.py`* opens them as tabs: 3D material geometry, Gmsh section mesh, Elmer field with flux
+lines (animated over the rotor positions), torque with its ripple, and the back-EMF of the three phases.
+Pictures: `pvpython --force-offscreen-rendering section_views.py --export DIR --out DIR/views`. An export made
+before T75 gets these files without solving with `--refresh` (same arguments).
+
 ## How the TFM field analysis works
 
 1. **Geometry.** The mesher rebuilds stator and rotor from the parameters, with the rotor turned
