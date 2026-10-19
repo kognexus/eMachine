@@ -1,0 +1,490 @@
+{
+ "machine:afm/pmsm": {
+  "cache_key": "ed8b9e65c47d8e70007a",
+  "signature": "4af155a9a20d807bf2fc",
+  "user": {
+   "machine": {
+    "configuration": "inrunner",
+    "family": "afm",
+    "topology": "pmsm"
+   }
+  },
+  "values": {
+   "bore_ratio": 0.6,
+   "current_density_A_mm2": 5.5,
+   "magnet_arc_ratio": 0.8,
+   "magnet_thickness_mm": 4.5,
+   "pole_pairs": 18,
+   "slot_depth_ratio": 0.5,
+   "tooth_ratio": 0.5,
+   "yoke_mm": 6.0
+  }
+ },
+ "machine:afm/srm": {
+  "cache_key": "dd71c1bb99c83b31d632",
+  "signature": "529aa64594983e779daa",
+  "user": {
+   "machine": {
+    "configuration": "inrunner",
+    "family": "afm",
+    "topology": "srm"
+   }
+  },
+  "values": {
+   "bore_ratio": 0.6,
+   "current_density_A_mm2": 5.5,
+   "rotor_pole_arc_ratio": 0.4,
+   "slot_depth_ratio": 0.5,
+   "stator_pole_arc_ratio": 0.4,
+   "tooth_ratio": 0.5,
+   "yoke_mm": 6.0
+  }
+ },
+ "machine:rfm/ipm": {
+  "cache_key": "a83457e84d97f2e99cfb",
+  "signature": "b8e22eb9f8704939292a",
+  "user": {
+   "machine": {
+    "configuration": "inrunner",
+    "family": "rfm",
+    "topology": "ipm"
+   }
+  },
+  "values": {
+   "bore_ratio": 0.6,
+   "bridge_mm": 1.25,
+   "current_density_A_mm2": 5.5,
+   "magnet_thickness_mm": 4.75,
+   "magnet_width_ratio": 0.6,
+   "pole_pairs": 18,
+   "slot_depth_ratio": 0.5,
+   "tooth_ratio": 0.5,
+   "v_angle_deg": 135.0,
+   "yoke_mm": 6.0
+  }
+ },
+ "machine:rfm/pmasynrm": {
+  "cache_key": "f92753cd67a1c00c7c99",
+  "signature": "971141074ed000c5c20c",
+  "user": {
+   "machine": {
+    "configuration": "inrunner",
+    "family": "rfm",
+    "topology": "pmasynrm"
+   }
+  },
+  "values": {
+   "bore_ratio": 0.6,
+   "current_density_A_mm2": 5.5,
+   "insulation_ratio": 0.4,
+   "magnet_fill_ratio": 0.55,
+   "pole_pairs": 18,
+   "rib_mm": 0.9,
+   "slot_depth_ratio": 0.5,
+   "tooth_ratio": 0.5,
+   "yoke_mm": 6.0
+  }
+ },
+ "machine:rfm/pmsm": {
+  "cache_key": "6af1b43de0fe6882a913",
+  "signature": "e5f657784dd504bbec07",
+  "user": {
+   "machine": {
+    "configuration": "inrunner",
+    "family": "rfm",
+    "topology": "pmsm"
+   }
+  },
+  "values": {
+   "bore_ratio": 0.6,
+   "current_density_A_mm2": 5.5,
+   "magnet_arc_ratio": 0.8,
+   "magnet_thickness_mm": 4.5,
+   "pole_pairs": 18,
+   "slot_depth_ratio": 0.5,
+   "tooth_ratio": 0.5,
+   "yoke_mm": 6.0
+  }
+ },
+ "machine:rfm/srm": {
+  "cache_key": "14e0a98189b513cd0fb2",
+  "signature": "b5e7836b0be7eb7470fe",
+  "user": {
+   "machine": {
+    "configuration": "inrunner",
+    "family": "rfm",
+    "topology": "srm"
+   }
+  },
+  "values": {
+   "bore_ratio": 0.6,
+   "current_density_A_mm2": 5.5,
+   "rotor_pole_arc_ratio": 0.4,
+   "slot_depth_ratio": 0.5,
+   "stator_pole_arc_ratio": 0.4,
+   "tooth_ratio": 0.5,
+   "yoke_mm": 6.0
+  }
+ },
+ "machine:rfm/synrm": {
+  "cache_key": "b42f8fc907aa01512321",
+  "signature": "5d2879a611d3a2ff61c6",
+  "user": {
+   "machine": {
+    "configuration": "inrunner",
+    "family": "rfm",
+    "topology": "synrm"
+   }
+  },
+  "values": {
+   "bore_ratio": 0.6,
+   "current_density_A_mm2": 5.5,
+   "insulation_ratio": 0.4,
+   "pole_pairs": 18,
+   "rib_mm": 0.9,
+   "slot_depth_ratio": 0.5,
+   "tooth_ratio": 0.5,
+   "yoke_mm": 6.0
+  }
+ },
+ "machine:tfm/pmsm": {
+  "cache_key": "ef601412f297acb8a775",
+  "signature": "5fffba6312193dc19f83",
+  "user": {
+   "machine": {
+    "family": "tfm",
+    "topology": "pmsm"
+   }
+  },
+  "values": {
+   "bridge_height_mm": 6.0,
+   "current_density_A_mm2": 5.5,
+   "leg_width_mm": 6.0,
+   "magnet_thickness_mm": 3.75,
+   "pole_pairs": 18,
+   "rotor_iron_mm": 6.0,
+   "slot_height_mm": 11.0,
+   "tooth_span": 0.725,
+   "yoke_height_mm": 6.0
+  }
+ },
+ "machine:tfm/srm": {
+  "cache_key": "b0840b8fc8d742e2f5b0",
+  "signature": "f7cee5079bd0bad2f3bf",
+  "user": {
+   "machine": {
+    "family": "tfm",
+    "topology": "srm"
+   }
+  },
+  "values": {
+   "bridge_height_mm": 6.0,
+   "current_density_A_mm2": 5.5,
+   "leg_width_mm": 6.0,
+   "pole_pairs": 18,
+   "rotor_iron_mm": 6.0,
+   "rotor_tooth_ratio": 0.5,
+   "slot_height_mm": 11.0,
+   "tooth_span": 0.725,
+   "yoke_height_mm": 6.0
+  }
+ },
+ "runs/rfm_spm_12s10p/opt_small/spec.json": {
+  "cache_key": "8d58562dcbdf30c77af9",
+  "signature": "cb11e45631d7e838129a",
+  "values": {
+   "bore_ratio": 0.6,
+   "current_density_A_mm2": 3.5,
+   "magnet_arc_ratio": 0.85,
+   "magnet_thickness_mm": 3.0,
+   "pole_pairs": 5,
+   "slot_depth_ratio": 0.6,
+   "tooth_ratio": 0.55,
+   "yoke_mm": 6.0
+  }
+ },
+ "runs/single_ui32/spec.json": {
+  "cache_key": "bb87595843f8c4e06d70",
+  "signature": "564443e57037afabe043",
+  "values": {
+   "bridge_height_mm": 6.0,
+   "current_density_A_mm2": 5.5,
+   "leg_width_mm": 2.0,
+   "magnet_thickness_mm": 3.25,
+   "pole_pairs": 18,
+   "rotor_iron_mm": 6.0,
+   "slot_height_mm": 11.0,
+   "tooth_span": 0.725,
+   "yoke_height_mm": 6.0
+  }
+ },
+ "runs/strip/ui/spec.json": {
+  "cache_key": "bf9de58c80838e0ac7ac",
+  "signature": "76bb0fe5656935669dcf",
+  "values": {
+   "bridge_height_mm": 6.0,
+   "current_density_A_mm2": 5.5,
+   "leg_width_mm": 2.0,
+   "magnet_thickness_mm": 3.25,
+   "pole_pairs": 18,
+   "rotor_iron_mm": 6.0,
+   "slot_height_mm": 11.0,
+   "tooth_span": 0.725,
+   "yoke_height_mm": 6.0
+  }
+ },
+ "runs/types/cp/spec.json": {
+  "cache_key": "3e22762ff4ddb6ba0fe6",
+  "signature": "db97a5b7a7fdc8d98df1",
+  "values": {
+   "claw_root_height_mm": 6.0,
+   "claw_tip_gap_mm": 2.0,
+   "current_density_A_mm2": 5.5,
+   "leg_width_mm": 2.0,
+   "magnet_thickness_mm": 3.75,
+   "pole_pairs": 18,
+   "rotor_iron_mm": 6.0,
+   "slot_height_mm": 11.0,
+   "tooth_span": 0.725,
+   "yoke_height_mm": 6.0
+  }
+ },
+ "runs/types/u/spec.json": {
+  "cache_key": "9741d567c5d8143b6af1",
+  "signature": "9cfb6d63e74035a8cc70",
+  "values": {
+   "current_density_A_mm2": 5.5,
+   "leg_width_mm": 2.0,
+   "magnet_thickness_mm": 3.75,
+   "pole_pairs": 18,
+   "rotor_iron_mm": 6.0,
+   "slot_height_mm": 11.0,
+   "tooth_span": 0.725,
+   "yoke_height_mm": 6.0
+  }
+ },
+ "runs/types/ui/spec.json": {
+  "cache_key": "24cdd0e4c4086dea900d",
+  "signature": "d101350c225249ba5647",
+  "values": {
+   "bridge_height_mm": 6.0,
+   "current_density_A_mm2": 5.5,
+   "leg_width_mm": 2.0,
+   "magnet_thickness_mm": 3.75,
+   "pole_pairs": 18,
+   "rotor_iron_mm": 6.0,
+   "slot_height_mm": 11.0,
+   "tooth_span": 0.725,
+   "yoke_height_mm": 6.0
+  }
+ },
+ "runs/types24/cp/spec.json": {
+  "cache_key": "d797cd9c2b3c8ce38a81",
+  "signature": "5e64b40ebe69d2deef14",
+  "values": {
+   "claw_root_height_mm": 6.0,
+   "claw_tip_gap_mm": 2.0,
+   "current_density_A_mm2": 5.5,
+   "leg_width_mm": 2.0,
+   "magnet_thickness_mm": 3.75,
+   "pole_pairs": 18,
+   "rotor_iron_mm": 6.0,
+   "slot_height_mm": 11.0,
+   "tooth_span": 0.725,
+   "yoke_height_mm": 6.0
+  }
+ },
+ "runs/types24/u/spec.json": {
+  "cache_key": "1fbb2fef6241b030b151",
+  "signature": "d9b8d411e8cb9d649917",
+  "values": {
+   "current_density_A_mm2": 5.5,
+   "leg_width_mm": 2.0,
+   "magnet_thickness_mm": 3.75,
+   "pole_pairs": 18,
+   "rotor_iron_mm": 6.0,
+   "slot_height_mm": 11.0,
+   "tooth_span": 0.725,
+   "yoke_height_mm": 6.0
+  }
+ },
+ "runs/types24/ui/spec.json": {
+  "cache_key": "61ec91d56d558a8b3ad7",
+  "signature": "2344189dcecfb6e4bf4f",
+  "values": {
+   "bridge_height_mm": 6.0,
+   "current_density_A_mm2": 5.5,
+   "leg_width_mm": 2.0,
+   "magnet_thickness_mm": 3.75,
+   "pole_pairs": 18,
+   "rotor_iron_mm": 6.0,
+   "slot_height_mm": 11.0,
+   "tooth_span": 0.725,
+   "yoke_height_mm": 6.0
+  }
+ },
+ "runs/user_tr48/spec.json": {
+  "cache_key": "f1362fcc66697897caf8",
+  "signature": "0cf7889d932dd48b67ac",
+  "values": {
+   "current_density_A_mm2": 5.5,
+   "leg_width_mm": 2.0,
+   "magnet_thickness_mm": 2.0,
+   "pole_pairs": 24,
+   "ring_tooth_height_mm": 8.0,
+   "rotor_iron_mm": 2.7,
+   "slot_height_mm": 10.0,
+   "tooth_span": 0.8,
+   "yoke_height_mm": 5.0
+  }
+ },
+ "examples/tfm_single_phase.json": {
+  "cache_key": "494a70a02e926332b5f2",
+  "signature": "a6248b6d3cde9509a822",
+  "values": {
+   "bridge_height_mm": 6.0,
+   "current_density_A_mm2": 5.5,
+   "leg_width_mm": 6.0,
+   "magnet_thickness_mm": 3.75,
+   "pole_pairs": 18,
+   "rotor_iron_mm": 6.0,
+   "slot_height_mm": 11.0,
+   "tooth_span": 0.725,
+   "yoke_height_mm": 6.0
+  }
+ },
+ "examples/tfm_three_phase.json": {
+  "cache_key": "cbfce8270f06ecc72da1",
+  "signature": "1f50ed4b309f3458fdca",
+  "values": {
+   "bridge_height_mm": 6.0,
+   "current_density_A_mm2": 5.5,
+   "leg_width_mm": 2.0,
+   "magnet_thickness_mm": 3.25,
+   "pole_pairs": 18,
+   "rotor_iron_mm": 6.0,
+   "slot_height_mm": 11.0,
+   "tooth_span": 0.725,
+   "yoke_height_mm": 6.0
+  }
+ },
+ "examples/rfm_spm_12s10p.json": {
+  "cache_key": "8d58562dcbdf30c77af9",
+  "signature": "cb11e45631d7e838129a",
+  "values": {
+   "bore_ratio": 0.6,
+   "current_density_A_mm2": 3.5,
+   "magnet_arc_ratio": 0.85,
+   "magnet_thickness_mm": 3.0,
+   "pole_pairs": 5,
+   "slot_depth_ratio": 0.6,
+   "tooth_ratio": 0.55,
+   "yoke_mm": 6.0
+  }
+ },
+ "examples/three_phase_cp.json": {
+  "cache_key": "fde2e297db7a2098ee20",
+  "signature": "d4f2883026818bf8845e",
+  "values": {
+   "claw_root_height_mm": 6.0,
+   "claw_tip_gap_mm": 2.0,
+   "current_density_A_mm2": 5.5,
+   "leg_width_mm": 2.0,
+   "magnet_thickness_mm": 3.25,
+   "pole_pairs": 18,
+   "rotor_iron_mm": 6.0,
+   "slot_height_mm": 11.0,
+   "tooth_span": 0.725,
+   "yoke_height_mm": 6.0
+  }
+ },
+ "examples/three_phase_cp_24.json": {
+  "cache_key": "c127ddc8e920bc120bf7",
+  "signature": "ad1e111470bc3a9d260c",
+  "values": {
+   "claw_root_height_mm": 6.0,
+   "claw_tip_gap_mm": 2.0,
+   "current_density_A_mm2": 5.5,
+   "leg_width_mm": 2.0,
+   "magnet_thickness_mm": 3.25,
+   "pole_pairs": 18,
+   "rotor_iron_mm": 6.0,
+   "slot_height_mm": 11.0,
+   "tooth_span": 0.725,
+   "yoke_height_mm": 6.0
+  }
+ },
+ "examples/three_phase_u.json": {
+  "cache_key": "ba850bb895893c316e5b",
+  "signature": "2f295a8e779a9db5f515",
+  "values": {
+   "current_density_A_mm2": 5.5,
+   "leg_width_mm": 2.0,
+   "magnet_thickness_mm": 3.25,
+   "pole_pairs": 18,
+   "rotor_iron_mm": 6.0,
+   "slot_height_mm": 11.0,
+   "tooth_span": 0.725,
+   "yoke_height_mm": 6.0
+  }
+ },
+ "examples/three_phase_u_24.json": {
+  "cache_key": "148ae23b9029e9b8089e",
+  "signature": "7606ebd8aa426e941cce",
+  "values": {
+   "current_density_A_mm2": 5.5,
+   "leg_width_mm": 2.0,
+   "magnet_thickness_mm": 3.25,
+   "pole_pairs": 18,
+   "rotor_iron_mm": 6.0,
+   "slot_height_mm": 11.0,
+   "tooth_span": 0.725,
+   "yoke_height_mm": 6.0
+  }
+ },
+ "examples/three_phase_ui.json": {
+  "cache_key": "3090ebe7c1b75c038630",
+  "signature": "8b9744132df3c1231358",
+  "values": {
+   "bridge_height_mm": 6.0,
+   "current_density_A_mm2": 5.5,
+   "leg_width_mm": 2.0,
+   "magnet_thickness_mm": 3.25,
+   "pole_pairs": 18,
+   "rotor_iron_mm": 6.0,
+   "slot_height_mm": 11.0,
+   "tooth_span": 0.725,
+   "yoke_height_mm": 6.0
+  }
+ },
+ "examples/three_phase_ui_24.json": {
+  "cache_key": "bb87595843f8c4e06d70",
+  "signature": "564443e57037afabe043",
+  "values": {
+   "bridge_height_mm": 6.0,
+   "current_density_A_mm2": 5.5,
+   "leg_width_mm": 2.0,
+   "magnet_thickness_mm": 3.25,
+   "pole_pairs": 18,
+   "rotor_iron_mm": 6.0,
+   "slot_height_mm": 11.0,
+   "tooth_span": 0.725,
+   "yoke_height_mm": 6.0
+  }
+ },
+ "examples/user_tr48.json": {
+  "cache_key": "f1362fcc66697897caf8",
+  "signature": "0cf7889d932dd48b67ac",
+  "values": {
+   "current_density_A_mm2": 5.5,
+   "leg_width_mm": 2.0,
+   "magnet_thickness_mm": 2.0,
+   "pole_pairs": 24,
+   "ring_tooth_height_mm": 8.0,
+   "rotor_iron_mm": 2.7,
+   "slot_height_mm": 10.0,
+   "tooth_span": 0.8,
+   "yoke_height_mm": 5.0
+  }
+ }
+}

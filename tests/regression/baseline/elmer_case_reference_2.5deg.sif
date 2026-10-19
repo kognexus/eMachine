@@ -1,0 +1,512 @@
+! Written by tfm_pipeline.py. Change the parameter file and re-run instead of editing this file.
+Check Keywords "Warn"
+
+Header
+  Mesh DB "." "mesh"
+  Results Directory "results"
+End
+
+Simulation
+  Max Output Level = 5
+  Coordinate System = Cartesian
+  Simulation Type = Steady State
+  Steady State Max Iterations = 1
+End
+
+Constants
+  Permeability of Vacuum = 1.25663706212e-6
+End
+
+Body 1
+  Name = "rotor_air"
+  Target Bodies(1) = 1
+  Equation = 1
+  Material = 1
+End
+
+Body 2
+  Name = "rotor_magnet_magnetised_90_deg_from_radial_row0_17"
+  Target Bodies(1) = 2
+  Equation = 1
+  Material = 3
+  Body Force = 1
+End
+
+Body 3
+  Name = "rotor_magnet_magnetised_90_deg_from_radial_row1_17"
+  Target Bodies(1) = 3
+  Equation = 1
+  Material = 3
+  Body Force = 2
+End
+
+Body 4
+  Name = "rotor_magnet_magnetised_minus_90_deg_from_radial_row0_0"
+  Target Bodies(1) = 4
+  Equation = 1
+  Material = 3
+  Body Force = 3
+End
+
+Body 5
+  Name = "rotor_magnet_magnetised_minus_90_deg_from_radial_row1_17"
+  Target Bodies(1) = 5
+  Equation = 1
+  Material = 3
+  Body Force = 4
+End
+
+Body 6
+  Name = "rotor_magnet_n_radial_in_row0_0"
+  Target Bodies(1) = 6
+  Equation = 1
+  Material = 3
+  Body Force = 5
+End
+
+Body 7
+  Name = "rotor_magnet_n_radial_in_row1_0"
+  Target Bodies(1) = 7
+  Equation = 1
+  Material = 3
+  Body Force = 6
+End
+
+Body 8
+  Name = "rotor_magnet_s_radial_out_row0_0"
+  Target Bodies(1) = 8
+  Equation = 1
+  Material = 3
+  Body Force = 7
+End
+
+Body 9
+  Name = "rotor_magnet_s_radial_out_row1_17"
+  Target Bodies(1) = 9
+  Equation = 1
+  Material = 3
+  Body Force = 8
+End
+
+Body 10
+  Name = "rotor_housing"
+  Target Bodies(1) = 10
+  Equation = 1
+  Material = 6
+End
+
+Body 11
+  Name = "stator_air"
+  Target Bodies(1) = 11
+  Equation = 1
+  Material = 1
+End
+
+Body 12
+  Name = "stator_air_coilshell"
+  Target Bodies(1) = 12
+  Equation = 1
+  Material = 1
+  Body Force = 9
+End
+
+Body 13
+  Name = "stator_tfm_coil"
+  Target Bodies(1) = 13
+  Equation = 1
+  Material = 2
+  Body Force = 10
+End
+
+Body 14
+  Name = "stator_tfm_core"
+  Target Bodies(1) = 14
+  Equation = 1
+  Material = 4
+End
+
+Body 15
+  Name = "stator_tfm_core_coilshell"
+  Target Bodies(1) = 15
+  Equation = 1
+  Material = 4
+  Body Force = 9
+End
+
+Body Force 1
+  Name = "rotor_magnet_magnetised_90_deg_from_radial_row0_17"
+  Magnetization 1 = Real 4.29757783e+04
+  Magnetization 2 = Real 9.84307151e+05
+End
+
+Body Force 2
+  Name = "rotor_magnet_magnetised_90_deg_from_radial_row1_17"
+  Magnetization 1 = Real -1.28600263e+05
+  Magnetization 2 = Real 9.76815979e+05
+End
+
+Body Force 3
+  Name = "rotor_magnet_magnetised_minus_90_deg_from_radial_row0_0"
+  Magnetization 1 = Real 1.28600263e+05
+  Magnetization 2 = Real -9.76815979e+05
+End
+
+Body Force 4
+  Name = "rotor_magnet_magnetised_minus_90_deg_from_radial_row1_17"
+  Magnetization 1 = Real -4.29757783e+04
+  Magnetization 2 = Real -9.84307151e+05
+End
+
+Body Force 5
+  Name = "rotor_magnet_n_radial_in_row0_0"
+  Magnetization 1 = Real -9.84307151e+05
+  Magnetization 2 = Real -4.29757783e+04
+End
+
+Body Force 6
+  Name = "rotor_magnet_n_radial_in_row1_0"
+  Magnetization 1 = Real -9.61890648e+05
+  Magnetization 2 = Real -2.13246023e+05
+End
+
+Body Force 7
+  Name = "rotor_magnet_s_radial_out_row0_0"
+  Magnetization 1 = Real 9.61890648e+05
+  Magnetization 2 = Real 2.13246023e+05
+End
+
+Body Force 8
+  Name = "rotor_magnet_s_radial_out_row1_17"
+  Magnetization 1 = Real 9.84307151e+05
+  Magnetization 2 = Real 4.29757783e+04
+End
+
+Body Force 9
+  Name = "coil current shell"
+  Magnetization 3 = Real 2.50000000e+04
+End
+
+Body Force 10
+  Name = "coil current"
+  Magnetization 3 = Variable Coordinate 1, Coordinate 2
+    Real MATC "2631578.9*(0.0308-sqrt(tx(0)^2+tx(1)^2))"
+End
+
+Material 1
+  Name = "air"
+  Relative Permeability = 1
+  Relative Permittivity = 1
+  Electric Conductivity = 0
+End
+
+Material 2
+  Name = "copper"
+  Relative Permeability = 1
+  Relative Permittivity = 1
+  Electric Conductivity = 0
+End
+
+Material 3
+  Name = "magnet"
+  Relative Permeability = 1.05
+  Relative Permittivity = 1
+  Electric Conductivity = 0
+End
+
+Material 4
+  Name = "stator core"
+  H-B Curve = Variable "dummy"
+    Real Cubic Monotone
+      0.00000 0.0000000e+00
+      0.05000 8.1719270e+01
+      0.10000 1.6795857e+02
+      0.15000 2.5910266e+02
+      0.20000 3.5558117e+02
+      0.25000 4.5787522e+02
+      0.30000 5.6652547e+02
+      0.35000 6.8214149e+02
+      0.40000 8.0541313e+02
+      0.45000 9.3712412e+02
+      0.50000 1.0781685e+03
+      0.55000 1.2295708e+03
+      0.60000 1.3925104e+03
+      0.65000 1.5683519e+03
+      0.70000 1.7586830e+03
+      0.75000 1.9653614e+03
+      0.80000 2.1905747e+03
+      0.85000 2.4369161e+03
+      0.90000 2.7074828e+03
+      0.95000 3.0060031e+03
+      1.00000 3.3370050e+03
+      1.05000 3.7060393e+03
+      1.10000 4.1199832e+03
+      1.15000 4.5874555e+03
+      1.20000 5.1193968e+03
+      1.25000 5.7298926e+03
+      1.30000 6.4373658e+03
+      1.35000 7.2663414e+03
+      1.40000 8.2501197e+03
+      1.45000 9.4349288e+03
+      1.50000 1.0886553e+04
+      1.55000 1.2701209e+04
+      1.60000 1.5023859e+04
+      1.65000 1.8079623e+04
+      1.70000 2.2227564e+04
+      1.75000 2.8047673e+04
+      1.80000 3.6453318e+04
+      1.85000 4.8726798e+04
+      1.90000 6.6187112e+04
+      1.95000 8.9369803e+04
+      2.00000 1.1756610e+05
+      2.05000 1.4941770e+05
+      2.10000 1.8369045e+05
+      2.15000 2.1952831e+05
+      2.20000 2.5639199e+05
+      2.25000 2.9394751e+05
+      2.30000 3.3198475e+05
+      2.35000 3.7036779e+05
+      2.40000 4.0900600e+05
+      2.45000 4.4783714e+05
+      2.50000 4.8681730e+05
+      2.55000 5.2591474e+05
+      2.60000 5.6510601e+05
+      2.65000 6.0437344e+05
+      2.70000 6.4370350e+05
+      2.75000 6.8308563e+05
+      2.80000 7.2251154e+05
+      2.85000 7.6197455e+05
+      2.90000 8.0146929e+05
+      2.95000 8.4099137e+05
+      3.00000 8.8053717e+05
+      3.05000 9.2010367e+05
+      3.10000 9.5968835e+05
+      3.15000 9.9928908e+05
+      3.20000 1.0389040e+06
+      3.25000 1.0785317e+06
+      3.30000 1.1181707e+06
+      3.35000 1.1578198e+06
+      3.40000 1.1974782e+06
+      3.45000 1.2371449e+06
+      3.50000 1.2768191e+06
+      3.55000 1.3165002e+06
+      3.60000 1.3561875e+06
+      3.65000 1.3958806e+06
+      3.70000 1.4355790e+06
+      3.75000 1.4752822e+06
+      3.80000 1.5149899e+06
+      3.85000 1.5547017e+06
+      3.90000 1.5944173e+06
+      3.95000 1.6341365e+06
+      4.00000 1.6738589e+06
+    End
+  Relative Permittivity = 1
+  Electric Conductivity = 0
+End
+
+Material 5
+  Name = "rotor iron"
+  H-B Curve = Variable "dummy"
+    Real Cubic Monotone
+      0.00000 0.0000000e+00
+      0.05000 4.0757181e+01
+      0.10000 8.3547786e+01
+      0.15000 1.2852770e+02
+      0.20000 1.7586915e+02
+      0.25000 2.2576286e+02
+      0.30000 2.7842068e+02
+      0.35000 3.3407850e+02
+      0.40000 3.9299981e+02
+      0.45000 4.5547982e+02
+      0.50000 5.2185041e+02
+      0.55000 5.9248596e+02
+      0.60000 6.6781039e+02
+      0.65000 7.4830560e+02
+      0.70000 8.3452170e+02
+      0.75000 9.2708953e+02
+      0.80000 1.0267359e+03
+      0.85000 1.1343028e+03
+      0.90000 1.2507705e+03
+      0.95000 1.3772876e+03
+      1.00000 1.5152087e+03
+      1.05000 1.6661417e+03
+      1.10000 1.8320110e+03
+      1.15000 2.0151376e+03
+      1.20000 2.2183472e+03
+      1.25000 2.4451139e+03
+      1.30000 2.6997565e+03
+      1.35000 2.9877092e+03
+      1.40000 3.3159032e+03
+      1.45000 3.6933148e+03
+      1.50000 4.1317691e+03
+      1.55000 4.6471499e+03
+      1.60000 5.2612698e+03
+      1.65000 6.0048545e+03
+      1.70000 6.9224723e+03
+      1.75000 8.0810021e+03
+      1.80000 9.5848184e+03
+      1.85000 1.1604274e+04
+      1.90000 1.4431355e+04
+      1.95000 1.8590516e+04
+      2.00000 2.5046358e+04
+      2.05000 3.5471249e+04
+      2.10000 5.2042331e+04
+      2.15000 7.5849035e+04
+      2.20000 1.0562964e+05
+      2.25000 1.3920883e+05
+      2.30000 1.7497958e+05
+      2.35000 2.1202505e+05
+      2.40000 2.4984670e+05
+      2.45000 2.8816603e+05
+      2.50000 3.2681985e+05
+      2.55000 3.6570779e+05
+      2.60000 4.0476531e+05
+      2.65000 4.4394926e+05
+      2.70000 4.8322982e+05
+      2.75000 5.2258578e+05
+      2.80000 5.6200165e+05
+      2.85000 6.0146589e+05
+      2.90000 6.4096972e+05
+      2.95000 6.8050635e+05
+      3.00000 7.2007045e+05
+      3.05000 7.5965779e+05
+      3.10000 7.9926495e+05
+      3.15000 8.3888916e+05
+      3.20000 8.7852812e+05
+      3.25000 9.1817995e+05
+      3.30000 9.5784307e+05
+      3.35000 9.9751612e+05
+      3.40000 1.0371980e+06
+      3.45000 1.0768877e+06
+      3.50000 1.1165844e+06
+      3.55000 1.1562875e+06
+      3.60000 1.1959962e+06
+      3.65000 1.2357100e+06
+      3.70000 1.2754285e+06
+      3.75000 1.3151512e+06
+      3.80000 1.3548777e+06
+      3.85000 1.3946078e+06
+      3.90000 1.4343412e+06
+      3.95000 1.4740775e+06
+      4.00000 1.5138166e+06
+    End
+  Relative Permittivity = 1
+  Electric Conductivity = 0
+End
+
+Material 6
+  Name = "rotor housing"
+  Relative Permeability = 1
+  Relative Permittivity = 1
+  Electric Conductivity = 0
+End
+
+Equation 1
+  Name = "magnetostatics"
+  Active Solvers(2) = 1 2
+End
+
+Solver 1
+  Equation = MGDynamics
+  Variable = AV
+  Procedure = "MagnetoDynamics" "WhitneyAVSolver"
+  Fix Input Current Density = Logical False
+  Edge Basis = Logical True
+  Apply Conforming BCs = Logical True
+  Optimize Bandwidth = False
+  Newton-Raphson Iteration = Logical True
+  Nonlinear System Max Iterations = 40
+  Nonlinear System Convergence Tolerance = 1e-05
+  Linear System Solver = Iterative
+  Linear System Iterative Method = BiCGStabl
+  BiCGStabl Polynomial Degree = 4
+  Linear System Preconditioning = ILU0
+  Linear System Max Iterations = 3000
+  Linear System Convergence Tolerance = 1e-08
+  Linear System Residual Output = 100
+  Linear System Abort Not Converged = True
+  Steady State Convergence Tolerance = 1e-6
+End
+
+Solver 2
+  Equation = MGDynamicsCalc
+  Procedure = "MagnetoDynamics" "MagnetoDynamicsCalcFields"
+  Potential Variable = String "AV"
+  Calculate Magnetic Flux Density = Logical True
+  Calculate Magnetic Vector Potential = Logical True
+  Calculate Nodal Forces = Logical True
+  Discontinuous Bodies = Logical True
+  Linear System Symmetric = True
+  Linear System Solver = Iterative
+  Linear System Iterative Method = CG
+  Linear System Preconditioning = None
+  Linear System Max Iterations = 5000
+  Linear System Convergence Tolerance = 1e-8
+  Linear System Residual Output = 0
+  Steady State Convergence Tolerance = 0
+End
+
+Solver 3
+  Exec Solver = After All
+  Equation = SaveScalars
+  Procedure = "SaveData" "SaveScalars"
+  Filename = scalars.dat
+  Save Component Results = Logical True
+End
+
+Solver 4
+  Exec Solver = After All
+  Equation = ResultOutput
+  Procedure = "ResultOutputSolve" "ResultOutputSolver"
+  Output File Name = fields
+  Vtu Format = Logical True
+  Ascii Output = Logical True
+  Save Geometry Ids = Logical True
+  Save Bulk Only = Logical True
+  Discontinuous Bodies = Logical True
+End
+
+Component 1
+  Name = "rotor"
+  Master Bodies(9) = 2 3 4 5 6 7 8 9 10
+  Calculate Magnetic Torque = Logical True
+  Torque Axis(3) = Real 0 0 1
+  Torque Origin(3) = Real 0 0 0
+End
+
+Boundary Condition 1
+  Name = "outer_rotor"
+  Target Boundaries(1) = 4
+  AV {e} = Real 0
+End
+
+Boundary Condition 2
+  Name = "outer_stator"
+  Target Boundaries(1) = 8
+  AV {e} = Real 0
+End
+
+Boundary Condition 3
+  Name = "periodic_b_rotor"
+  Target Boundaries(1) = 3
+End
+
+Boundary Condition 4
+  Name = "periodic_a_rotor"
+  Target Boundaries(1) = 2
+  Conforming BC = Integer 3
+  Radial Projector = Logical True
+  Level Projector = Logical True
+End
+
+Boundary Condition 5
+  Name = "periodic_b_stator"
+  Target Boundaries(1) = 7
+End
+
+Boundary Condition 6
+  Name = "periodic_a_stator"
+  Target Boundaries(1) = 6
+  Conforming BC = Integer 5
+  Radial Projector = Logical True
+  Level Projector = Logical True
+End

@@ -1,0 +1,65 @@
+[project]
+name = "emachine"
+version = "0.1.0"
+description = "Design, finite-element analysis and multi-objective optimization of electrical machines (Gmsh + Elmer FEM)"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["numpy>=1.26", "gmsh>=4.11"]
+
+[project.scripts]
+emachine = "emachine.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["emachine"]
+
+# ----------------------------------------------------------------------------------------------
+# pixi: one command sets up Python, Gmsh, the compilers and builds Elmer FEM into the environment.
+#
+#     pixi install                 # Python environment with emachine (editable)
+#     pixi run install-elmer       # builds Elmer 26.2.1 from source into .pixi/envs/default (once, ~10 min)
+#     pixi run emachine --help
+# ----------------------------------------------------------------------------------------------
+
+[tool.pixi.workspace]
+channels = ["conda-forge"]
+platforms = ["osx-arm64", "osx-64", "linux-64"]   # where PyPI has Gmsh wheels
+
+[tool.pixi.dependencies]
+python = "3.13.*"
+numpy = ">=1.26"
+# Gmsh comes from PyPI (the dependency of emachine): the wheel the recorded results and the
+# regression baselines were made with. conda-forge's build meshes slightly differently.
+# toolchain and libraries for building Elmer FEM (not on conda-forge)
+cmake = ">=3.20"
+make = "*"
+git = "*"
+c-compiler = "*"
+cxx-compiler = "*"
+fortran-compiler = "*"
+libblas = { version = "*", build = "*openblas" }
+liblapack = { version = "*", build = "*openblas" }
+
+[tool.pixi.pypi-dependencies]
+emachine = { path = ".", editable = true }
+
+# Libraries the PyPI Gmsh wheel loads on Linux (headless machines lack them)
+[tool.pixi.target.linux-64.dependencies]
+libglu = "*"
+xorg-libxcursor = "*"
+xorg-libxft = "*"
+xorg-libxinerama = "*"
+xorg-libxrender = "*"
+fontconfig = "*"
+
+
+[tool.pixi.tasks]
+install-elmer = { cmd = "bash scripts/install_elmer.sh", description = "Build Elmer FEM from source into this environment" }
+check-elmer = { cmd = "python -c 'import os, sys; from emachine.solvers.elmer import ELMER_SOLVER; print(ELMER_SOLVER); sys.exit(not os.path.isfile(ELMER_SOLVER))'", description = "Print the ElmerSolver that emachine will use" }
+test = { cmd = "python -m unittest discover tests", description = "Fast tests (about 30 s)" }
+test-slow = { cmd = "python -m unittest discover tests", env = { EMACHINE_SLOW = "1" }, description = "All tests including Gmsh/Elmer runs (about 20 min)" }
+rebaseline = { cmd = "python tests/regression/capture.py", env = { EMACHINE_SLOW = "1" }, description = "Re-record the regression baseline after an intended model change (needs Elmer)" }
+demo = { cmd = "emachine optimize --spec examples/tfm_three_phase.json --run runs/demo --dry-run", description = "Optimization workflow in seconds with the analytic stand-in" }

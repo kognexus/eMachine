@@ -1,0 +1,11 @@
+{
+  "pole_pairs": 24,
+  "tooth_arc_el_deg": 144.0,
+  "leg_width_mm": 2.0,
+  "slot_height_mm": 10.0,
+  "yoke_height_mm": 5.0,
+  "magnet_thickness_mm": 2.0,
+  "rotor_iron_mm": 2.7,
+  "ring_tooth_height_mm": 8.0,
+  "current_density_A_mm2": 10.0
+}

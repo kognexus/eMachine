@@ -1,0 +1,68 @@
+{
+  "machine": {
+    "rotor_placement": "outer",
+    "stator": "ui_core",
+    "rotor": "halbach",
+    "outer_diameter_mm": 80.0,
+    "stack_length_mm": 29.0,
+    "phases": 3,
+    "phase_spacing_mm": 1.0,
+    "air_gap_mm": 0.5,
+    "bore_diameter_mm": 20.0
+  },
+  "operating_point": {
+    "speed_rpm": 300.0,
+    "ambient_C": 25.0
+  },
+  "limits": {
+    "iron_thickness_mm": [
+      2.0,
+      10.0
+    ],
+    "pole_pairs": [
+      4,
+      32
+    ],
+    "bus_voltage_V": [
+      12.0,
+      48.0
+    ],
+    "max_current_A": 15.0,
+    "max_winding_temp_C": 120.0,
+    "max_magnet_temp_C": 80.0,
+    "max_current_density_A_mm2": 10.0,
+    "max_torque_ripple_percent": 20.0
+  },
+  "objectives": [
+    "max_torque",
+    "min_losses",
+    "min_ripple"
+  ],
+  "optimizer": {
+    "population": 12,
+    "generations": 4,
+    "seed": 1,
+    "jobs": 6
+  },
+  "variables": {
+    "leg_width_mm": 2.0,
+    "magnet_thickness_mm": [
+      1.5,
+      5.0
+    ]
+  },
+  "fidelity": {
+    "load_levels": 2,
+    "positions": 24,
+    "level": "medium",
+    "levels": {
+      "medium": {
+        "gap_cell_factor": 1.0,
+        "size_max_mm": 4.0
+      }
+    }
+  },
+  "winding": {
+    "conductor": "strip"
+  }
+}

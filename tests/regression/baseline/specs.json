@@ -1,0 +1,1503 @@
+{
+ "defaults": {
+  "fidelity": {
+   "early_stop_margin": 0.1,
+   "level": "fast",
+   "levels": {
+    "fast": {
+     "gap_cell_factor": 1.5,
+     "size_max_mm": 6.0
+    },
+    "fine": {
+     "gap_cell_factor": 0.6,
+     "size_max_mm": 6.0
+    }
+   },
+   "load_levels": 0,
+   "positions": 12,
+   "staged": true
+  },
+  "limits": {
+   "bus_voltage_V": [
+    12.0,
+    48.0
+   ],
+   "iron_thickness_mm": [
+    2.0,
+    10.0
+   ],
+   "max_core_flux_density_T": null,
+   "max_current_A": 15.0,
+   "max_current_density_A_mm2": 10.0,
+   "max_magnet_temp_C": 80.0,
+   "max_torque_ripple_percent": 20.0,
+   "max_winding_temp_C": 120.0,
+   "min_coil_height_mm": 2.0,
+   "min_core_gap_mm": 0.5,
+   "min_slot_width_mm": 3.0,
+   "pole_pairs": [
+    4,
+    32
+   ]
+  },
+  "machine": {
+   "air_gap_mm": 0.5,
+   "bore_diameter_mm": 10.0,
+   "configuration": "outrunner",
+   "halbach_segments": 2,
+   "outer_diameter_mm": 80.0,
+   "phase_spacing_mm": 2.0,
+   "phases": 1,
+   "pole_shift_el_deg": 0.0,
+   "ring_arched_valleys": false,
+   "ring_staggered_teeth": false,
+   "ring_tooth_tips": false,
+   "rotor_magnet_slots": false,
+   "rotor_skew_el_deg": 0.0,
+   "rotor_skew_steps": 1,
+   "rotor_type": "halbach",
+   "stack_length_mm": 23.0,
+   "stator_type": "ui"
+  },
+  "materials": {
+   "copper": {
+    "resistivity_20C_ohm_m": 1.72e-08,
+    "temp_coefficient_per_K": 0.00393
+   },
+   "magnet": {
+    "conductivity_S_m": 670000.0,
+    "density_kg_m3": 7500.0,
+    "eddy_correction": 1.0,
+    "eddy_width_mm": null,
+    "mu_r": 1.05,
+    "remanence_T": 1.3
+   },
+   "rotor_housing": {
+    "conductivity_S_m": null,
+    "density_kg_m3": 2700.0,
+    "eddy_correction": 1.0,
+    "eddy_width_mm": null,
+    "mu_r": 1.0
+   },
+   "rotor_iron": {
+    "bh_curve": null,
+    "conductivity_S_m": 6000000.0,
+    "density_kg_m3": 7850.0,
+    "eddy_correction": 1.0,
+    "eddy_width_mm": null,
+    "mu_r": 1000.0,
+    "saturation_T": 2.1
+   },
+   "stator_core": {
+    "alpha": 1.548,
+    "bh_curve": null,
+    "density_kg_m3": 7450.0,
+    "k_anomalous": 0.0003645,
+    "k_eddy": 1.233e-05,
+    "k_hysteresis": 0.1402,
+    "mu_r": 500.0,
+    "rotational": {
+     "a1": 6.814,
+     "a2": 1.054,
+     "a3": 1.445,
+     "k_anomalous": 0.0,
+     "k_eddy": 0.0002303,
+     "saturation_T": 2.134
+    },
+    "saturation_T": 1.9
+   }
+  },
+  "objectives": [
+   "max_torque",
+   "min_losses",
+   "min_ripple"
+  ],
+  "operating_point": {
+   "ambient_C": 25.0,
+   "speed_rpm": 300.0
+  },
+  "optimizer": {
+   "current_steps": 6,
+   "generations": 8,
+   "jobs": 6,
+   "population": 16,
+   "seed": 1
+  },
+  "thermal": {
+   "h_air_gap_W_m2K": 60.0,
+   "h_external_W_m2K": 25.0,
+   "h_mount_W_m2K": 150.0,
+   "insulation_conductivity_W_mK": 0.2,
+   "insulation_thickness_mm": 0.3,
+   "winding_conductivity_W_mK": 0.8
+  },
+  "variables": {},
+  "winding": {
+   "coil_clearance_mm": 0.5,
+   "coil_margin_mm": 1.0,
+   "conductor": "round_wire",
+   "fill_factor": 0.45,
+   "strip_fill_factor": 0.85,
+   "strip_min_thickness_mm": 0.3,
+   "turns": null
+  }
+ },
+ "tfm_single_phase.json": {
+  "fidelity": {
+   "early_stop_margin": 0.1,
+   "level": "fast",
+   "levels": {
+    "fast": {
+     "gap_cell_factor": 1.5,
+     "size_max_mm": 6.0
+    },
+    "fine": {
+     "gap_cell_factor": 0.6,
+     "size_max_mm": 6.0
+    }
+   },
+   "load_levels": 0,
+   "positions": 12,
+   "staged": true
+  },
+  "limits": {
+   "bus_voltage_V": [
+    12.0,
+    48.0
+   ],
+   "iron_thickness_mm": [
+    2.0,
+    10.0
+   ],
+   "max_core_flux_density_T": null,
+   "max_current_A": 15.0,
+   "max_current_density_A_mm2": 10.0,
+   "max_magnet_temp_C": 80.0,
+   "max_torque_ripple_percent": null,
+   "max_winding_temp_C": 120.0,
+   "min_coil_height_mm": 2.0,
+   "min_core_gap_mm": 0.5,
+   "min_slot_width_mm": 3.0,
+   "pole_pairs": [
+    4,
+    32
+   ]
+  },
+  "machine": {
+   "air_gap_mm": 0.5,
+   "bore_diameter_mm": 20.0,
+   "configuration": "outrunner",
+   "halbach_segments": 2,
+   "outer_diameter_mm": 80.0,
+   "phase_spacing_mm": 2.0,
+   "phases": 1,
+   "pole_shift_el_deg": 0.0,
+   "ring_arched_valleys": false,
+   "ring_staggered_teeth": false,
+   "ring_tooth_tips": false,
+   "rotor_magnet_slots": false,
+   "rotor_skew_el_deg": 0.0,
+   "rotor_skew_steps": 1,
+   "rotor_type": "halbach",
+   "stack_length_mm": 23.0,
+   "stator_type": "ui"
+  },
+  "materials": {
+   "copper": {
+    "resistivity_20C_ohm_m": 1.72e-08,
+    "temp_coefficient_per_K": 0.00393
+   },
+   "magnet": {
+    "conductivity_S_m": 670000.0,
+    "density_kg_m3": 7500.0,
+    "eddy_correction": 1.0,
+    "eddy_width_mm": null,
+    "mu_r": 1.05,
+    "remanence_T": 1.3
+   },
+   "rotor_housing": {
+    "conductivity_S_m": null,
+    "density_kg_m3": 2700.0,
+    "eddy_correction": 1.0,
+    "eddy_width_mm": null,
+    "mu_r": 1.0
+   },
+   "rotor_iron": {
+    "bh_curve": null,
+    "conductivity_S_m": 6000000.0,
+    "density_kg_m3": 7850.0,
+    "eddy_correction": 1.0,
+    "eddy_width_mm": null,
+    "mu_r": 1000.0,
+    "saturation_T": 2.1
+   },
+   "stator_core": {
+    "alpha": 1.548,
+    "bh_curve": null,
+    "density_kg_m3": 7450.0,
+    "k_anomalous": 0.0003645,
+    "k_eddy": 1.233e-05,
+    "k_hysteresis": 0.1402,
+    "mu_r": 500.0,
+    "rotational": {
+     "a1": 6.814,
+     "a2": 1.054,
+     "a3": 1.445,
+     "k_anomalous": 0.0,
+     "k_eddy": 0.0002303,
+     "saturation_T": 2.134
+    },
+    "saturation_T": 1.9
+   }
+  },
+  "objectives": [
+   "max_torque",
+   "min_losses",
+   "min_ripple"
+  ],
+  "operating_point": {
+   "ambient_C": 25.0,
+   "speed_rpm": 300.0
+  },
+  "optimizer": {
+   "current_steps": 6,
+   "generations": 8,
+   "jobs": 6,
+   "population": 16,
+   "seed": 1
+  },
+  "thermal": {
+   "h_air_gap_W_m2K": 60.0,
+   "h_external_W_m2K": 25.0,
+   "h_mount_W_m2K": 150.0,
+   "insulation_conductivity_W_mK": 0.2,
+   "insulation_thickness_mm": 0.3,
+   "winding_conductivity_W_mK": 0.8
+  },
+  "variables": {},
+  "winding": {
+   "coil_clearance_mm": 0.5,
+   "coil_margin_mm": 1.0,
+   "conductor": "round_wire",
+   "fill_factor": 0.45,
+   "strip_fill_factor": 0.85,
+   "strip_min_thickness_mm": 0.3,
+   "turns": null
+  }
+ },
+ "tfm_three_phase.json": {
+  "fidelity": {
+   "early_stop_margin": 0.1,
+   "level": "fast",
+   "levels": {
+    "fast": {
+     "gap_cell_factor": 1.5,
+     "size_max_mm": 6.0
+    },
+    "fine": {
+     "gap_cell_factor": 0.6,
+     "size_max_mm": 6.0
+    }
+   },
+   "load_levels": 0,
+   "positions": 12,
+   "staged": true
+  },
+  "limits": {
+   "bus_voltage_V": [
+    12.0,
+    48.0
+   ],
+   "iron_thickness_mm": [
+    2.0,
+    10.0
+   ],
+   "max_core_flux_density_T": null,
+   "max_current_A": 15.0,
+   "max_current_density_A_mm2": 10.0,
+   "max_magnet_temp_C": 80.0,
+   "max_torque_ripple_percent": 20.0,
+   "max_winding_temp_C": 120.0,
+   "min_coil_height_mm": 2.0,
+   "min_core_gap_mm": 0.5,
+   "min_slot_width_mm": 3.0,
+   "pole_pairs": [
+    4,
+    32
+   ]
+  },
+  "machine": {
+   "air_gap_mm": 0.5,
+   "bore_diameter_mm": 20.0,
+   "configuration": "outrunner",
+   "halbach_segments": 2,
+   "outer_diameter_mm": 80.0,
+   "phase_spacing_mm": 1.0,
+   "phases": 3,
+   "pole_shift_el_deg": 0.0,
+   "ring_arched_valleys": false,
+   "ring_staggered_teeth": false,
+   "ring_tooth_tips": false,
+   "rotor_magnet_slots": false,
+   "rotor_skew_el_deg": 0.0,
+   "rotor_skew_steps": 1,
+   "rotor_type": "halbach",
+   "stack_length_mm": 29.0,
+   "stator_type": "ui"
+  },
+  "materials": {
+   "copper": {
+    "resistivity_20C_ohm_m": 1.72e-08,
+    "temp_coefficient_per_K": 0.00393
+   },
+   "magnet": {
+    "conductivity_S_m": 670000.0,
+    "density_kg_m3": 7500.0,
+    "eddy_correction": 1.0,
+    "eddy_width_mm": null,
+    "mu_r": 1.05,
+    "remanence_T": 1.3
+   },
+   "rotor_housing": {
+    "conductivity_S_m": null,
+    "density_kg_m3": 2700.0,
+    "eddy_correction": 1.0,
+    "eddy_width_mm": null,
+    "mu_r": 1.0
+   },
+   "rotor_iron": {
+    "bh_curve": null,
+    "conductivity_S_m": 6000000.0,
+    "density_kg_m3": 7850.0,
+    "eddy_correction": 1.0,
+    "eddy_width_mm": null,
+    "mu_r": 1000.0,
+    "saturation_T": 2.1
+   },
+   "stator_core": {
+    "alpha": 1.548,
+    "bh_curve": null,
+    "density_kg_m3": 7450.0,
+    "k_anomalous": 0.0003645,
+    "k_eddy": 1.233e-05,
+    "k_hysteresis": 0.1402,
+    "mu_r": 500.0,
+    "rotational": {
+     "a1": 6.814,
+     "a2": 1.054,
+     "a3": 1.445,
+     "k_anomalous": 0.0,
+     "k_eddy": 0.0002303,
+     "saturation_T": 2.134
+    },
+    "saturation_T": 1.9
+   }
+  },
+  "objectives": [
+   "max_torque",
+   "min_losses",
+   "min_ripple"
+  ],
+  "operating_point": {
+   "ambient_C": 25.0,
+   "speed_rpm": 300.0
+  },
+  "optimizer": {
+   "current_steps": 6,
+   "generations": 8,
+   "jobs": 6,
+   "population": 16,
+   "seed": 1
+  },
+  "thermal": {
+   "h_air_gap_W_m2K": 60.0,
+   "h_external_W_m2K": 25.0,
+   "h_mount_W_m2K": 150.0,
+   "insulation_conductivity_W_mK": 0.2,
+   "insulation_thickness_mm": 0.3,
+   "winding_conductivity_W_mK": 0.8
+  },
+  "variables": {
+   "leg_width_mm": 2.0,
+   "magnet_thickness_mm": [
+    1.5,
+    5.0
+   ]
+  },
+  "winding": {
+   "coil_clearance_mm": 0.5,
+   "coil_margin_mm": 1.0,
+   "conductor": "strip",
+   "fill_factor": 0.45,
+   "strip_fill_factor": 0.85,
+   "strip_min_thickness_mm": 0.3,
+   "turns": null
+  }
+ },
+ "three_phase_cp.json": {
+  "fidelity": {
+   "early_stop_margin": 0.1,
+   "level": "fast",
+   "levels": {
+    "fast": {
+     "gap_cell_factor": 1.5,
+     "size_max_mm": 6.0
+    },
+    "fine": {
+     "gap_cell_factor": 0.6,
+     "size_max_mm": 6.0
+    }
+   },
+   "load_levels": 2,
+   "positions": 12,
+   "staged": true
+  },
+  "limits": {
+   "bus_voltage_V": [
+    12.0,
+    48.0
+   ],
+   "iron_thickness_mm": [
+    2.0,
+    10.0
+   ],
+   "max_core_flux_density_T": null,
+   "max_current_A": 15.0,
+   "max_current_density_A_mm2": 10.0,
+   "max_magnet_temp_C": 80.0,
+   "max_torque_ripple_percent": 20.0,
+   "max_winding_temp_C": 120.0,
+   "min_coil_height_mm": 2.0,
+   "min_core_gap_mm": 0.5,
+   "min_slot_width_mm": 3.0,
+   "pole_pairs": [
+    4,
+    32
+   ]
+  },
+  "machine": {
+   "air_gap_mm": 0.5,
+   "bore_diameter_mm": 20.0,
+   "configuration": "outrunner",
+   "halbach_segments": 2,
+   "outer_diameter_mm": 80.0,
+   "phase_spacing_mm": 1.0,
+   "phases": 3,
+   "pole_shift_el_deg": 0.0,
+   "ring_arched_valleys": false,
+   "ring_staggered_teeth": false,
+   "ring_tooth_tips": false,
+   "rotor_magnet_slots": false,
+   "rotor_skew_el_deg": 0.0,
+   "rotor_skew_steps": 1,
+   "rotor_type": "halbach",
+   "stack_length_mm": 29.0,
+   "stator_type": "cp"
+  },
+  "materials": {
+   "copper": {
+    "resistivity_20C_ohm_m": 1.72e-08,
+    "temp_coefficient_per_K": 0.00393
+   },
+   "magnet": {
+    "conductivity_S_m": 670000.0,
+    "density_kg_m3": 7500.0,
+    "eddy_correction": 1.0,
+    "eddy_width_mm": null,
+    "mu_r": 1.05,
+    "remanence_T": 1.3
+   },
+   "rotor_housing": {
+    "conductivity_S_m": null,
+    "density_kg_m3": 2700.0,
+    "eddy_correction": 1.0,
+    "eddy_width_mm": null,
+    "mu_r": 1.0
+   },
+   "rotor_iron": {
+    "bh_curve": null,
+    "conductivity_S_m": 6000000.0,
+    "density_kg_m3": 7850.0,
+    "eddy_correction": 1.0,
+    "eddy_width_mm": null,
+    "mu_r": 1000.0,
+    "saturation_T": 2.1
+   },
+   "stator_core": {
+    "alpha": 1.548,
+    "bh_curve": null,
+    "density_kg_m3": 7450.0,
+    "k_anomalous": 0.0003645,
+    "k_eddy": 1.233e-05,
+    "k_hysteresis": 0.1402,
+    "mu_r": 500.0,
+    "rotational": {
+     "a1": 6.814,
+     "a2": 1.054,
+     "a3": 1.445,
+     "k_anomalous": 0.0,
+     "k_eddy": 0.0002303,
+     "saturation_T": 2.134
+    },
+    "saturation_T": 1.9
+   }
+  },
+  "objectives": [
+   "max_torque",
+   "min_losses",
+   "min_ripple"
+  ],
+  "operating_point": {
+   "ambient_C": 25.0,
+   "speed_rpm": 300.0
+  },
+  "optimizer": {
+   "current_steps": 6,
+   "generations": 4,
+   "jobs": 6,
+   "population": 12,
+   "seed": 1
+  },
+  "thermal": {
+   "h_air_gap_W_m2K": 60.0,
+   "h_external_W_m2K": 25.0,
+   "h_mount_W_m2K": 150.0,
+   "insulation_conductivity_W_mK": 0.2,
+   "insulation_thickness_mm": 0.3,
+   "winding_conductivity_W_mK": 0.8
+  },
+  "variables": {
+   "leg_width_mm": 2.0,
+   "magnet_thickness_mm": [
+    1.5,
+    5.0
+   ]
+  },
+  "winding": {
+   "coil_clearance_mm": 0.5,
+   "coil_margin_mm": 1.0,
+   "conductor": "strip",
+   "fill_factor": 0.45,
+   "strip_fill_factor": 0.85,
+   "strip_min_thickness_mm": 0.3,
+   "turns": null
+  }
+ },
+ "three_phase_cp_24.json": {
+  "fidelity": {
+   "early_stop_margin": 0.1,
+   "level": "medium",
+   "levels": {
+    "fast": {
+     "gap_cell_factor": 1.5,
+     "size_max_mm": 6.0
+    },
+    "fine": {
+     "gap_cell_factor": 0.6,
+     "size_max_mm": 6.0
+    },
+    "medium": {
+     "gap_cell_factor": 1.0,
+     "size_max_mm": 4.0
+    }
+   },
+   "load_levels": 2,
+   "positions": 24,
+   "staged": true
+  },
+  "limits": {
+   "bus_voltage_V": [
+    12.0,
+    48.0
+   ],
+   "iron_thickness_mm": [
+    2.0,
+    10.0
+   ],
+   "max_core_flux_density_T": null,
+   "max_current_A": 15.0,
+   "max_current_density_A_mm2": 10.0,
+   "max_magnet_temp_C": 80.0,
+   "max_torque_ripple_percent": 20.0,
+   "max_winding_temp_C": 120.0,
+   "min_coil_height_mm": 2.0,
+   "min_core_gap_mm": 0.5,
+   "min_slot_width_mm": 3.0,
+   "pole_pairs": [
+    4,
+    32
+   ]
+  },
+  "machine": {
+   "air_gap_mm": 0.5,
+   "bore_diameter_mm": 20.0,
+   "configuration": "outrunner",
+   "halbach_segments": 2,
+   "outer_diameter_mm": 80.0,
+   "phase_spacing_mm": 1.0,
+   "phases": 3,
+   "pole_shift_el_deg": 0.0,
+   "ring_arched_valleys": false,
+   "ring_staggered_teeth": false,
+   "ring_tooth_tips": false,
+   "rotor_magnet_slots": false,
+   "rotor_skew_el_deg": 0.0,
+   "rotor_skew_steps": 1,
+   "rotor_type": "halbach",
+   "stack_length_mm": 29.0,
+   "stator_type": "cp"
+  },
+  "materials": {
+   "copper": {
+    "resistivity_20C_ohm_m": 1.72e-08,
+    "temp_coefficient_per_K": 0.00393
+   },
+   "magnet": {
+    "conductivity_S_m": 670000.0,
+    "density_kg_m3": 7500.0,
+    "eddy_correction": 1.0,
+    "eddy_width_mm": null,
+    "mu_r": 1.05,
+    "remanence_T": 1.3
+   },
+   "rotor_housing": {
+    "conductivity_S_m": null,
+    "density_kg_m3": 2700.0,
+    "eddy_correction": 1.0,
+    "eddy_width_mm": null,
+    "mu_r": 1.0
+   },
+   "rotor_iron": {
+    "bh_curve": null,
+    "conductivity_S_m": 6000000.0,
+    "density_kg_m3": 7850.0,
+    "eddy_correction": 1.0,
+    "eddy_width_mm": null,
+    "mu_r": 1000.0,
+    "saturation_T": 2.1
+   },
+   "stator_core": {
+    "alpha": 1.548,
+    "bh_curve": null,
+    "density_kg_m3": 7450.0,
+    "k_anomalous": 0.0003645,
+    "k_eddy": 1.233e-05,
+    "k_hysteresis": 0.1402,
+    "mu_r": 500.0,
+    "rotational": {
+     "a1": 6.814,
+     "a2": 1.054,
+     "a3": 1.445,
+     "k_anomalous": 0.0,
+     "k_eddy": 0.0002303,
+     "saturation_T": 2.134
+    },
+    "saturation_T": 1.9
+   }
+  },
+  "objectives": [
+   "max_torque",
+   "min_losses",
+   "min_ripple"
+  ],
+  "operating_point": {
+   "ambient_C": 25.0,
+   "speed_rpm": 300.0
+  },
+  "optimizer": {
+   "current_steps": 6,
+   "generations": 4,
+   "jobs": 6,
+   "population": 12,
+   "seed": 1
+  },
+  "thermal": {
+   "h_air_gap_W_m2K": 60.0,
+   "h_external_W_m2K": 25.0,
+   "h_mount_W_m2K": 150.0,
+   "insulation_conductivity_W_mK": 0.2,
+   "insulation_thickness_mm": 0.3,
+   "winding_conductivity_W_mK": 0.8
+  },
+  "variables": {
+   "leg_width_mm": 2.0,
+   "magnet_thickness_mm": [
+    1.5,
+    5.0
+   ]
+  },
+  "winding": {
+   "coil_clearance_mm": 0.5,
+   "coil_margin_mm": 1.0,
+   "conductor": "strip",
+   "fill_factor": 0.45,
+   "strip_fill_factor": 0.85,
+   "strip_min_thickness_mm": 0.3,
+   "turns": null
+  }
+ },
+ "three_phase_u.json": {
+  "fidelity": {
+   "early_stop_margin": 0.1,
+   "level": "fast",
+   "levels": {
+    "fast": {
+     "gap_cell_factor": 1.5,
+     "size_max_mm": 6.0
+    },
+    "fine": {
+     "gap_cell_factor": 0.6,
+     "size_max_mm": 6.0
+    }
+   },
+   "load_levels": 2,
+   "positions": 12,
+   "staged": true
+  },
+  "limits": {
+   "bus_voltage_V": [
+    12.0,
+    48.0
+   ],
+   "iron_thickness_mm": [
+    2.0,
+    10.0
+   ],
+   "max_core_flux_density_T": null,
+   "max_current_A": 15.0,
+   "max_current_density_A_mm2": 10.0,
+   "max_magnet_temp_C": 80.0,
+   "max_torque_ripple_percent": 20.0,
+   "max_winding_temp_C": 120.0,
+   "min_coil_height_mm": 2.0,
+   "min_core_gap_mm": 0.5,
+   "min_slot_width_mm": 3.0,
+   "pole_pairs": [
+    4,
+    32
+   ]
+  },
+  "machine": {
+   "air_gap_mm": 0.5,
+   "bore_diameter_mm": 20.0,
+   "configuration": "outrunner",
+   "halbach_segments": 2,
+   "outer_diameter_mm": 80.0,
+   "phase_spacing_mm": 1.0,
+   "phases": 3,
+   "pole_shift_el_deg": 0.0,
+   "ring_arched_valleys": false,
+   "ring_staggered_teeth": false,
+   "ring_tooth_tips": false,
+   "rotor_magnet_slots": false,
+   "rotor_skew_el_deg": 0.0,
+   "rotor_skew_steps": 1,
+   "rotor_type": "halbach",
+   "stack_length_mm": 29.0,
+   "stator_type": "u"
+  },
+  "materials": {
+   "copper": {
+    "resistivity_20C_ohm_m": 1.72e-08,
+    "temp_coefficient_per_K": 0.00393
+   },
+   "magnet": {
+    "conductivity_S_m": 670000.0,
+    "density_kg_m3": 7500.0,
+    "eddy_correction": 1.0,
+    "eddy_width_mm": null,
+    "mu_r": 1.05,
+    "remanence_T": 1.3
+   },
+   "rotor_housing": {
+    "conductivity_S_m": null,
+    "density_kg_m3": 2700.0,
+    "eddy_correction": 1.0,
+    "eddy_width_mm": null,
+    "mu_r": 1.0
+   },
+   "rotor_iron": {
+    "bh_curve": null,
+    "conductivity_S_m": 6000000.0,
+    "density_kg_m3": 7850.0,
+    "eddy_correction": 1.0,
+    "eddy_width_mm": null,
+    "mu_r": 1000.0,
+    "saturation_T": 2.1
+   },
+   "stator_core": {
+    "alpha": 1.548,
+    "bh_curve": null,
+    "density_kg_m3": 7450.0,
+    "k_anomalous": 0.0003645,
+    "k_eddy": 1.233e-05,
+    "k_hysteresis": 0.1402,
+    "mu_r": 500.0,
+    "rotational": {
+     "a1": 6.814,
+     "a2": 1.054,
+     "a3": 1.445,
+     "k_anomalous": 0.0,
+     "k_eddy": 0.0002303,
+     "saturation_T": 2.134
+    },
+    "saturation_T": 1.9
+   }
+  },
+  "objectives": [
+   "max_torque",
+   "min_losses",
+   "min_ripple"
+  ],
+  "operating_point": {
+   "ambient_C": 25.0,
+   "speed_rpm": 300.0
+  },
+  "optimizer": {
+   "current_steps": 6,
+   "generations": 4,
+   "jobs": 6,
+   "population": 12,
+   "seed": 1
+  },
+  "thermal": {
+   "h_air_gap_W_m2K": 60.0,
+   "h_external_W_m2K": 25.0,
+   "h_mount_W_m2K": 150.0,
+   "insulation_conductivity_W_mK": 0.2,
+   "insulation_thickness_mm": 0.3,
+   "winding_conductivity_W_mK": 0.8
+  },
+  "variables": {
+   "leg_width_mm": 2.0,
+   "magnet_thickness_mm": [
+    1.5,
+    5.0
+   ]
+  },
+  "winding": {
+   "coil_clearance_mm": 0.5,
+   "coil_margin_mm": 1.0,
+   "conductor": "strip",
+   "fill_factor": 0.45,
+   "strip_fill_factor": 0.85,
+   "strip_min_thickness_mm": 0.3,
+   "turns": null
+  }
+ },
+ "three_phase_u_24.json": {
+  "fidelity": {
+   "early_stop_margin": 0.1,
+   "level": "medium",
+   "levels": {
+    "fast": {
+     "gap_cell_factor": 1.5,
+     "size_max_mm": 6.0
+    },
+    "fine": {
+     "gap_cell_factor": 0.6,
+     "size_max_mm": 6.0
+    },
+    "medium": {
+     "gap_cell_factor": 1.0,
+     "size_max_mm": 4.0
+    }
+   },
+   "load_levels": 2,
+   "positions": 24,
+   "staged": true
+  },
+  "limits": {
+   "bus_voltage_V": [
+    12.0,
+    48.0
+   ],
+   "iron_thickness_mm": [
+    2.0,
+    10.0
+   ],
+   "max_core_flux_density_T": null,
+   "max_current_A": 15.0,
+   "max_current_density_A_mm2": 10.0,
+   "max_magnet_temp_C": 80.0,
+   "max_torque_ripple_percent": 20.0,
+   "max_winding_temp_C": 120.0,
+   "min_coil_height_mm": 2.0,
+   "min_core_gap_mm": 0.5,
+   "min_slot_width_mm": 3.0,
+   "pole_pairs": [
+    4,
+    32
+   ]
+  },
+  "machine": {
+   "air_gap_mm": 0.5,
+   "bore_diameter_mm": 20.0,
+   "configuration": "outrunner",
+   "halbach_segments": 2,
+   "outer_diameter_mm": 80.0,
+   "phase_spacing_mm": 1.0,
+   "phases": 3,
+   "pole_shift_el_deg": 0.0,
+   "ring_arched_valleys": false,
+   "ring_staggered_teeth": false,
+   "ring_tooth_tips": false,
+   "rotor_magnet_slots": false,
+   "rotor_skew_el_deg": 0.0,
+   "rotor_skew_steps": 1,
+   "rotor_type": "halbach",
+   "stack_length_mm": 29.0,
+   "stator_type": "u"
+  },
+  "materials": {
+   "copper": {
+    "resistivity_20C_ohm_m": 1.72e-08,
+    "temp_coefficient_per_K": 0.00393
+   },
+   "magnet": {
+    "conductivity_S_m": 670000.0,
+    "density_kg_m3": 7500.0,
+    "eddy_correction": 1.0,
+    "eddy_width_mm": null,
+    "mu_r": 1.05,
+    "remanence_T": 1.3
+   },
+   "rotor_housing": {
+    "conductivity_S_m": null,
+    "density_kg_m3": 2700.0,
+    "eddy_correction": 1.0,
+    "eddy_width_mm": null,
+    "mu_r": 1.0
+   },
+   "rotor_iron": {
+    "bh_curve": null,
+    "conductivity_S_m": 6000000.0,
+    "density_kg_m3": 7850.0,
+    "eddy_correction": 1.0,
+    "eddy_width_mm": null,
+    "mu_r": 1000.0,
+    "saturation_T": 2.1
+   },
+   "stator_core": {
+    "alpha": 1.548,
+    "bh_curve": null,
+    "density_kg_m3": 7450.0,
+    "k_anomalous": 0.0003645,
+    "k_eddy": 1.233e-05,
+    "k_hysteresis": 0.1402,
+    "mu_r": 500.0,
+    "rotational": {
+     "a1": 6.814,
+     "a2": 1.054,
+     "a3": 1.445,
+     "k_anomalous": 0.0,
+     "k_eddy": 0.0002303,
+     "saturation_T": 2.134
+    },
+    "saturation_T": 1.9
+   }
+  },
+  "objectives": [
+   "max_torque",
+   "min_losses",
+   "min_ripple"
+  ],
+  "operating_point": {
+   "ambient_C": 25.0,
+   "speed_rpm": 300.0
+  },
+  "optimizer": {
+   "current_steps": 6,
+   "generations": 4,
+   "jobs": 6,
+   "population": 12,
+   "seed": 1
+  },
+  "thermal": {
+   "h_air_gap_W_m2K": 60.0,
+   "h_external_W_m2K": 25.0,
+   "h_mount_W_m2K": 150.0,
+   "insulation_conductivity_W_mK": 0.2,
+   "insulation_thickness_mm": 0.3,
+   "winding_conductivity_W_mK": 0.8
+  },
+  "variables": {
+   "leg_width_mm": 2.0,
+   "magnet_thickness_mm": [
+    1.5,
+    5.0
+   ]
+  },
+  "winding": {
+   "coil_clearance_mm": 0.5,
+   "coil_margin_mm": 1.0,
+   "conductor": "strip",
+   "fill_factor": 0.45,
+   "strip_fill_factor": 0.85,
+   "strip_min_thickness_mm": 0.3,
+   "turns": null
+  }
+ },
+ "three_phase_ui.json": {
+  "fidelity": {
+   "early_stop_margin": 0.1,
+   "level": "fast",
+   "levels": {
+    "fast": {
+     "gap_cell_factor": 1.5,
+     "size_max_mm": 6.0
+    },
+    "fine": {
+     "gap_cell_factor": 0.6,
+     "size_max_mm": 6.0
+    }
+   },
+   "load_levels": 2,
+   "positions": 12,
+   "staged": true
+  },
+  "limits": {
+   "bus_voltage_V": [
+    12.0,
+    48.0
+   ],
+   "iron_thickness_mm": [
+    2.0,
+    10.0
+   ],
+   "max_core_flux_density_T": null,
+   "max_current_A": 15.0,
+   "max_current_density_A_mm2": 10.0,
+   "max_magnet_temp_C": 80.0,
+   "max_torque_ripple_percent": 20.0,
+   "max_winding_temp_C": 120.0,
+   "min_coil_height_mm": 2.0,
+   "min_core_gap_mm": 0.5,
+   "min_slot_width_mm": 3.0,
+   "pole_pairs": [
+    4,
+    32
+   ]
+  },
+  "machine": {
+   "air_gap_mm": 0.5,
+   "bore_diameter_mm": 20.0,
+   "configuration": "outrunner",
+   "halbach_segments": 2,
+   "outer_diameter_mm": 80.0,
+   "phase_spacing_mm": 1.0,
+   "phases": 3,
+   "pole_shift_el_deg": 0.0,
+   "ring_arched_valleys": false,
+   "ring_staggered_teeth": false,
+   "ring_tooth_tips": false,
+   "rotor_magnet_slots": false,
+   "rotor_skew_el_deg": 0.0,
+   "rotor_skew_steps": 1,
+   "rotor_type": "halbach",
+   "stack_length_mm": 29.0,
+   "stator_type": "ui"
+  },
+  "materials": {
+   "copper": {
+    "resistivity_20C_ohm_m": 1.72e-08,
+    "temp_coefficient_per_K": 0.00393
+   },
+   "magnet": {
+    "conductivity_S_m": 670000.0,
+    "density_kg_m3": 7500.0,
+    "eddy_correction": 1.0,
+    "eddy_width_mm": null,
+    "mu_r": 1.05,
+    "remanence_T": 1.3
+   },
+   "rotor_housing": {
+    "conductivity_S_m": null,
+    "density_kg_m3": 2700.0,
+    "eddy_correction": 1.0,
+    "eddy_width_mm": null,
+    "mu_r": 1.0
+   },
+   "rotor_iron": {
+    "bh_curve": null,
+    "conductivity_S_m": 6000000.0,
+    "density_kg_m3": 7850.0,
+    "eddy_correction": 1.0,
+    "eddy_width_mm": null,
+    "mu_r": 1000.0,
+    "saturation_T": 2.1
+   },
+   "stator_core": {
+    "alpha": 1.548,
+    "bh_curve": null,
+    "density_kg_m3": 7450.0,
+    "k_anomalous": 0.0003645,
+    "k_eddy": 1.233e-05,
+    "k_hysteresis": 0.1402,
+    "mu_r": 500.0,
+    "rotational": {
+     "a1": 6.814,
+     "a2": 1.054,
+     "a3": 1.445,
+     "k_anomalous": 0.0,
+     "k_eddy": 0.0002303,
+     "saturation_T": 2.134
+    },
+    "saturation_T": 1.9
+   }
+  },
+  "objectives": [
+   "max_torque",
+   "min_losses",
+   "min_ripple"
+  ],
+  "operating_point": {
+   "ambient_C": 25.0,
+   "speed_rpm": 300.0
+  },
+  "optimizer": {
+   "current_steps": 6,
+   "generations": 4,
+   "jobs": 6,
+   "population": 12,
+   "seed": 1
+  },
+  "thermal": {
+   "h_air_gap_W_m2K": 60.0,
+   "h_external_W_m2K": 25.0,
+   "h_mount_W_m2K": 150.0,
+   "insulation_conductivity_W_mK": 0.2,
+   "insulation_thickness_mm": 0.3,
+   "winding_conductivity_W_mK": 0.8
+  },
+  "variables": {
+   "leg_width_mm": 2.0,
+   "magnet_thickness_mm": [
+    1.5,
+    5.0
+   ]
+  },
+  "winding": {
+   "coil_clearance_mm": 0.5,
+   "coil_margin_mm": 1.0,
+   "conductor": "strip",
+   "fill_factor": 0.45,
+   "strip_fill_factor": 0.85,
+   "strip_min_thickness_mm": 0.3,
+   "turns": null
+  }
+ },
+ "three_phase_ui_24.json": {
+  "fidelity": {
+   "early_stop_margin": 0.1,
+   "level": "medium",
+   "levels": {
+    "fast": {
+     "gap_cell_factor": 1.5,
+     "size_max_mm": 6.0
+    },
+    "fine": {
+     "gap_cell_factor": 0.6,
+     "size_max_mm": 6.0
+    },
+    "medium": {
+     "gap_cell_factor": 1.0,
+     "size_max_mm": 4.0
+    }
+   },
+   "load_levels": 2,
+   "positions": 24,
+   "staged": true
+  },
+  "limits": {
+   "bus_voltage_V": [
+    12.0,
+    48.0
+   ],
+   "iron_thickness_mm": [
+    2.0,
+    10.0
+   ],
+   "max_core_flux_density_T": null,
+   "max_current_A": 15.0,
+   "max_current_density_A_mm2": 10.0,
+   "max_magnet_temp_C": 80.0,
+   "max_torque_ripple_percent": 20.0,
+   "max_winding_temp_C": 120.0,
+   "min_coil_height_mm": 2.0,
+   "min_core_gap_mm": 0.5,
+   "min_slot_width_mm": 3.0,
+   "pole_pairs": [
+    4,
+    32
+   ]
+  },
+  "machine": {
+   "air_gap_mm": 0.5,
+   "bore_diameter_mm": 20.0,
+   "configuration": "outrunner",
+   "halbach_segments": 2,
+   "outer_diameter_mm": 80.0,
+   "phase_spacing_mm": 1.0,
+   "phases": 3,
+   "pole_shift_el_deg": 0.0,
+   "ring_arched_valleys": false,
+   "ring_staggered_teeth": false,
+   "ring_tooth_tips": false,
+   "rotor_magnet_slots": false,
+   "rotor_skew_el_deg": 0.0,
+   "rotor_skew_steps": 1,
+   "rotor_type": "halbach",
+   "stack_length_mm": 29.0,
+   "stator_type": "ui"
+  },
+  "materials": {
+   "copper": {
+    "resistivity_20C_ohm_m": 1.72e-08,
+    "temp_coefficient_per_K": 0.00393
+   },
+   "magnet": {
+    "conductivity_S_m": 670000.0,
+    "density_kg_m3": 7500.0,
+    "eddy_correction": 1.0,
+    "eddy_width_mm": null,
+    "mu_r": 1.05,
+    "remanence_T": 1.3
+   },
+   "rotor_housing": {
+    "conductivity_S_m": null,
+    "density_kg_m3": 2700.0,
+    "eddy_correction": 1.0,
+    "eddy_width_mm": null,
+    "mu_r": 1.0
+   },
+   "rotor_iron": {
+    "bh_curve": null,
+    "conductivity_S_m": 6000000.0,
+    "density_kg_m3": 7850.0,
+    "eddy_correction": 1.0,
+    "eddy_width_mm": null,
+    "mu_r": 1000.0,
+    "saturation_T": 2.1
+   },
+   "stator_core": {
+    "alpha": 1.548,
+    "bh_curve": null,
+    "density_kg_m3": 7450.0,
+    "k_anomalous": 0.0003645,
+    "k_eddy": 1.233e-05,
+    "k_hysteresis": 0.1402,
+    "mu_r": 500.0,
+    "rotational": {
+     "a1": 6.814,
+     "a2": 1.054,
+     "a3": 1.445,
+     "k_anomalous": 0.0,
+     "k_eddy": 0.0002303,
+     "saturation_T": 2.134
+    },
+    "saturation_T": 1.9
+   }
+  },
+  "objectives": [
+   "max_torque",
+   "min_losses",
+   "min_ripple"
+  ],
+  "operating_point": {
+   "ambient_C": 25.0,
+   "speed_rpm": 300.0
+  },
+  "optimizer": {
+   "current_steps": 6,
+   "generations": 4,
+   "jobs": 6,
+   "population": 12,
+   "seed": 1
+  },
+  "thermal": {
+   "h_air_gap_W_m2K": 60.0,
+   "h_external_W_m2K": 25.0,
+   "h_mount_W_m2K": 150.0,
+   "insulation_conductivity_W_mK": 0.2,
+   "insulation_thickness_mm": 0.3,
+   "winding_conductivity_W_mK": 0.8
+  },
+  "variables": {
+   "leg_width_mm": 2.0,
+   "magnet_thickness_mm": [
+    1.5,
+    5.0
+   ]
+  },
+  "winding": {
+   "coil_clearance_mm": 0.5,
+   "coil_margin_mm": 1.0,
+   "conductor": "strip",
+   "fill_factor": 0.45,
+   "strip_fill_factor": 0.85,
+   "strip_min_thickness_mm": 0.3,
+   "turns": null
+  }
+ },
+ "user_tr48.json": {
+  "fidelity": {
+   "early_stop_margin": 0.1,
+   "level": "medium",
+   "levels": {
+    "fast": {
+     "gap_cell_factor": 1.5,
+     "size_max_mm": 6.0
+    },
+    "fine": {
+     "gap_cell_factor": 0.6,
+     "size_max_mm": 6.0
+    },
+    "medium": {
+     "gap_cell_factor": 1.0,
+     "size_max_mm": 4.0
+    }
+   },
+   "load_levels": 0,
+   "positions": 24,
+   "staged": true
+  },
+  "limits": {
+   "bus_voltage_V": [
+    12.0,
+    48.0
+   ],
+   "iron_thickness_mm": [
+    2.0,
+    10.0
+   ],
+   "max_core_flux_density_T": null,
+   "max_current_A": 15.0,
+   "max_current_density_A_mm2": 10.0,
+   "max_magnet_temp_C": 80.0,
+   "max_torque_ripple_percent": null,
+   "max_winding_temp_C": 120.0,
+   "min_coil_height_mm": 2.0,
+   "min_core_gap_mm": 0.5,
+   "min_slot_width_mm": 3.0,
+   "pole_pairs": [
+    4,
+    32
+   ]
+  },
+  "machine": {
+   "air_gap_mm": 0.3,
+   "bore_diameter_mm": 30.0,
+   "configuration": "outrunner",
+   "halbach_segments": 2,
+   "outer_diameter_mm": 80.0,
+   "phase_spacing_mm": 0.1,
+   "phases": 3,
+   "pole_shift_el_deg": 0.0,
+   "ring_arched_valleys": true,
+   "ring_staggered_teeth": true,
+   "ring_tooth_tips": false,
+   "rotor_magnet_slots": false,
+   "rotor_skew_el_deg": 0.0,
+   "rotor_skew_steps": 1,
+   "rotor_type": "halbach",
+   "stack_length_mm": 27.2,
+   "stator_type": "tr"
+  },
+  "materials": {
+   "copper": {
+    "resistivity_20C_ohm_m": 1.72e-08,
+    "temp_coefficient_per_K": 0.00393
+   },
+   "magnet": {
+    "conductivity_S_m": 670000.0,
+    "density_kg_m3": 7500.0,
+    "eddy_correction": 1.0,
+    "eddy_width_mm": null,
+    "mu_r": 1.05,
+    "remanence_T": 1.3
+   },
+   "rotor_housing": {
+    "conductivity_S_m": null,
+    "density_kg_m3": 2700.0,
+    "eddy_correction": 1.0,
+    "eddy_width_mm": null,
+    "mu_r": 1.0
+   },
+   "rotor_iron": {
+    "bh_curve": null,
+    "conductivity_S_m": 6000000.0,
+    "density_kg_m3": 7850.0,
+    "eddy_correction": 1.0,
+    "eddy_width_mm": null,
+    "mu_r": 1000.0,
+    "saturation_T": 2.1
+   },
+   "stator_core": {
+    "alpha": 1.548,
+    "bh_curve": null,
+    "density_kg_m3": 7450.0,
+    "k_anomalous": 0.0003645,
+    "k_eddy": 1.233e-05,
+    "k_hysteresis": 0.1402,
+    "mu_r": 500.0,
+    "rotational": {
+     "a1": 6.814,
+     "a2": 1.054,
+     "a3": 1.445,
+     "k_anomalous": 0.0,
+     "k_eddy": 0.0002303,
+     "saturation_T": 2.134
+    },
+    "saturation_T": 1.9
+   }
+  },
+  "objectives": [
+   "max_torque",
+   "min_losses",
+   "min_ripple"
+  ],
+  "operating_point": {
+   "ambient_C": 25.0,
+   "speed_rpm": 300.0
+  },
+  "optimizer": {
+   "current_steps": 6,
+   "generations": 8,
+   "jobs": 6,
+   "population": 16,
+   "seed": 1
+  },
+  "thermal": {
+   "h_air_gap_W_m2K": 60.0,
+   "h_external_W_m2K": 25.0,
+   "h_mount_W_m2K": 150.0,
+   "insulation_conductivity_W_mK": 0.2,
+   "insulation_thickness_mm": 0.3,
+   "winding_conductivity_W_mK": 0.8
+  },
+  "variables": {
+   "current_density_A_mm2": [
+    1.0,
+    10.0
+   ],
+   "leg_width_mm": 2.0,
+   "magnet_thickness_mm": 2.0,
+   "pole_pairs": 24.0,
+   "ring_tooth_height_mm": 8.0,
+   "rotor_iron_mm": 2.7,
+   "slot_height_mm": 10.0,
+   "tooth_span": 0.8,
+   "yoke_height_mm": 5.0
+  },
+  "winding": {
+   "coil_clearance_mm": 1.0,
+   "coil_margin_mm": 1.0,
+   "conductor": "strip",
+   "fill_factor": 0.45,
+   "strip_fill_factor": 0.85,
+   "strip_min_thickness_mm": 0.3,
+   "turns": null
+  }
+ }
+}

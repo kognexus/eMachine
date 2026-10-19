@@ -1,0 +1,228 @@
+{
+ "name": "Guo et al. 2003-2007, 3-phase SMC claw-pole motor, 500 W at 1800 rpm (Table V of the TFM paper)",
+ "source": "Y. G. Guo, J. G. Zhu, P. A. Watterson, W. Wu, \"Development of a permanent magnet claw pole motor with soft magnetic composite core\", Australian J. Electrical & Electronics Eng. 2(1), 21-30, 2005 (main paper, open: https://opus.lib.uts.edu.au/bitstream/10453/166879/3/). Also: Guo, Zhu, Lu, IEE Proc. EPA 153(4), 2006; Guo, Zhu, Wu, JSAEM 15, 2005 (2nd sub-airgap); Guo, Zhu, Wu, IEEE TMAG 41(6), 2005 (wire); Guo, Zhu, Zhong, Wu, IEEE TMAG 39(5), 2003 (SOMALOY 500 loss fit).",
+ "notes": {
+  "stator": "Two SOMALOY 500 discs per phase with 10 rectangular claws each, ring coil between them (stated). Stator outer radius 40, coil window 17 x 11 (17 axial: discs (31 - 17) / 2 = 7 = the stated narrowest disc section; then the claw overlap leaves the stated 1.65 mm magnet overhang), 1st sub-airgap 4.2 mm between neighbouring claws -> claw width 2 pi 40 / 20 - 4.2 = 8.4 mm = tooth_span 0.667, 2nd sub-airgap 2.65 mm claw tip to opposite disc = claw_tip_gap, shaft radius 9 -> claws 10 mm thick with a 10 mm yoke (40 - 11 - 10 - 10 = 9). Claw shape from the papers' figures (JAEEE 2005 Fig. 1, IEE Proc. 2006 Fig. 1, field region Fig. 2): each disc is a full disc with 10 rim teeth, one under each of its own L-shaped claws; at the claw level a disc has no iron where the claws of the other disc reach across (mesher option claw_full_discs).",
+  "assumed": "claw thickness 10 mm without taper (variant 7 mm), continuous discs and yoke (the per-frame claw-pole core of the Onshape feature does not mesh at these dimensions: 'segment and facet intersect'), coil 16 x 6 mm at the bottom of the window (gives the mean turn radius about 22 mm that the measured resistance implies), magnet remanence 1.10 T (N30M), SMC Froehlich mu_r 500 / Js 1.9 T, mild steel mu_r 2000 / Js 2.0 T, SMC density 7300 kg/m3.",
+  "rotor": "Outer rotor, magnets OD 88 x ID 82 x 15 mm axial, arc 12 deg, one row per phase centred on the claw overlap; rotor yoke 3 mm (OD 94). The rotor yoke is modelled over the magnet length (15 mm) only.",
+  "not_modelled": "coupling between the stacks, mild-steel shaft (0.007 mWb, negligible per the authors), six-step current (sinusoidal here with the same rms), rotational core loss (the authors' loss model includes it; here alternating loss on the peak flux density).",
+  "history": "First runs (kept under variants/): discs as full rings up to the air gap (discs_to_air_gap: inductance 11.2 mH) and O-frames with legs on both discs at every pole (frames_both_discs: 10.9 mH) put iron 2.65 mm from every claw tip and doubled the coil leakage; the papers' figures show the L-shaped claws used now.",
+  "losses": "T31: SOMALOY 500 alternating and rotational loss (Guo, Zhu, Zhong, Wu, IEEE TMAG 39(5), 2003); mild-steel rotor yoke conductivity 1.12e7 S/m (stated in the claw-pole papers), thin-plate eddy formula with the skin-effect factor of a plate at the incremental permeability of the B-H model (no fitted correction; the authors' factor k_e is not published); NdFeB conductivity 6.7e5 S/m (assumed)."
+ },
+ "params": {
+  "stator": {
+   "core_type": "cp",
+   "air_gap_radius": 40.0,
+   "pole_pairs": 10,
+   "inner_stator": true,
+   "trim_pole_faces": true,
+   "tooth_span": 0.6667,
+   "leg_width": 7.0,
+   "slot_width": 17.0,
+   "slot_height": 11.0,
+   "yoke_height": 10.0,
+   "claw_root_height": 10.0,
+   "claw_tip_height": 10.0,
+   "claw_tip_gap": 2.65,
+   "claw_full_discs": true,
+   "include_coil": true,
+   "coil_height": 6.0,
+   "coil_clearance": 0.5,
+   "pole_shift_deg": 0.0
+  },
+  "rotor": {
+   "configuration": "outrunner",
+   "type": "surface",
+   "inner_diameter": 82.0,
+   "outer_diameter": 94.0,
+   "stack_length": 15.0,
+   "poles": 20,
+   "magnet_thickness": 3.0,
+   "magnet_arc_ratio": 0.6667,
+   "magnet_rows": 1,
+   "row_gap": 0.0,
+   "alternate_rows": false
+  },
+  "mesh": {
+   "size_max": 4.0
+  }
+ },
+ "analysis": {
+  "magnet_remanence_T": 1.1,
+  "magnet_mu_r": 1.05,
+  "stator_core_mu_r": 500.0,
+  "stator_core_saturation_T": 1.9,
+  "rotor_iron_mu_r": 2000.0,
+  "rotor_iron_saturation_T": 2.0
+ },
+ "operating": {
+  "phases": 3,
+  "turns": 75,
+  "wire_diameter_mm": 0.71,
+  "strands": 2,
+  "speed_rpm": 1800,
+  "phase_current_rms_A": 4.1,
+  "winding_temp_C": 91.0,
+  "mechanical_loss_W": 6.0
+ },
+ "positions_per_period": 24,
+ "published": [
+  {
+   "key": "emf_constant_Vs",
+   "label": "Back-EMF constant (measured 68 V peak at 1800 rpm)",
+   "value": 0.2552,
+   "unit": "V s",
+   "kind": "measured (read from figure)"
+  },
+  {
+   "key": "emf_constant_Vs",
+   "label": "Back-EMF constant Ke, authors' FEA",
+   "value": 0.2594,
+   "unit": "V s",
+   "kind": "FEA"
+  },
+  {
+   "key": "flux_per_turn_fundamental_Wb",
+   "scale": 1000,
+   "label": "No-load flux per turn, fundamental",
+   "value": 0.48,
+   "unit": "mWb",
+   "kind": "FEA"
+  },
+  {
+   "key": "cogging_one_phase_peak_Nm",
+   "label": "Cogging torque, one stack, peak",
+   "value": 0.75,
+   "unit": "N m",
+   "kind": "FEA (read from figure)"
+  },
+  {
+   "key": "cogging_all_phases_peak_Nm",
+   "label": "Cogging torque, three stacks, peak",
+   "value": 0.33,
+   "unit": "N m",
+   "kind": "measured (read from figure)"
+  },
+  {
+   "key": "cogging_all_phases_peak_Nm",
+   "label": "Cogging torque, three stacks, authors' FEA (6th harmonic)",
+   "value": 0.381,
+   "unit": "N m",
+   "kind": "FEA"
+  },
+  {
+   "key": "inductance_mean_H",
+   "scale": 1000,
+   "label": "Phase inductance",
+   "value": 5.79,
+   "unit": "mH",
+   "kind": "measured"
+  },
+  {
+   "key": "inductance_mean_H",
+   "scale": 1000,
+   "label": "Phase inductance, authors' FEA (0.932 uH per turn)",
+   "value": 5.24,
+   "unit": "mH",
+   "kind": "FEA"
+  },
+  {
+   "key": "resistance_20C_ohm",
+   "label": "Phase resistance at room temperature",
+   "value": 0.225,
+   "unit": "ohm",
+   "kind": "measured"
+  },
+  {
+   "key": "torque_em_mean_Nm",
+   "label": "Electromagnetic torque at 4.1 A (601.5 W / 188.5 rad/s)",
+   "value": 3.19,
+   "unit": "N m",
+   "kind": "authors' calculation"
+  },
+  {
+   "key": "core_loss_no_load_W",
+   "label": "Core loss, no load, 1800 rpm",
+   "value": 60.0,
+   "unit": "W",
+   "kind": "measured (read from figure)"
+  },
+  {
+   "key": "stator_loss_no_load_W",
+   "label": "Stator core loss, no load, authors' FEA (rotor loss taken as negligible)",
+   "value": 58.0,
+   "unit": "W",
+   "kind": "FEA (rotational model)"
+  },
+  {
+   "key": "stator_loss_load_W",
+   "label": "Stator core loss, full load, authors' FEA",
+   "value": 81.8,
+   "unit": "W",
+   "kind": "FEA (rotational model)"
+  },
+  {
+   "key": "output_torque_Nm",
+   "label": "Output torque at 1800 rpm (rated)",
+   "value": 2.65,
+   "unit": "N m",
+   "kind": "measured"
+  },
+  {
+   "key": "efficiency_motor",
+   "label": "Efficiency at rated torque (drive total, includes the inverter)",
+   "value": 0.81,
+   "unit": "",
+   "kind": "measured"
+  }
+ ],
+ "variants": {
+  "claw_7mm": {
+   "params": {
+    "stator": {
+     "claw_root_height": 7.0,
+     "claw_tip_height": 7.0
+    }
+   }
+  }
+ },
+ "materials": {
+  "stator_core": {
+   "density_kg_m3": 7300.0,
+   "k_hysteresis": 0.1402,
+   "alpha": 1.548,
+   "k_eddy": 1.233e-05,
+   "k_anomalous": 0.0003645,
+   "rotational": {
+    "a1": 6.814,
+    "a2": 1.054,
+    "a3": 1.445,
+    "saturation_T": 2.134,
+    "k_eddy": 0.0002303,
+    "k_anomalous": 0.0
+   }
+  },
+  "rotor_iron": {
+   "conductivity_S_m": 11200000.0,
+   "density_kg_m3": 7850.0,
+   "eddy_width_mm": null,
+   "eddy_correction": 1.0,
+   "mu_r": 2000.0,
+   "saturation_T": 2.0
+  },
+  "rotor_housing": {
+   "conductivity_S_m": null,
+   "density_kg_m3": 2700.0,
+   "eddy_width_mm": null,
+   "eddy_correction": 1.0,
+   "mu_r": 1.0
+  },
+  "magnet": {
+   "conductivity_S_m": 670000.0,
+   "density_kg_m3": 7500.0,
+   "eddy_width_mm": null,
+   "eddy_correction": 1.0,
+   "mu_r": 1.05
+  }
+ }
+}

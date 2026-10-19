@@ -1,0 +1,85 @@
+{
+ "parameters": {
+  "stator": {
+   "core_type": "ui",
+   "air_gap_radius": 34.8,
+   "pole_pairs": 18,
+   "inner_stator": true,
+   "trim_pole_faces": true,
+   "tooth_span": 0.7,
+   "leg_width": 5.0,
+   "slot_width": 13.0,
+   "slot_height": 14.0,
+   "yoke_height": 5.0,
+   "bridge_height": 3.0,
+   "bridge_top_ratio": 0.8,
+   "include_coil": true,
+   "coil_height": 9.5,
+   "coil_clearance": 0.5
+  },
+  "rotor": {
+   "configuration": "outrunner",
+   "type": "halbach",
+   "stack_length": 23.0,
+   "poles": 36,
+   "segments_per_pole": 2,
+   "magnet_rows": 2,
+   "row_gap": 13.0,
+   "alternate_rows": true,
+   "magnet_thickness": 2.0,
+   "inner_diameter": 70.6,
+   "outer_diameter": 80.0
+  },
+  "mesh": {
+   "gap_cell": 0.75,
+   "size_max": 6.0
+  },
+  "analysis": {
+   "magnet_remanence_T": 1.3,
+   "magnet_mu_r": 1.05,
+   "stator_core_mu_r": 500.0,
+   "rotor_iron_mu_r": 1000.0,
+   "rotor_housing_mu_r": 1.0,
+   "stator_core_saturation_T": 1.9,
+   "stator_core_bh_curve": null,
+   "rotor_iron_saturation_T": 2.1,
+   "rotor_iron_bh_curve": null,
+   "coil_turns": 1,
+   "coil_current_A": 362.7457787486989
+  },
+  "design": {
+   "pole_pairs": 18,
+   "tooth_span": 0.7,
+   "leg_width_mm": 5.0,
+   "slot_height_mm": 14.0,
+   "yoke_height_mm": 5.0,
+   "magnet_thickness_mm": 2.0,
+   "current_density_A_mm2": 5.0,
+   "rotor_iron_mm": 2.7,
+   "bridge_height_mm": 3.0
+  }
+ },
+ "analysis": {
+  "magnet_remanence_T": 1.3,
+  "magnet_mu_r": 1.05,
+  "stator_core_mu_r": 500.0,
+  "rotor_iron_mu_r": 1000.0,
+  "rotor_housing_mu_r": 1.0,
+  "stator_core_saturation_T": 1.9,
+  "stator_core_bh_curve": null,
+  "rotor_iron_saturation_T": 2.1,
+  "rotor_iron_bh_curve": null,
+  "nonlinear_tolerance": 1e-05,
+  "nonlinear_max_iterations": 40,
+  "coil_turns": 1,
+  "coil_current_A": 362.7457787486989,
+  "positions": 8,
+  "sweep_start_deg": 0.0,
+  "sweep_deg": null,
+  "keep_fields": false,
+  "linear_tolerance": 1e-08,
+  "linear_max_iterations": 3000
+ },
+ "angle_deg": 2.5,
+ "current_A": 300.0
+}

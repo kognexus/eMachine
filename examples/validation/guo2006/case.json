@@ -1,0 +1,252 @@
+{
+ "name": "Guo et al. 2006, 3-phase SMC TFM, 640 W at 1800 rpm (review Table 2, row 5)",
+ "source": "Y. G. Guo, J. G. Zhu, P. A. Watterson, W. Wu, \"Development of a PM transverse flux motor with soft magnetic composite core\", IEEE Trans. Energy Conversion 21(2), 426-434, 2006. Open copy: https://opus.lib.uts.edu.au/bitstream/10453/5857/3/2006004024.pdf. Design paper: Guo et al., ICEMS 2003.",
+ "notes": {
+  "stator": "Table I: stator outer radius 40, coil window 15 (axial) x 20.5 (radial), 10 teeth per side per phase (60 in total), effective axial length 93 for 3 stacks -> 31 per stack, legs (31 - 15) / 2 = 8 (ICEMS 2003: narrowest tooth 8 mm), yoke 10 (ICEMS 2003) -> bore radius 9.5 = shaft radius. Side discs with teeth (paper: 'stator side discs', 'stator teeth', Fig. 1b, Fig. 3): toothed ring. Teeth aligned on both sides (Fig. 2: the two magnet arrays of a phase have opposite polarity at the same angle).",
+  "assumed": "ring_tooth_height 10 mm (not published; variants 6 and 14 mm), tooth arc 12 deg = magnet arc (tooth_span 0.667; not published), straight-cut teeth (the real teeth taper, Fig. 3), coil 13 x 18.5 mm in the window, magnet remanence 1.10 T (N30M data sheet range 1.08-1.13 T), SMC B-H curve Froehlich mu_r 500 / Js 1.9 T (B = 1.47 T at 10 kA/m, close to Somaloy 500), mild-steel rotor mu_r 2000 / Js 2.0 T (paper: mu_r about 5000), SOMALOY 500 alternating-loss fit of Guo, Zhu, Zhong, Wu, IEEE TMAG 39(5), 2003 (C_ha 0.1402, h 1.548, C_ea 1.233e-5, C_aa 3.645e-4, W/kg), applied to the peak flux density (no rotational loss); SMC density 7300 kg/m3.",
+  "rotor": "Table I: outer rotor, rotor inner radius 41 (air gap 1), outer radius 47, magnets OD 88 x ID 82 x 9 mm, arc 12 deg (pole pitch 18 deg -> arc ratio 0.667), radial magnetisation, two arrays per phase, assumed centred on the teeth (centres at +-11.5 mm): inner edges at +-7 mm -> row gap 14 mm, rotor stack per phase 32 mm.",
+  "not_modelled": "silicon-steel sheets between the stacks and coupling between the phases (measured L 6.33 / 6.94 mH), mild-steel shaft, six-step current of the real drive (here sinusoidal with the same rms fundamental), eddy currents in the rotor yoke.",
+  "losses": "T31: SOMALOY 500 alternating and rotational loss (Guo, Zhu, Zhong, Wu, IEEE TMAG 39(5), 2003); mild-steel rotor yoke conductivity 1.12e7 S/m (stated in the claw-pole papers), thin-plate eddy formula with the skin-effect factor of a plate at the incremental permeability of the B-H model (no fitted correction; the authors' factor k_e is not published); NdFeB conductivity 6.7e5 S/m (assumed)."
+ },
+ "params": {
+  "stator": {
+   "core_type": "tr",
+   "air_gap_radius": 40.0,
+   "pole_pairs": 10,
+   "inner_stator": true,
+   "trim_pole_faces": true,
+   "tooth_span": 0.6667,
+   "leg_width": 8.0,
+   "slot_width": 15.0,
+   "slot_height": 20.5,
+   "yoke_height": 10.0,
+   "ring_tooth_height": 10.0,
+   "ring_arched_valleys": false,
+   "ring_staggered_teeth": false,
+   "include_coil": true,
+   "coil_height": 18.5,
+   "coil_clearance": 1.0,
+   "pole_shift_deg": 0.0
+  },
+  "rotor": {
+   "configuration": "outrunner",
+   "type": "surface",
+   "inner_diameter": 82.0,
+   "outer_diameter": 94.0,
+   "stack_length": 32.0,
+   "poles": 20,
+   "magnet_thickness": 3.0,
+   "magnet_arc_ratio": 0.6667,
+   "magnet_rows": 2,
+   "row_gap": 14.0,
+   "alternate_rows": true
+  },
+  "mesh": {
+   "size_max": 4.0
+  }
+ },
+ "analysis": {
+  "magnet_remanence_T": 1.1,
+  "magnet_mu_r": 1.05,
+  "stator_core_mu_r": 500.0,
+  "stator_core_saturation_T": 1.9,
+  "rotor_iron_mu_r": 2000.0,
+  "rotor_iron_saturation_T": 2.0
+ },
+ "operating": {
+  "phases": 3,
+  "turns": 125,
+  "wire_diameter_mm": 1.25,
+  "speed_rpm": 1800,
+  "phase_current_rms_A": 5.5,
+  "winding_temp_C": 86.0,
+  "mechanical_loss_W": 6.0
+ },
+ "positions_per_period": 24,
+ "published": [
+  {
+   "key": "emf_constant_Vs",
+   "label": "Back-EMF constant k (E1 rms = k * omega)",
+   "value": 0.244,
+   "unit": "V s",
+   "kind": "measured"
+  },
+  {
+   "key": "emf_constant_Vs",
+   "label": "Back-EMF constant k, authors' FEA",
+   "value": 0.247,
+   "unit": "V s",
+   "kind": "FEA"
+  },
+  {
+   "key": "flux_per_turn_peak_Wb",
+   "scale": 1000,
+   "label": "No-load flux per turn, peak (Fig. 4)",
+   "value": 0.28,
+   "unit": "mWb",
+   "kind": "FEA (read from figure)"
+  },
+  {
+   "key": "cogging_one_phase_peak_Nm",
+   "label": "Cogging torque, one stack, peak (Fig. 5)",
+   "value": 1.07,
+   "unit": "N m",
+   "kind": "FEA (read from figure)"
+  },
+  {
+   "key": "cogging_all_phases_peak_Nm",
+   "label": "Cogging torque, three stacks, peak",
+   "value": 0.32,
+   "unit": "N m",
+   "kind": "measured"
+  },
+  {
+   "key": "cogging_all_phases_peak_Nm",
+   "label": "Cogging torque, three stacks, authors' FEA",
+   "value": 0.339,
+   "unit": "N m",
+   "kind": "FEA"
+  },
+  {
+   "key": "inductance_mean_H",
+   "scale": 1000,
+   "label": "Phase inductance (mean of 6.33 / 6.94 / 6.33)",
+   "value": 6.53,
+   "unit": "mH",
+   "kind": "measured"
+  },
+  {
+   "key": "inductance_mean_H",
+   "scale": 1000,
+   "label": "Phase inductance, authors' FEA",
+   "value": 6.68,
+   "unit": "mH",
+   "kind": "FEA"
+  },
+  {
+   "key": "resistance_20C_ohm",
+   "label": "Phase resistance at 20 C",
+   "value": 0.305,
+   "unit": "ohm",
+   "kind": "measured"
+  },
+  {
+   "key": "torque_em_mean_Nm",
+   "label": "Electromagnetic torque at 5.5 A (3 k I)",
+   "value": 4.03,
+   "unit": "N m",
+   "kind": "derived from measured k and I"
+  },
+  {
+   "key": "stator_loss_no_load_W",
+   "label": "Stator SMC core loss, no load, 1800 rpm",
+   "value": 29.0,
+   "unit": "W",
+   "kind": "FEA (authors, rotational model, TMAG 2014)"
+  },
+  {
+   "key": "rotor_loss_no_load_W",
+   "label": "Rotor yoke loss, no load, 1800 rpm",
+   "value": 34.3,
+   "unit": "W",
+   "kind": "authors' calculation (TMAG 2014, fitted k_e)"
+  },
+  {
+   "key": "core_loss_no_load_W",
+   "label": "Core loss, no load, 1800 rpm (stator + rotor)",
+   "value": 68.2,
+   "unit": "W",
+   "kind": "measured (TMAG 2014; 69 W in TEC 2006)"
+  },
+  {
+   "key": "stator_loss_load_W",
+   "label": "Stator SMC core loss, rated load",
+   "value": 56.5,
+   "unit": "W",
+   "kind": "FEA (authors, TMAG 2014)"
+  },
+  {
+   "key": "rotor_loss_load_W",
+   "label": "Rotor yoke loss, rated load",
+   "value": 63.8,
+   "unit": "W",
+   "kind": "authors' calculation (TMAG 2014)"
+  },
+  {
+   "key": "core_loss_load_W",
+   "label": "Core loss, rated load (stator + rotor)",
+   "value": 112.0,
+   "unit": "W",
+   "kind": "measured (TEC 2006; 131.2 W derived in TMAG 2014)"
+  },
+  {
+   "key": "output_torque_Nm",
+   "label": "Output torque at 1800 rpm, 5.5 A",
+   "value": 3.4,
+   "unit": "N m",
+   "kind": "measured"
+  },
+  {
+   "key": "efficiency_motor",
+   "label": "Motor efficiency (640 / (805 - 11 inverter))",
+   "value": 0.806,
+   "unit": "",
+   "kind": "derived from measured powers"
+  }
+ ],
+ "variants": {
+  "tooth_6mm": {
+   "params": {
+    "stator": {
+     "ring_tooth_height": 6.0
+    }
+   }
+  },
+  "tooth_14mm": {
+   "params": {
+    "stator": {
+     "ring_tooth_height": 14.0
+    }
+   }
+  }
+ },
+ "materials": {
+  "stator_core": {
+   "density_kg_m3": 7300.0,
+   "k_hysteresis": 0.1402,
+   "alpha": 1.548,
+   "k_eddy": 1.233e-05,
+   "k_anomalous": 0.0003645,
+   "rotational": {
+    "a1": 6.814,
+    "a2": 1.054,
+    "a3": 1.445,
+    "saturation_T": 2.134,
+    "k_eddy": 0.0002303,
+    "k_anomalous": 0.0
+   }
+  },
+  "rotor_iron": {
+   "conductivity_S_m": 11200000.0,
+   "density_kg_m3": 7850.0,
+   "eddy_width_mm": null,
+   "eddy_correction": 1.0,
+   "mu_r": 2000.0,
+   "saturation_T": 2.0
+  },
+  "rotor_housing": {
+   "conductivity_S_m": null,
+   "density_kg_m3": 2700.0,
+   "eddy_width_mm": null,
+   "eddy_correction": 1.0,
+   "mu_r": 1.0
+  },
+  "magnet": {
+   "conductivity_S_m": 670000.0,
+   "density_kg_m3": 7500.0,
+   "eddy_width_mm": null,
+   "eddy_correction": 1.0,
+   "mu_r": 1.05
+  }
+ }
+}

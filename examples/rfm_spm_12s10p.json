@@ -1,0 +1,15 @@
+{
+ "machine": {"flux_path": "rfm", "principle": "pmsm", "rotor": "surface", "rotor_placement": "inner", "phases": 3,
+             "outer_diameter_mm": 100.0, "stack_length_mm": 40.0, "air_gap_mm": 0.7, "bore_diameter_mm": 20.0,
+             "slots": 12},
+ "winding": {"span": "concentrated", "layers": 2},
+ "operating_point": {"speed_rpm": 1500.0, "ambient_C": 25.0},
+ "limits": {"bus_voltage_V": [24.0, 48.0], "max_current_A": 30.0, "max_current_density_A_mm2": 6.0,
+            "max_torque_ripple_percent": null},
+ "materials": {"magnet": {"remanence_T": 1.2}, "stator_core": {"saturation_T": null, "mu_r": 2000.0},
+               "rotor_iron": {"saturation_T": null, "mu_r": 2000.0,
+                              "conductivity_S_m": 2.0e6, "eddy_width_mm": 0.35}},
+ "variables": {"pole_pairs": 5, "slot_height_mm": 12.0, "slot_width_mm": 7.07, "yoke_height_mm": 8.0,
+               "magnet_thickness_mm": 3.0, "magnet_arc_el_deg": 153.0, "current_density_A_mm2": [1.0, 6.0]},
+ "fidelity": {"positions": 12, "staged": false}
+}

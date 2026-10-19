@@ -1,0 +1,2988 @@
+{
+ "default_reference": {
+  "checks": [
+   {
+    "limit": 4,
+    "name": "pole_pairs_min",
+    "sense": ">=",
+    "value": 18,
+    "violation": 0.0
+   },
+   {
+    "limit": 32,
+    "name": "pole_pairs_max",
+    "sense": "<=",
+    "value": 18,
+    "violation": 0.0
+   },
+   {
+    "limit": 2.0,
+    "name": "iron_leg_min",
+    "sense": ">=",
+    "value": 5.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 10.0,
+    "name": "iron_leg_max",
+    "sense": "<=",
+    "value": 5.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 2.0,
+    "name": "iron_yoke_min",
+    "sense": ">=",
+    "value": 5.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 10.0,
+    "name": "iron_yoke_max",
+    "sense": "<=",
+    "value": 5.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 2.0,
+    "name": "iron_core_thickness_min",
+    "sense": ">=",
+    "value": 4.251622057858186,
+    "violation": 0.0
+   },
+   {
+    "limit": 10.0,
+    "name": "iron_core_thickness_max",
+    "sense": "<=",
+    "value": 4.251622057858186,
+    "violation": 0.0
+   },
+   {
+    "limit": 2.0,
+    "name": "iron_bridge_min",
+    "sense": ">=",
+    "value": 3.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 10.0,
+    "name": "iron_bridge_max",
+    "sense": "<=",
+    "value": 3.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 2.0,
+    "name": "iron_rotor_min",
+    "sense": ">=",
+    "value": 2.7,
+    "violation": 0.0
+   },
+   {
+    "limit": 10.0,
+    "name": "iron_rotor_max",
+    "sense": "<=",
+    "value": 2.7,
+    "violation": 0.0
+   },
+   {
+    "limit": 3.0,
+    "name": "slot_width",
+    "sense": ">=",
+    "value": 13.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 2.0,
+    "name": "coil_height",
+    "sense": ">=",
+    "value": 9.5,
+    "violation": 0.0
+   },
+   {
+    "limit": 0.5,
+    "name": "coil_width",
+    "sense": ">=",
+    "value": 12.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 4.0,
+    "name": "stator_radius",
+    "sense": ">=",
+    "value": 34.8,
+    "violation": 0.0
+   },
+   {
+    "limit": 5.0,
+    "name": "bore_clearance",
+    "sense": ">=",
+    "value": 15.799999999999997,
+    "violation": 0.0
+   },
+   {
+    "limit": 0.5,
+    "name": "core_overlap",
+    "sense": ">=",
+    "value": 1.2356603564168118,
+    "violation": 0.0
+   },
+   {
+    "limit": 0.5,
+    "name": "bridge_overlap",
+    "sense": ">=",
+    "value": 1.2914831808928726,
+    "violation": 0.0
+   }
+  ],
+  "copper_loss_60C": 4.178128970559522,
+  "derived": {
+   "ampere_turns_peak": 362.7457787486989,
+   "ampere_turns_rms": 256.5,
+   "bore_radius": 5.0,
+   "bridge_height": 3.0,
+   "claw_root_height": 0.0,
+   "claw_tip_gap": 0.0,
+   "claw_tip_height": 0.0,
+   "coil_area_mm2": 114.0,
+   "coil_height": 9.5,
+   "coil_mean_radius": 26.049999999999997,
+   "coil_r0": 21.299999999999997,
+   "coil_r1": 30.799999999999997,
+   "coil_width": 12.0,
+   "core_coverage": 0.35,
+   "core_thickness": 4.251622057858186,
+   "cores_per_pole_pair": 2,
+   "electrical_frequency_Hz": 90.0,
+   "inner_diameter": 31.599999999999994,
+   "leg_width": 5.0,
+   "magnet": 2.0,
+   "outer_radius": 40.0,
+   "outrunner": true,
+   "phase_width": 23.0,
+   "pole_face_area_mm2": 2525.4635023677624,
+   "pole_pairs": 18,
+   "pole_pitch": 6.073745796940266,
+   "pole_shift_deg": 0.0,
+   "ring_tip_height": 0.0,
+   "ring_tip_overhang": 0.0,
+   "ring_tooth_height": 0.0,
+   "rotor_gap_radius": 35.3,
+   "rotor_iron": 2.7,
+   "slot_height": 14.0,
+   "slot_width": 13.0,
+   "stator_far_radius": 15.799999999999997,
+   "stator_height": 19.0,
+   "stator_radius": 34.8,
+   "turn_length_mm": 163.6769772520282,
+   "window_top": 14.0,
+   "yoke_height": 5.0
+  },
+  "from_parameters": {
+   "bridge_height_mm": 3.0,
+   "current_density_A_mm2": 5.0,
+   "leg_width_mm": 5.0,
+   "magnet_thickness_mm": 2.0,
+   "pole_pairs": 18,
+   "rotor_iron_mm": 2.700000000000003,
+   "slot_height_mm": 14.0,
+   "tooth_span": 0.7,
+   "yoke_height_mm": 5.0
+  },
+  "parameters": {
+   "analysis": {
+    "coil_current_A": 362.7457787486989,
+    "coil_turns": 1,
+    "magnet_mu_r": 1.05,
+    "magnet_remanence_T": 1.3,
+    "rotor_housing_mu_r": 1.0,
+    "rotor_iron_bh_curve": null,
+    "rotor_iron_mu_r": 1000.0,
+    "rotor_iron_saturation_T": 2.1,
+    "stator_core_bh_curve": null,
+    "stator_core_mu_r": 500.0,
+    "stator_core_saturation_T": 1.9
+   },
+   "design": {
+    "bridge_height_mm": 3.0,
+    "current_density_A_mm2": 5.0,
+    "leg_width_mm": 5.0,
+    "magnet_thickness_mm": 2.0,
+    "pole_pairs": 18,
+    "rotor_iron_mm": 2.7,
+    "slot_height_mm": 14.0,
+    "tooth_span": 0.7,
+    "yoke_height_mm": 5.0
+   },
+   "mesh": {
+    "gap_cell": 0.75,
+    "size_max": 6.0
+   },
+   "rotor": {
+    "alternate_rows": true,
+    "configuration": "outrunner",
+    "inner_diameter": 70.6,
+    "magnet_rows": 2,
+    "magnet_thickness": 2.0,
+    "outer_diameter": 80.0,
+    "poles": 36,
+    "row_gap": 13.0,
+    "segments_per_pole": 2,
+    "stack_length": 23.0,
+    "type": "halbach"
+   },
+   "stator": {
+    "air_gap_radius": 34.8,
+    "bridge_height": 3.0,
+    "bridge_top_ratio": 0.8,
+    "coil_clearance": 0.5,
+    "coil_height": 9.5,
+    "core_type": "ui",
+    "include_coil": true,
+    "inner_stator": true,
+    "leg_width": 5.0,
+    "pole_pairs": 18,
+    "slot_height": 14.0,
+    "slot_width": 13.0,
+    "tooth_span": 0.7,
+    "trim_pole_faces": true,
+    "yoke_height": 5.0
+   }
+  },
+  "resistance_20_turns_80C": 0.027127318097423553,
+  "sheet": "\nFeature \"TFM stator v2\"\n-----------------------\n  Core structure                                        U-core with I-bridge\n  Arrangement                                           Rotary ring\n  Air-gap radius                                        34.800 mm\n  Pole pairs                                            18\n  Inner stator (outer rotor)                            on\n  Trim pole faces to air-gap cylinder                   on\n  Number of phases                                      1\n  Pole shift angle                                      0.0000 deg\n  Tooth span / pole pitch                               0.7000\n  Leg width                                             5.000 mm\n  Slot width                                            13.000 mm\n  Slot height                                           14.000 mm\n  Yoke height                                           5.000 mm\n  I-bridge height                                       3.000 mm\n  I-bridge top width / slot width                       0.8000\n  Include coil                                          on\n  Coil height                                           9.500 mm\n  Coil clearance                                        0.500 mm\n\nFeature \"TFM rotor v2\"\n----------------------\n  Configuration                                         Outrunner (rotor around the stator)\n  Rotor type                                            Halbach array\n  Inner diameter (air gap)                              70.600 mm\n  Outer diameter                                        80.000 mm\n  Stack length                                          23.000 mm\n  Number of phases                                      1\n  Number of poles                                       36\n  Magnet thickness                                      2.000 mm\n  Segments per pole                                     2\n  Axial magnet rows                                     2\n  Gap between rows                                      13.000 mm\n  Alternate polarity between rows                       on\n\nChecks on the finished model\n----------------------------\n  Air gap                                               0.500 mm\n  Overall outer diameter (rotor)                        80.000 mm\n  Innermost diameter (inner end of the stator cores)    31.600 mm\n  Axial width of one stator ring                        23.000 mm\n  Thickness of one stator core along the circumference  4.252 mm\n  Total axial length                                    23.000 mm",
+  "thermal_coupled": {
+   "converged": true,
+   "copper_loss_W": 4.598072161493182,
+   "core_C": 77.15533806285174,
+   "heat_to_ambient_W": 10.598072161493183,
+   "iterations": 5,
+   "magnet_C": 55.0734762832231,
+   "winding_C": 89.60433327432371
+  },
+  "thermal_response": {
+   "core": [
+    5.158828267054876,
+    5.158828267054879,
+    2.640532086908216
+   ],
+   "rotor": [
+    2.640532086908216,
+    2.640532086908216,
+    4.729458768339871
+   ],
+   "winding": [
+    7.866266248504317,
+    5.158828267054876,
+    2.640532086908216
+   ]
+  },
+  "turns": {
+   "below_minimum_bus": false,
+   "conductor": "round_wire",
+   "current_density_rms_A_mm2": 5.0,
+   "feasible": true,
+   "peak_current_A": 0.6137830435680185,
+   "required_bus_voltage_V": 47.95933563891475,
+   "resistance_ohm": 23.68764198096549,
+   "rms_current_A": 0.434010152284264,
+   "turns": 591,
+   "turns_max": 591,
+   "turns_min": 25,
+   "violation": 0.0,
+   "volts_per_turn_peak": 0.08114946808615017,
+   "wire_area_mm2": 0.0868020304568528
+  },
+  "values": {
+   "bridge_height_mm": 3.0,
+   "current_density_A_mm2": 5.0,
+   "leg_width_mm": 5.0,
+   "magnet_thickness_mm": 2.0,
+   "pole_pairs": 18,
+   "rotor_iron_mm": 2.7,
+   "slot_height_mm": 14.0,
+   "tooth_span": 0.7,
+   "yoke_height_mm": 5.0
+  },
+  "variables": [
+   {
+    "high": 32.0,
+    "kind": "int",
+    "low": 4.0,
+    "name": "pole_pairs"
+   },
+   {
+    "high": 0.95,
+    "kind": "real",
+    "low": 0.5,
+    "name": "tooth_span"
+   },
+   {
+    "high": 10.0,
+    "kind": "real",
+    "low": 2.0,
+    "name": "leg_width_mm"
+   },
+   {
+    "high": 18.0,
+    "kind": "real",
+    "low": 4.0,
+    "name": "slot_height_mm"
+   },
+   {
+    "high": 10.0,
+    "kind": "real",
+    "low": 2.0,
+    "name": "yoke_height_mm"
+   },
+   {
+    "high": 6.0,
+    "kind": "real",
+    "low": 1.5,
+    "name": "magnet_thickness_mm"
+   },
+   {
+    "high": 10.0,
+    "kind": "real",
+    "low": 1.0,
+    "name": "current_density_A_mm2"
+   },
+   {
+    "high": 10.0,
+    "kind": "real",
+    "low": 2.0,
+    "name": "rotor_iron_mm"
+   },
+   {
+    "high": 10.0,
+    "kind": "real",
+    "low": 2.0,
+    "name": "bridge_height_mm"
+   }
+  ],
+  "vector": [
+   18,
+   0.7,
+   5.0,
+   14.0,
+   5.0,
+   2.0,
+   5.0,
+   2.7,
+   3.0
+  ]
+ },
+ "three_phase_cp": {
+  "checks": [
+   {
+    "limit": 4,
+    "name": "pole_pairs_min",
+    "sense": ">=",
+    "value": 18,
+    "violation": 0.0
+   },
+   {
+    "limit": 32,
+    "name": "pole_pairs_max",
+    "sense": "<=",
+    "value": 18,
+    "violation": 0.0
+   },
+   {
+    "limit": 2.0,
+    "name": "iron_leg_min",
+    "sense": ">=",
+    "value": 2.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 10.0,
+    "name": "iron_leg_max",
+    "sense": "<=",
+    "value": 2.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 2.0,
+    "name": "iron_yoke_min",
+    "sense": ">=",
+    "value": 6.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 10.0,
+    "name": "iron_yoke_max",
+    "sense": "<=",
+    "value": 6.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 2.0,
+    "name": "iron_core_thickness_min",
+    "sense": ">=",
+    "value": 3.827725215780064,
+    "violation": 0.0
+   },
+   {
+    "limit": 10.0,
+    "name": "iron_core_thickness_max",
+    "sense": "<=",
+    "value": 3.827725215780064,
+    "violation": 0.0
+   },
+   {
+    "limit": 2.0,
+    "name": "iron_claw_root_min",
+    "sense": ">=",
+    "value": 6.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 10.0,
+    "name": "iron_claw_root_max",
+    "sense": "<=",
+    "value": 6.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 2.0,
+    "name": "iron_claw_tip_min",
+    "sense": ">=",
+    "value": 3.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 1.0,
+    "name": "claw_tip_gap",
+    "sense": ">=",
+    "value": 2.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 4.0,
+    "name": "claw_tip_gap_max",
+    "sense": "<=",
+    "value": 2.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 2.0,
+    "name": "iron_rotor_min",
+    "sense": ">=",
+    "value": 6.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 10.0,
+    "name": "iron_rotor_max",
+    "sense": "<=",
+    "value": 6.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 3.0,
+    "name": "slot_width",
+    "sense": ">=",
+    "value": 5.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 2.0,
+    "name": "coil_height",
+    "sense": ">=",
+    "value": 10.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 0.5,
+    "name": "coil_width",
+    "sense": ">=",
+    "value": 4.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 4.0,
+    "name": "stator_radius",
+    "sense": ">=",
+    "value": 30.25,
+    "violation": 0.0
+   },
+   {
+    "limit": 10.0,
+    "name": "bore_clearance",
+    "sense": ">=",
+    "value": 7.25,
+    "violation": 0.06875
+   },
+   {
+    "limit": 0.5,
+    "name": "claw_overlap",
+    "sense": ">=",
+    "value": 0.3993283074813574,
+    "violation": 0.02630065818298987
+   }
+  ],
+  "copper_loss_60C": 2.41169458543538,
+  "derived": {
+   "ampere_turns_peak": 264.4579361637688,
+   "ampere_turns_rms": 187.0,
+   "bore_radius": 10.0,
+   "bridge_height": 0.0,
+   "claw_root_height": 6.0,
+   "claw_tip_gap": 2.0,
+   "claw_tip_height": 3.0,
+   "coil_area_mm2": 40.0,
+   "coil_height": 10.0,
+   "coil_mean_radius": 18.75,
+   "coil_r0": 13.75,
+   "coil_r1": 23.75,
+   "coil_width": 4.0,
+   "core_coverage": 0.725,
+   "core_thickness": 3.827725215780064,
+   "cores_per_pole_pair": 2,
+   "electrical_frequency_Hz": 90.0,
+   "inner_diameter": 14.5,
+   "leg_width": 2.0,
+   "magnet": 3.25,
+   "outer_radius": 40.0,
+   "outrunner": true,
+   "phase_width": 9.0,
+   "pole_face_area_mm2": 964.5867543765761,
+   "pole_pairs": 18,
+   "pole_pitch": 5.279620987282847,
+   "pole_shift_deg": 0.0,
+   "ring_tip_height": 0.0,
+   "ring_tip_overhang": 0.0,
+   "ring_tooth_height": 0.0,
+   "rotor_gap_radius": 30.75,
+   "rotor_iron": 6.0,
+   "slot_height": 11.0,
+   "slot_width": 5.0,
+   "stator_far_radius": 7.25,
+   "stator_height": 23.0,
+   "stator_radius": 30.25,
+   "turn_length_mm": 117.80972450961724,
+   "window_top": 17.0,
+   "yoke_height": 6.0
+  },
+  "from_parameters": {
+   "claw_root_height_mm": 6.0,
+   "claw_tip_gap_mm": 2.0,
+   "current_density_A_mm2": 5.5,
+   "leg_width_mm": 2.0,
+   "magnet_thickness_mm": 3.25,
+   "pole_pairs": 18,
+   "rotor_iron_mm": 6.0,
+   "slot_height_mm": 11.0,
+   "tooth_span": 0.725,
+   "yoke_height_mm": 6.0
+  },
+  "parameters": {
+   "analysis": {
+    "coil_current_A": 264.4579361637688,
+    "coil_turns": 1,
+    "magnet_mu_r": 1.05,
+    "magnet_remanence_T": 1.3,
+    "rotor_housing_mu_r": 1.0,
+    "rotor_iron_bh_curve": null,
+    "rotor_iron_mu_r": 1000.0,
+    "rotor_iron_saturation_T": 2.1,
+    "stator_core_bh_curve": null,
+    "stator_core_mu_r": 500.0,
+    "stator_core_saturation_T": 1.9
+   },
+   "design": {
+    "claw_root_height_mm": 6.0,
+    "claw_tip_gap_mm": 2.0,
+    "current_density_A_mm2": 5.5,
+    "leg_width_mm": 2.0,
+    "magnet_thickness_mm": 3.25,
+    "pole_pairs": 18,
+    "rotor_iron_mm": 6.0,
+    "slot_height_mm": 11.0,
+    "tooth_span": 0.725,
+    "yoke_height_mm": 6.0
+   },
+   "mesh": {
+    "gap_cell": 0.75,
+    "size_max": 6.0
+   },
+   "rotor": {
+    "alternate_rows": false,
+    "configuration": "outrunner",
+    "inner_diameter": 61.5,
+    "magnet_rows": 1,
+    "magnet_thickness": 3.25,
+    "outer_diameter": 80.0,
+    "poles": 36,
+    "row_gap": 0.0,
+    "segments_per_pole": 2,
+    "stack_length": 9.0,
+    "type": "halbach"
+   },
+   "stator": {
+    "air_gap_radius": 30.25,
+    "bridge_height": 1.0,
+    "bridge_top_ratio": 0.8,
+    "claw_root_height": 6.0,
+    "claw_tip_gap": 2.0,
+    "claw_tip_height": 3.0,
+    "coil_clearance": 0.5,
+    "coil_height": 10.0,
+    "core_type": "cp",
+    "include_coil": true,
+    "inner_stator": true,
+    "leg_width": 2.0,
+    "pole_pairs": 18,
+    "slot_height": 11.0,
+    "slot_width": 5.0,
+    "tooth_span": 0.725,
+    "trim_pole_faces": true,
+    "yoke_height": 6.0
+   }
+  },
+  "resistance_20_turns_80C": 0.029460414468735787,
+  "sheet": "\nFeature \"TFM stator v2\"\n-----------------------\n  Core structure                                        Claw-pole (CP) core\n  Arrangement                                           Rotary ring\n  Air-gap radius                                        30.250 mm\n  Pole pairs                                            18\n  Inner stator (outer rotor)                            on\n  Trim pole faces to air-gap cylinder                   on\n  Number of phases                                      1\n  Pole shift angle                                      0.0000 deg\n  Tooth span / pole pitch                               0.7250\n  Leg width                                             2.000 mm\n  Slot width                                            5.000 mm\n  Slot height                                           11.000 mm\n  Yoke height                                           6.000 mm\n  Claw root height                                      6.000 mm\n  Claw tip height                                       3.000 mm\n  Claw tip gap                                          2.000 mm\n  Include coil                                          on\n  Coil height                                           10.000 mm\n  Coil clearance                                        0.500 mm\n\nFeature \"TFM rotor v2\"\n----------------------\n  Configuration                                         Outrunner (rotor around the stator)\n  Rotor type                                            Halbach array\n  Inner diameter (air gap)                              61.500 mm\n  Outer diameter                                        80.000 mm\n  Stack length                                          9.000 mm\n  Number of phases                                      1\n  Number of poles                                       36\n  Magnet thickness                                      3.250 mm\n  Segments per pole                                     2\n  Axial magnet rows                                     1\n  Gap between rows                                      0.000 mm\n  Alternate polarity between rows                       off\n\nChecks on the finished model\n----------------------------\n  Air gap                                               0.500 mm\n  Overall outer diameter (rotor)                        80.000 mm\n  Innermost diameter (inner end of the stator cores)    14.500 mm\n  Axial width of one stator ring                        9.000 mm\n  Thickness of one stator core along the circumference  3.828 mm\n  Total axial length                                    9.000 mm",
+  "thermal_coupled": {
+   "converged": true,
+   "copper_loss_W": 3.1270716137762182,
+   "core_C": 142.95596197648413,
+   "heat_to_ambient_W": 9.127071613776218,
+   "iterations": 6,
+   "magnet_C": 93.40115881652218,
+   "winding_C": 147.34616081536402
+  },
+  "thermal_response": {
+   "core": [
+    13.663588871733694,
+    13.663588871733694,
+    6.910996714708617
+   ],
+   "rotor": [
+    6.910996714708617,
+    6.910996714708617,
+    12.234993593513074
+   ],
+   "winding": [
+    15.067521809994197,
+    13.663588871733694,
+    6.910996714708617
+   ]
+  },
+  "turns": {
+   "below_minimum_bus": true,
+   "conductor": "strip",
+   "current_density_rms_A_mm2": 5.500000000000002,
+   "feasible": true,
+   "layer_cap": 28,
+   "peak_current_A": 9.444926291563172,
+   "required_bus_voltage_V": 3.6870780869684947,
+   "resistance_ohm": 0.05774241235872214,
+   "rms_current_A": 6.67857142857143,
+   "strip_thickness_mm": 0.30357142857142855,
+   "strip_width_mm": 4.0,
+   "turns": 28,
+   "turns_max": 28,
+   "turns_min": 18,
+   "violation": 0.0,
+   "volts_per_turn_peak": 0.07602626878694396,
+   "wire_area_mm2": 1.2142857142857142
+  },
+  "values": {
+   "claw_root_height_mm": 6.0,
+   "claw_tip_gap_mm": 2.0,
+   "current_density_A_mm2": 5.5,
+   "leg_width_mm": 2.0,
+   "magnet_thickness_mm": 3.25,
+   "pole_pairs": 18,
+   "rotor_iron_mm": 6.0,
+   "slot_height_mm": 11.0,
+   "tooth_span": 0.725,
+   "yoke_height_mm": 6.0
+  },
+  "variables": [
+   {
+    "high": 32.0,
+    "kind": "int",
+    "low": 4.0,
+    "name": "pole_pairs"
+   },
+   {
+    "high": 0.95,
+    "kind": "real",
+    "low": 0.5,
+    "name": "tooth_span"
+   },
+   {
+    "high": 2.0,
+    "kind": "real",
+    "low": 2.0,
+    "name": "leg_width_mm"
+   },
+   {
+    "high": 18.0,
+    "kind": "real",
+    "low": 4.0,
+    "name": "slot_height_mm"
+   },
+   {
+    "high": 10.0,
+    "kind": "real",
+    "low": 2.0,
+    "name": "yoke_height_mm"
+   },
+   {
+    "high": 5.0,
+    "kind": "real",
+    "low": 1.5,
+    "name": "magnet_thickness_mm"
+   },
+   {
+    "high": 10.0,
+    "kind": "real",
+    "low": 1.0,
+    "name": "current_density_A_mm2"
+   },
+   {
+    "high": 10.0,
+    "kind": "real",
+    "low": 2.0,
+    "name": "rotor_iron_mm"
+   },
+   {
+    "high": 10.0,
+    "kind": "real",
+    "low": 2.0,
+    "name": "claw_root_height_mm"
+   },
+   {
+    "high": 3.0,
+    "kind": "real",
+    "low": 1.0,
+    "name": "claw_tip_gap_mm"
+   }
+  ],
+  "vector": [
+   18,
+   0.725,
+   2.0,
+   11.0,
+   6.0,
+   3.25,
+   5.5,
+   6.0,
+   6.0,
+   2.0
+  ]
+ },
+ "three_phase_cp_24": {
+  "checks": [
+   {
+    "limit": 4,
+    "name": "pole_pairs_min",
+    "sense": ">=",
+    "value": 18,
+    "violation": 0.0
+   },
+   {
+    "limit": 32,
+    "name": "pole_pairs_max",
+    "sense": "<=",
+    "value": 18,
+    "violation": 0.0
+   },
+   {
+    "limit": 2.0,
+    "name": "iron_leg_min",
+    "sense": ">=",
+    "value": 2.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 10.0,
+    "name": "iron_leg_max",
+    "sense": "<=",
+    "value": 2.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 2.0,
+    "name": "iron_yoke_min",
+    "sense": ">=",
+    "value": 6.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 10.0,
+    "name": "iron_yoke_max",
+    "sense": "<=",
+    "value": 6.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 2.0,
+    "name": "iron_core_thickness_min",
+    "sense": ">=",
+    "value": 3.827725215780064,
+    "violation": 0.0
+   },
+   {
+    "limit": 10.0,
+    "name": "iron_core_thickness_max",
+    "sense": "<=",
+    "value": 3.827725215780064,
+    "violation": 0.0
+   },
+   {
+    "limit": 2.0,
+    "name": "iron_claw_root_min",
+    "sense": ">=",
+    "value": 6.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 10.0,
+    "name": "iron_claw_root_max",
+    "sense": "<=",
+    "value": 6.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 2.0,
+    "name": "iron_claw_tip_min",
+    "sense": ">=",
+    "value": 3.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 1.0,
+    "name": "claw_tip_gap",
+    "sense": ">=",
+    "value": 2.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 4.0,
+    "name": "claw_tip_gap_max",
+    "sense": "<=",
+    "value": 2.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 2.0,
+    "name": "iron_rotor_min",
+    "sense": ">=",
+    "value": 6.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 10.0,
+    "name": "iron_rotor_max",
+    "sense": "<=",
+    "value": 6.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 3.0,
+    "name": "slot_width",
+    "sense": ">=",
+    "value": 5.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 2.0,
+    "name": "coil_height",
+    "sense": ">=",
+    "value": 10.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 0.5,
+    "name": "coil_width",
+    "sense": ">=",
+    "value": 4.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 4.0,
+    "name": "stator_radius",
+    "sense": ">=",
+    "value": 30.25,
+    "violation": 0.0
+   },
+   {
+    "limit": 10.0,
+    "name": "bore_clearance",
+    "sense": ">=",
+    "value": 7.25,
+    "violation": 0.06875
+   },
+   {
+    "limit": 0.5,
+    "name": "claw_overlap",
+    "sense": ">=",
+    "value": 0.3993283074813574,
+    "violation": 0.02630065818298987
+   }
+  ],
+  "copper_loss_60C": 2.41169458543538,
+  "derived": {
+   "ampere_turns_peak": 264.4579361637688,
+   "ampere_turns_rms": 187.0,
+   "bore_radius": 10.0,
+   "bridge_height": 0.0,
+   "claw_root_height": 6.0,
+   "claw_tip_gap": 2.0,
+   "claw_tip_height": 3.0,
+   "coil_area_mm2": 40.0,
+   "coil_height": 10.0,
+   "coil_mean_radius": 18.75,
+   "coil_r0": 13.75,
+   "coil_r1": 23.75,
+   "coil_width": 4.0,
+   "core_coverage": 0.725,
+   "core_thickness": 3.827725215780064,
+   "cores_per_pole_pair": 2,
+   "electrical_frequency_Hz": 90.0,
+   "inner_diameter": 14.5,
+   "leg_width": 2.0,
+   "magnet": 3.25,
+   "outer_radius": 40.0,
+   "outrunner": true,
+   "phase_width": 9.0,
+   "pole_face_area_mm2": 964.5867543765761,
+   "pole_pairs": 18,
+   "pole_pitch": 5.279620987282847,
+   "pole_shift_deg": 0.0,
+   "ring_tip_height": 0.0,
+   "ring_tip_overhang": 0.0,
+   "ring_tooth_height": 0.0,
+   "rotor_gap_radius": 30.75,
+   "rotor_iron": 6.0,
+   "slot_height": 11.0,
+   "slot_width": 5.0,
+   "stator_far_radius": 7.25,
+   "stator_height": 23.0,
+   "stator_radius": 30.25,
+   "turn_length_mm": 117.80972450961724,
+   "window_top": 17.0,
+   "yoke_height": 6.0
+  },
+  "from_parameters": {
+   "claw_root_height_mm": 6.0,
+   "claw_tip_gap_mm": 2.0,
+   "current_density_A_mm2": 5.5,
+   "leg_width_mm": 2.0,
+   "magnet_thickness_mm": 3.25,
+   "pole_pairs": 18,
+   "rotor_iron_mm": 6.0,
+   "slot_height_mm": 11.0,
+   "tooth_span": 0.725,
+   "yoke_height_mm": 6.0
+  },
+  "parameters": {
+   "analysis": {
+    "coil_current_A": 264.4579361637688,
+    "coil_turns": 1,
+    "magnet_mu_r": 1.05,
+    "magnet_remanence_T": 1.3,
+    "rotor_housing_mu_r": 1.0,
+    "rotor_iron_bh_curve": null,
+    "rotor_iron_mu_r": 1000.0,
+    "rotor_iron_saturation_T": 2.1,
+    "stator_core_bh_curve": null,
+    "stator_core_mu_r": 500.0,
+    "stator_core_saturation_T": 1.9
+   },
+   "design": {
+    "claw_root_height_mm": 6.0,
+    "claw_tip_gap_mm": 2.0,
+    "current_density_A_mm2": 5.5,
+    "leg_width_mm": 2.0,
+    "magnet_thickness_mm": 3.25,
+    "pole_pairs": 18,
+    "rotor_iron_mm": 6.0,
+    "slot_height_mm": 11.0,
+    "tooth_span": 0.725,
+    "yoke_height_mm": 6.0
+   },
+   "mesh": {
+    "gap_cell": 0.5,
+    "size_max": 4.0
+   },
+   "rotor": {
+    "alternate_rows": false,
+    "configuration": "outrunner",
+    "inner_diameter": 61.5,
+    "magnet_rows": 1,
+    "magnet_thickness": 3.25,
+    "outer_diameter": 80.0,
+    "poles": 36,
+    "row_gap": 0.0,
+    "segments_per_pole": 2,
+    "stack_length": 9.0,
+    "type": "halbach"
+   },
+   "stator": {
+    "air_gap_radius": 30.25,
+    "bridge_height": 1.0,
+    "bridge_top_ratio": 0.8,
+    "claw_root_height": 6.0,
+    "claw_tip_gap": 2.0,
+    "claw_tip_height": 3.0,
+    "coil_clearance": 0.5,
+    "coil_height": 10.0,
+    "core_type": "cp",
+    "include_coil": true,
+    "inner_stator": true,
+    "leg_width": 2.0,
+    "pole_pairs": 18,
+    "slot_height": 11.0,
+    "slot_width": 5.0,
+    "tooth_span": 0.725,
+    "trim_pole_faces": true,
+    "yoke_height": 6.0
+   }
+  },
+  "resistance_20_turns_80C": 0.029460414468735787,
+  "sheet": "\nFeature \"TFM stator v2\"\n-----------------------\n  Core structure                                        Claw-pole (CP) core\n  Arrangement                                           Rotary ring\n  Air-gap radius                                        30.250 mm\n  Pole pairs                                            18\n  Inner stator (outer rotor)                            on\n  Trim pole faces to air-gap cylinder                   on\n  Number of phases                                      1\n  Pole shift angle                                      0.0000 deg\n  Tooth span / pole pitch                               0.7250\n  Leg width                                             2.000 mm\n  Slot width                                            5.000 mm\n  Slot height                                           11.000 mm\n  Yoke height                                           6.000 mm\n  Claw root height                                      6.000 mm\n  Claw tip height                                       3.000 mm\n  Claw tip gap                                          2.000 mm\n  Include coil                                          on\n  Coil height                                           10.000 mm\n  Coil clearance                                        0.500 mm\n\nFeature \"TFM rotor v2\"\n----------------------\n  Configuration                                         Outrunner (rotor around the stator)\n  Rotor type                                            Halbach array\n  Inner diameter (air gap)                              61.500 mm\n  Outer diameter                                        80.000 mm\n  Stack length                                          9.000 mm\n  Number of phases                                      1\n  Number of poles                                       36\n  Magnet thickness                                      3.250 mm\n  Segments per pole                                     2\n  Axial magnet rows                                     1\n  Gap between rows                                      0.000 mm\n  Alternate polarity between rows                       off\n\nChecks on the finished model\n----------------------------\n  Air gap                                               0.500 mm\n  Overall outer diameter (rotor)                        80.000 mm\n  Innermost diameter (inner end of the stator cores)    14.500 mm\n  Axial width of one stator ring                        9.000 mm\n  Thickness of one stator core along the circumference  3.828 mm\n  Total axial length                                    9.000 mm",
+  "thermal_coupled": {
+   "converged": true,
+   "copper_loss_W": 3.1270716137762182,
+   "core_C": 142.95596197648413,
+   "heat_to_ambient_W": 9.127071613776218,
+   "iterations": 6,
+   "magnet_C": 93.40115881652218,
+   "winding_C": 147.34616081536402
+  },
+  "thermal_response": {
+   "core": [
+    13.663588871733694,
+    13.663588871733694,
+    6.910996714708617
+   ],
+   "rotor": [
+    6.910996714708617,
+    6.910996714708617,
+    12.234993593513074
+   ],
+   "winding": [
+    15.067521809994197,
+    13.663588871733694,
+    6.910996714708617
+   ]
+  },
+  "turns": {
+   "below_minimum_bus": true,
+   "conductor": "strip",
+   "current_density_rms_A_mm2": 5.500000000000002,
+   "feasible": true,
+   "layer_cap": 28,
+   "peak_current_A": 9.444926291563172,
+   "required_bus_voltage_V": 3.6870780869684947,
+   "resistance_ohm": 0.05774241235872214,
+   "rms_current_A": 6.67857142857143,
+   "strip_thickness_mm": 0.30357142857142855,
+   "strip_width_mm": 4.0,
+   "turns": 28,
+   "turns_max": 28,
+   "turns_min": 18,
+   "violation": 0.0,
+   "volts_per_turn_peak": 0.07602626878694396,
+   "wire_area_mm2": 1.2142857142857142
+  },
+  "values": {
+   "claw_root_height_mm": 6.0,
+   "claw_tip_gap_mm": 2.0,
+   "current_density_A_mm2": 5.5,
+   "leg_width_mm": 2.0,
+   "magnet_thickness_mm": 3.25,
+   "pole_pairs": 18,
+   "rotor_iron_mm": 6.0,
+   "slot_height_mm": 11.0,
+   "tooth_span": 0.725,
+   "yoke_height_mm": 6.0
+  },
+  "variables": [
+   {
+    "high": 32.0,
+    "kind": "int",
+    "low": 4.0,
+    "name": "pole_pairs"
+   },
+   {
+    "high": 0.95,
+    "kind": "real",
+    "low": 0.5,
+    "name": "tooth_span"
+   },
+   {
+    "high": 2.0,
+    "kind": "real",
+    "low": 2.0,
+    "name": "leg_width_mm"
+   },
+   {
+    "high": 18.0,
+    "kind": "real",
+    "low": 4.0,
+    "name": "slot_height_mm"
+   },
+   {
+    "high": 10.0,
+    "kind": "real",
+    "low": 2.0,
+    "name": "yoke_height_mm"
+   },
+   {
+    "high": 5.0,
+    "kind": "real",
+    "low": 1.5,
+    "name": "magnet_thickness_mm"
+   },
+   {
+    "high": 10.0,
+    "kind": "real",
+    "low": 1.0,
+    "name": "current_density_A_mm2"
+   },
+   {
+    "high": 10.0,
+    "kind": "real",
+    "low": 2.0,
+    "name": "rotor_iron_mm"
+   },
+   {
+    "high": 10.0,
+    "kind": "real",
+    "low": 2.0,
+    "name": "claw_root_height_mm"
+   },
+   {
+    "high": 3.0,
+    "kind": "real",
+    "low": 1.0,
+    "name": "claw_tip_gap_mm"
+   }
+  ],
+  "vector": [
+   18,
+   0.725,
+   2.0,
+   11.0,
+   6.0,
+   3.25,
+   5.5,
+   6.0,
+   6.0,
+   2.0
+  ]
+ },
+ "three_phase_u": {
+  "checks": [
+   {
+    "limit": 4,
+    "name": "pole_pairs_min",
+    "sense": ">=",
+    "value": 18,
+    "violation": 0.0
+   },
+   {
+    "limit": 32,
+    "name": "pole_pairs_max",
+    "sense": "<=",
+    "value": 18,
+    "violation": 0.0
+   },
+   {
+    "limit": 2.0,
+    "name": "iron_leg_min",
+    "sense": ">=",
+    "value": 2.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 10.0,
+    "name": "iron_leg_max",
+    "sense": "<=",
+    "value": 2.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 2.0,
+    "name": "iron_yoke_min",
+    "sense": ">=",
+    "value": 6.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 10.0,
+    "name": "iron_yoke_max",
+    "sense": "<=",
+    "value": 6.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 2.0,
+    "name": "iron_core_thickness_min",
+    "sense": ">=",
+    "value": 3.827725215780064,
+    "violation": 0.0
+   },
+   {
+    "limit": 10.0,
+    "name": "iron_core_thickness_max",
+    "sense": "<=",
+    "value": 3.827725215780064,
+    "violation": 0.0
+   },
+   {
+    "limit": 2.0,
+    "name": "iron_rotor_min",
+    "sense": ">=",
+    "value": 6.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 10.0,
+    "name": "iron_rotor_max",
+    "sense": "<=",
+    "value": 6.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 3.0,
+    "name": "slot_width",
+    "sense": ">=",
+    "value": 5.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 2.0,
+    "name": "coil_height",
+    "sense": ">=",
+    "value": 9.5,
+    "violation": 0.0
+   },
+   {
+    "limit": 0.5,
+    "name": "coil_width",
+    "sense": ">=",
+    "value": 4.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 4.0,
+    "name": "stator_radius",
+    "sense": ">=",
+    "value": 30.25,
+    "violation": 0.0
+   },
+   {
+    "limit": 10.0,
+    "name": "bore_clearance",
+    "sense": ">=",
+    "value": 13.25,
+    "violation": 0.0
+   },
+   {
+    "limit": 0.5,
+    "name": "core_overlap",
+    "sense": ">=",
+    "value": 0.7739514923935893,
+    "violation": 0.0
+   }
+  ],
+  "copper_loss_60C": 2.9937168787204516,
+  "derived": {
+   "ampere_turns_peak": 251.23503935558037,
+   "ampere_turns_rms": 177.65,
+   "bore_radius": 10.0,
+   "bridge_height": 0.0,
+   "claw_root_height": 0.0,
+   "claw_tip_gap": 0.0,
+   "claw_tip_height": 0.0,
+   "coil_area_mm2": 38.0,
+   "coil_height": 9.5,
+   "coil_mean_radius": 24.5,
+   "coil_r0": 19.75,
+   "coil_r1": 29.25,
+   "coil_width": 4.0,
+   "core_coverage": 0.3625,
+   "core_thickness": 3.827725215780064,
+   "cores_per_pole_pair": 1,
+   "electrical_frequency_Hz": 90.0,
+   "inner_diameter": 26.5,
+   "leg_width": 2.0,
+   "magnet": 3.25,
+   "outer_radius": 40.0,
+   "outrunner": true,
+   "phase_width": 9.0,
+   "pole_face_area_mm2": 275.5962155361646,
+   "pole_pairs": 18,
+   "pole_pitch": 5.279620987282847,
+   "pole_shift_deg": 0.0,
+   "ring_tip_height": 0.0,
+   "ring_tip_overhang": 0.0,
+   "ring_tooth_height": 0.0,
+   "rotor_gap_radius": 30.75,
+   "rotor_iron": 6.0,
+   "slot_height": 11.0,
+   "slot_width": 5.0,
+   "stator_far_radius": 13.25,
+   "stator_height": 17.0,
+   "stator_radius": 30.25,
+   "turn_length_mm": 153.93804002589985,
+   "window_top": 11.0,
+   "yoke_height": 6.0
+  },
+  "from_parameters": {
+   "current_density_A_mm2": 5.5,
+   "leg_width_mm": 2.0,
+   "magnet_thickness_mm": 3.25,
+   "pole_pairs": 18,
+   "rotor_iron_mm": 6.0,
+   "slot_height_mm": 11.0,
+   "tooth_span": 0.725,
+   "yoke_height_mm": 6.0
+  },
+  "parameters": {
+   "analysis": {
+    "coil_current_A": 251.23503935558037,
+    "coil_turns": 1,
+    "magnet_mu_r": 1.05,
+    "magnet_remanence_T": 1.3,
+    "rotor_housing_mu_r": 1.0,
+    "rotor_iron_bh_curve": null,
+    "rotor_iron_mu_r": 1000.0,
+    "rotor_iron_saturation_T": 2.1,
+    "stator_core_bh_curve": null,
+    "stator_core_mu_r": 500.0,
+    "stator_core_saturation_T": 1.9
+   },
+   "design": {
+    "current_density_A_mm2": 5.5,
+    "leg_width_mm": 2.0,
+    "magnet_thickness_mm": 3.25,
+    "pole_pairs": 18,
+    "rotor_iron_mm": 6.0,
+    "slot_height_mm": 11.0,
+    "tooth_span": 0.725,
+    "yoke_height_mm": 6.0
+   },
+   "mesh": {
+    "gap_cell": 0.75,
+    "size_max": 6.0
+   },
+   "rotor": {
+    "alternate_rows": true,
+    "configuration": "outrunner",
+    "inner_diameter": 61.5,
+    "magnet_rows": 2,
+    "magnet_thickness": 3.25,
+    "outer_diameter": 80.0,
+    "poles": 36,
+    "row_gap": 5.0,
+    "segments_per_pole": 2,
+    "stack_length": 9.0,
+    "type": "halbach"
+   },
+   "stator": {
+    "air_gap_radius": 30.25,
+    "bridge_height": 1.0,
+    "bridge_top_ratio": 0.8,
+    "coil_clearance": 0.5,
+    "coil_height": 9.5,
+    "core_type": "u",
+    "include_coil": true,
+    "inner_stator": true,
+    "leg_width": 2.0,
+    "pole_pairs": 18,
+    "slot_height": 11.0,
+    "slot_width": 5.0,
+    "tooth_span": 0.725,
+    "trim_pole_faces": true,
+    "yoke_height": 6.0
+   }
+  },
+  "resistance_20_turns_80C": 0.04052099112892782,
+  "sheet": "\nFeature \"TFM stator v2\"\n-----------------------\n  Core structure                                        U-core\n  Arrangement                                           Rotary ring\n  Air-gap radius                                        30.250 mm\n  Pole pairs                                            18\n  Inner stator (outer rotor)                            on\n  Trim pole faces to air-gap cylinder                   on\n  Number of phases                                      1\n  Pole shift angle                                      0.0000 deg\n  Tooth span / pole pitch                               0.7250\n  Leg width                                             2.000 mm\n  Slot width                                            5.000 mm\n  Slot height                                           11.000 mm\n  Yoke height                                           6.000 mm\n  Include coil                                          on\n  Coil height                                           9.500 mm\n  Coil clearance                                        0.500 mm\n\nFeature \"TFM rotor v2\"\n----------------------\n  Configuration                                         Outrunner (rotor around the stator)\n  Rotor type                                            Halbach array\n  Inner diameter (air gap)                              61.500 mm\n  Outer diameter                                        80.000 mm\n  Stack length                                          9.000 mm\n  Number of phases                                      1\n  Number of poles                                       36\n  Magnet thickness                                      3.250 mm\n  Segments per pole                                     2\n  Axial magnet rows                                     2\n  Gap between rows                                      5.000 mm\n  Alternate polarity between rows                       on\n\nChecks on the finished model\n----------------------------\n  Air gap                                               0.500 mm\n  Overall outer diameter (rotor)                        80.000 mm\n  Innermost diameter (inner end of the stator cores)    26.500 mm\n  Axial width of one stator ring                        9.000 mm\n  Thickness of one stator core along the circumference  3.828 mm\n  Total axial length                                    9.000 mm",
+  "thermal_coupled": {
+   "converged": true,
+   "copper_loss_W": 4.60971821719495,
+   "core_C": 208.72632494952754,
+   "heat_to_ambient_W": 10.609718217194953,
+   "iterations": 8,
+   "magnet_C": 80.25193533026538,
+   "winding_C": 218.94798207982828
+  },
+  "thermal_response": {
+   "core": [
+    18.679017052736285,
+    18.679017052736285,
+    4.226234498552557
+   ],
+   "rotor": [
+    4.226234498552557,
+    4.226234498552557,
+    14.639012679387108
+   ],
+   "winding": [
+    20.896431794525142,
+    18.679017052736285,
+    4.226234498552557
+   ]
+  },
+  "turns": {
+   "below_minimum_bus": true,
+   "conductor": "strip",
+   "current_density_rms_A_mm2": 5.500000000000002,
+   "feasible": true,
+   "layer_cap": 26,
+   "peak_current_A": 9.662886129060784,
+   "required_bus_voltage_V": 3.69270529125709,
+   "resistance_ohm": 0.06848047500788801,
+   "rms_current_A": 6.832692307692309,
+   "strip_thickness_mm": 0.31057692307692303,
+   "strip_width_mm": 4.0,
+   "turns": 26,
+   "turns_max": 26,
+   "turns_min": 17,
+   "violation": 0.0,
+   "volts_per_turn_peak": 0.08199939976712448,
+   "wire_area_mm2": 1.2423076923076921
+  },
+  "values": {
+   "current_density_A_mm2": 5.5,
+   "leg_width_mm": 2.0,
+   "magnet_thickness_mm": 3.25,
+   "pole_pairs": 18,
+   "rotor_iron_mm": 6.0,
+   "slot_height_mm": 11.0,
+   "tooth_span": 0.725,
+   "yoke_height_mm": 6.0
+  },
+  "variables": [
+   {
+    "high": 32.0,
+    "kind": "int",
+    "low": 4.0,
+    "name": "pole_pairs"
+   },
+   {
+    "high": 0.95,
+    "kind": "real",
+    "low": 0.5,
+    "name": "tooth_span"
+   },
+   {
+    "high": 2.0,
+    "kind": "real",
+    "low": 2.0,
+    "name": "leg_width_mm"
+   },
+   {
+    "high": 18.0,
+    "kind": "real",
+    "low": 4.0,
+    "name": "slot_height_mm"
+   },
+   {
+    "high": 10.0,
+    "kind": "real",
+    "low": 2.0,
+    "name": "yoke_height_mm"
+   },
+   {
+    "high": 5.0,
+    "kind": "real",
+    "low": 1.5,
+    "name": "magnet_thickness_mm"
+   },
+   {
+    "high": 10.0,
+    "kind": "real",
+    "low": 1.0,
+    "name": "current_density_A_mm2"
+   },
+   {
+    "high": 10.0,
+    "kind": "real",
+    "low": 2.0,
+    "name": "rotor_iron_mm"
+   }
+  ],
+  "vector": [
+   18,
+   0.725,
+   2.0,
+   11.0,
+   6.0,
+   3.25,
+   5.5,
+   6.0
+  ]
+ },
+ "three_phase_u_24": {
+  "checks": [
+   {
+    "limit": 4,
+    "name": "pole_pairs_min",
+    "sense": ">=",
+    "value": 18,
+    "violation": 0.0
+   },
+   {
+    "limit": 32,
+    "name": "pole_pairs_max",
+    "sense": "<=",
+    "value": 18,
+    "violation": 0.0
+   },
+   {
+    "limit": 2.0,
+    "name": "iron_leg_min",
+    "sense": ">=",
+    "value": 2.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 10.0,
+    "name": "iron_leg_max",
+    "sense": "<=",
+    "value": 2.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 2.0,
+    "name": "iron_yoke_min",
+    "sense": ">=",
+    "value": 6.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 10.0,
+    "name": "iron_yoke_max",
+    "sense": "<=",
+    "value": 6.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 2.0,
+    "name": "iron_core_thickness_min",
+    "sense": ">=",
+    "value": 3.827725215780064,
+    "violation": 0.0
+   },
+   {
+    "limit": 10.0,
+    "name": "iron_core_thickness_max",
+    "sense": "<=",
+    "value": 3.827725215780064,
+    "violation": 0.0
+   },
+   {
+    "limit": 2.0,
+    "name": "iron_rotor_min",
+    "sense": ">=",
+    "value": 6.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 10.0,
+    "name": "iron_rotor_max",
+    "sense": "<=",
+    "value": 6.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 3.0,
+    "name": "slot_width",
+    "sense": ">=",
+    "value": 5.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 2.0,
+    "name": "coil_height",
+    "sense": ">=",
+    "value": 9.5,
+    "violation": 0.0
+   },
+   {
+    "limit": 0.5,
+    "name": "coil_width",
+    "sense": ">=",
+    "value": 4.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 4.0,
+    "name": "stator_radius",
+    "sense": ">=",
+    "value": 30.25,
+    "violation": 0.0
+   },
+   {
+    "limit": 10.0,
+    "name": "bore_clearance",
+    "sense": ">=",
+    "value": 13.25,
+    "violation": 0.0
+   },
+   {
+    "limit": 0.5,
+    "name": "core_overlap",
+    "sense": ">=",
+    "value": 0.7739514923935893,
+    "violation": 0.0
+   }
+  ],
+  "copper_loss_60C": 2.9937168787204516,
+  "derived": {
+   "ampere_turns_peak": 251.23503935558037,
+   "ampere_turns_rms": 177.65,
+   "bore_radius": 10.0,
+   "bridge_height": 0.0,
+   "claw_root_height": 0.0,
+   "claw_tip_gap": 0.0,
+   "claw_tip_height": 0.0,
+   "coil_area_mm2": 38.0,
+   "coil_height": 9.5,
+   "coil_mean_radius": 24.5,
+   "coil_r0": 19.75,
+   "coil_r1": 29.25,
+   "coil_width": 4.0,
+   "core_coverage": 0.3625,
+   "core_thickness": 3.827725215780064,
+   "cores_per_pole_pair": 1,
+   "electrical_frequency_Hz": 90.0,
+   "inner_diameter": 26.5,
+   "leg_width": 2.0,
+   "magnet": 3.25,
+   "outer_radius": 40.0,
+   "outrunner": true,
+   "phase_width": 9.0,
+   "pole_face_area_mm2": 275.5962155361646,
+   "pole_pairs": 18,
+   "pole_pitch": 5.279620987282847,
+   "pole_shift_deg": 0.0,
+   "ring_tip_height": 0.0,
+   "ring_tip_overhang": 0.0,
+   "ring_tooth_height": 0.0,
+   "rotor_gap_radius": 30.75,
+   "rotor_iron": 6.0,
+   "slot_height": 11.0,
+   "slot_width": 5.0,
+   "stator_far_radius": 13.25,
+   "stator_height": 17.0,
+   "stator_radius": 30.25,
+   "turn_length_mm": 153.93804002589985,
+   "window_top": 11.0,
+   "yoke_height": 6.0
+  },
+  "from_parameters": {
+   "current_density_A_mm2": 5.5,
+   "leg_width_mm": 2.0,
+   "magnet_thickness_mm": 3.25,
+   "pole_pairs": 18,
+   "rotor_iron_mm": 6.0,
+   "slot_height_mm": 11.0,
+   "tooth_span": 0.725,
+   "yoke_height_mm": 6.0
+  },
+  "parameters": {
+   "analysis": {
+    "coil_current_A": 251.23503935558037,
+    "coil_turns": 1,
+    "magnet_mu_r": 1.05,
+    "magnet_remanence_T": 1.3,
+    "rotor_housing_mu_r": 1.0,
+    "rotor_iron_bh_curve": null,
+    "rotor_iron_mu_r": 1000.0,
+    "rotor_iron_saturation_T": 2.1,
+    "stator_core_bh_curve": null,
+    "stator_core_mu_r": 500.0,
+    "stator_core_saturation_T": 1.9
+   },
+   "design": {
+    "current_density_A_mm2": 5.5,
+    "leg_width_mm": 2.0,
+    "magnet_thickness_mm": 3.25,
+    "pole_pairs": 18,
+    "rotor_iron_mm": 6.0,
+    "slot_height_mm": 11.0,
+    "tooth_span": 0.725,
+    "yoke_height_mm": 6.0
+   },
+   "mesh": {
+    "gap_cell": 0.5,
+    "size_max": 4.0
+   },
+   "rotor": {
+    "alternate_rows": true,
+    "configuration": "outrunner",
+    "inner_diameter": 61.5,
+    "magnet_rows": 2,
+    "magnet_thickness": 3.25,
+    "outer_diameter": 80.0,
+    "poles": 36,
+    "row_gap": 5.0,
+    "segments_per_pole": 2,
+    "stack_length": 9.0,
+    "type": "halbach"
+   },
+   "stator": {
+    "air_gap_radius": 30.25,
+    "bridge_height": 1.0,
+    "bridge_top_ratio": 0.8,
+    "coil_clearance": 0.5,
+    "coil_height": 9.5,
+    "core_type": "u",
+    "include_coil": true,
+    "inner_stator": true,
+    "leg_width": 2.0,
+    "pole_pairs": 18,
+    "slot_height": 11.0,
+    "slot_width": 5.0,
+    "tooth_span": 0.725,
+    "trim_pole_faces": true,
+    "yoke_height": 6.0
+   }
+  },
+  "resistance_20_turns_80C": 0.04052099112892782,
+  "sheet": "\nFeature \"TFM stator v2\"\n-----------------------\n  Core structure                                        U-core\n  Arrangement                                           Rotary ring\n  Air-gap radius                                        30.250 mm\n  Pole pairs                                            18\n  Inner stator (outer rotor)                            on\n  Trim pole faces to air-gap cylinder                   on\n  Number of phases                                      1\n  Pole shift angle                                      0.0000 deg\n  Tooth span / pole pitch                               0.7250\n  Leg width                                             2.000 mm\n  Slot width                                            5.000 mm\n  Slot height                                           11.000 mm\n  Yoke height                                           6.000 mm\n  Include coil                                          on\n  Coil height                                           9.500 mm\n  Coil clearance                                        0.500 mm\n\nFeature \"TFM rotor v2\"\n----------------------\n  Configuration                                         Outrunner (rotor around the stator)\n  Rotor type                                            Halbach array\n  Inner diameter (air gap)                              61.500 mm\n  Outer diameter                                        80.000 mm\n  Stack length                                          9.000 mm\n  Number of phases                                      1\n  Number of poles                                       36\n  Magnet thickness                                      3.250 mm\n  Segments per pole                                     2\n  Axial magnet rows                                     2\n  Gap between rows                                      5.000 mm\n  Alternate polarity between rows                       on\n\nChecks on the finished model\n----------------------------\n  Air gap                                               0.500 mm\n  Overall outer diameter (rotor)                        80.000 mm\n  Innermost diameter (inner end of the stator cores)    26.500 mm\n  Axial width of one stator ring                        9.000 mm\n  Thickness of one stator core along the circumference  3.828 mm\n  Total axial length                                    9.000 mm",
+  "thermal_coupled": {
+   "converged": true,
+   "copper_loss_W": 4.60971821719495,
+   "core_C": 208.72632494952754,
+   "heat_to_ambient_W": 10.609718217194953,
+   "iterations": 8,
+   "magnet_C": 80.25193533026538,
+   "winding_C": 218.94798207982828
+  },
+  "thermal_response": {
+   "core": [
+    18.679017052736285,
+    18.679017052736285,
+    4.226234498552557
+   ],
+   "rotor": [
+    4.226234498552557,
+    4.226234498552557,
+    14.639012679387108
+   ],
+   "winding": [
+    20.896431794525142,
+    18.679017052736285,
+    4.226234498552557
+   ]
+  },
+  "turns": {
+   "below_minimum_bus": true,
+   "conductor": "strip",
+   "current_density_rms_A_mm2": 5.500000000000002,
+   "feasible": true,
+   "layer_cap": 26,
+   "peak_current_A": 9.662886129060784,
+   "required_bus_voltage_V": 3.69270529125709,
+   "resistance_ohm": 0.06848047500788801,
+   "rms_current_A": 6.832692307692309,
+   "strip_thickness_mm": 0.31057692307692303,
+   "strip_width_mm": 4.0,
+   "turns": 26,
+   "turns_max": 26,
+   "turns_min": 17,
+   "violation": 0.0,
+   "volts_per_turn_peak": 0.08199939976712448,
+   "wire_area_mm2": 1.2423076923076921
+  },
+  "values": {
+   "current_density_A_mm2": 5.5,
+   "leg_width_mm": 2.0,
+   "magnet_thickness_mm": 3.25,
+   "pole_pairs": 18,
+   "rotor_iron_mm": 6.0,
+   "slot_height_mm": 11.0,
+   "tooth_span": 0.725,
+   "yoke_height_mm": 6.0
+  },
+  "variables": [
+   {
+    "high": 32.0,
+    "kind": "int",
+    "low": 4.0,
+    "name": "pole_pairs"
+   },
+   {
+    "high": 0.95,
+    "kind": "real",
+    "low": 0.5,
+    "name": "tooth_span"
+   },
+   {
+    "high": 2.0,
+    "kind": "real",
+    "low": 2.0,
+    "name": "leg_width_mm"
+   },
+   {
+    "high": 18.0,
+    "kind": "real",
+    "low": 4.0,
+    "name": "slot_height_mm"
+   },
+   {
+    "high": 10.0,
+    "kind": "real",
+    "low": 2.0,
+    "name": "yoke_height_mm"
+   },
+   {
+    "high": 5.0,
+    "kind": "real",
+    "low": 1.5,
+    "name": "magnet_thickness_mm"
+   },
+   {
+    "high": 10.0,
+    "kind": "real",
+    "low": 1.0,
+    "name": "current_density_A_mm2"
+   },
+   {
+    "high": 10.0,
+    "kind": "real",
+    "low": 2.0,
+    "name": "rotor_iron_mm"
+   }
+  ],
+  "vector": [
+   18,
+   0.725,
+   2.0,
+   11.0,
+   6.0,
+   3.25,
+   5.5,
+   6.0
+  ]
+ },
+ "three_phase_ui": {
+  "checks": [
+   {
+    "limit": 4,
+    "name": "pole_pairs_min",
+    "sense": ">=",
+    "value": 18,
+    "violation": 0.0
+   },
+   {
+    "limit": 32,
+    "name": "pole_pairs_max",
+    "sense": "<=",
+    "value": 18,
+    "violation": 0.0
+   },
+   {
+    "limit": 2.0,
+    "name": "iron_leg_min",
+    "sense": ">=",
+    "value": 2.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 10.0,
+    "name": "iron_leg_max",
+    "sense": "<=",
+    "value": 2.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 2.0,
+    "name": "iron_yoke_min",
+    "sense": ">=",
+    "value": 6.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 10.0,
+    "name": "iron_yoke_max",
+    "sense": "<=",
+    "value": 6.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 2.0,
+    "name": "iron_core_thickness_min",
+    "sense": ">=",
+    "value": 3.827725215780064,
+    "violation": 0.0
+   },
+   {
+    "limit": 10.0,
+    "name": "iron_core_thickness_max",
+    "sense": "<=",
+    "value": 3.827725215780064,
+    "violation": 0.0
+   },
+   {
+    "limit": 2.0,
+    "name": "iron_bridge_min",
+    "sense": ">=",
+    "value": 6.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 10.0,
+    "name": "iron_bridge_max",
+    "sense": "<=",
+    "value": 6.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 2.0,
+    "name": "iron_rotor_min",
+    "sense": ">=",
+    "value": 6.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 10.0,
+    "name": "iron_rotor_max",
+    "sense": "<=",
+    "value": 6.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 3.0,
+    "name": "slot_width",
+    "sense": ">=",
+    "value": 5.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 2.0,
+    "name": "coil_height",
+    "sense": ">=",
+    "value": 3.5,
+    "violation": 0.0
+   },
+   {
+    "limit": 0.5,
+    "name": "coil_width",
+    "sense": ">=",
+    "value": 4.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 4.0,
+    "name": "stator_radius",
+    "sense": ">=",
+    "value": 30.25,
+    "violation": 0.0
+   },
+   {
+    "limit": 10.0,
+    "name": "bore_clearance",
+    "sense": ">=",
+    "value": 13.25,
+    "violation": 0.0
+   },
+   {
+    "limit": 0.5,
+    "name": "core_overlap",
+    "sense": ">=",
+    "value": 0.7739514923935893,
+    "violation": 0.0
+   },
+   {
+    "limit": 0.5,
+    "name": "bridge_overlap",
+    "sense": ">=",
+    "value": 0.3993283074813574,
+    "violation": 0.02630065818298987
+   }
+  ],
+  "copper_loss_60C": 0.9678934269547325,
+  "derived": {
+   "ampere_turns_peak": 92.56027765731908,
+   "ampere_turns_rms": 65.45,
+   "bore_radius": 10.0,
+   "bridge_height": 6.0,
+   "claw_root_height": 0.0,
+   "claw_tip_gap": 0.0,
+   "claw_tip_height": 0.0,
+   "coil_area_mm2": 14.0,
+   "coil_height": 3.5,
+   "coil_mean_radius": 21.5,
+   "coil_r0": 19.75,
+   "coil_r1": 23.25,
+   "coil_width": 4.0,
+   "core_coverage": 0.3625,
+   "core_thickness": 3.827725215780064,
+   "cores_per_pole_pair": 2,
+   "electrical_frequency_Hz": 90.0,
+   "inner_diameter": 26.5,
+   "leg_width": 2.0,
+   "magnet": 3.25,
+   "outer_radius": 40.0,
+   "outrunner": true,
+   "phase_width": 9.0,
+   "pole_face_area_mm2": 895.687700492535,
+   "pole_pairs": 18,
+   "pole_pitch": 5.279620987282847,
+   "pole_shift_deg": 0.0,
+   "ring_tip_height": 0.0,
+   "ring_tip_overhang": 0.0,
+   "ring_tooth_height": 0.0,
+   "rotor_gap_radius": 30.75,
+   "rotor_iron": 6.0,
+   "slot_height": 11.0,
+   "slot_width": 5.0,
+   "stator_far_radius": 13.25,
+   "stator_height": 17.0,
+   "stator_radius": 30.25,
+   "turn_length_mm": 135.0884841043611,
+   "window_top": 11.0,
+   "yoke_height": 6.0
+  },
+  "from_parameters": {
+   "bridge_height_mm": 6.0,
+   "current_density_A_mm2": 5.5,
+   "leg_width_mm": 2.0,
+   "magnet_thickness_mm": 3.25,
+   "pole_pairs": 18,
+   "rotor_iron_mm": 6.0,
+   "slot_height_mm": 11.0,
+   "tooth_span": 0.725,
+   "yoke_height_mm": 6.0
+  },
+  "parameters": {
+   "analysis": {
+    "coil_current_A": 92.56027765731908,
+    "coil_turns": 1,
+    "magnet_mu_r": 1.05,
+    "magnet_remanence_T": 1.3,
+    "rotor_housing_mu_r": 1.0,
+    "rotor_iron_bh_curve": null,
+    "rotor_iron_mu_r": 1000.0,
+    "rotor_iron_saturation_T": 2.1,
+    "stator_core_bh_curve": null,
+    "stator_core_mu_r": 500.0,
+    "stator_core_saturation_T": 1.9
+   },
+   "design": {
+    "bridge_height_mm": 6.0,
+    "current_density_A_mm2": 5.5,
+    "leg_width_mm": 2.0,
+    "magnet_thickness_mm": 3.25,
+    "pole_pairs": 18,
+    "rotor_iron_mm": 6.0,
+    "slot_height_mm": 11.0,
+    "tooth_span": 0.725,
+    "yoke_height_mm": 6.0
+   },
+   "mesh": {
+    "gap_cell": 0.75,
+    "size_max": 6.0
+   },
+   "rotor": {
+    "alternate_rows": true,
+    "configuration": "outrunner",
+    "inner_diameter": 61.5,
+    "magnet_rows": 2,
+    "magnet_thickness": 3.25,
+    "outer_diameter": 80.0,
+    "poles": 36,
+    "row_gap": 5.0,
+    "segments_per_pole": 2,
+    "stack_length": 9.0,
+    "type": "halbach"
+   },
+   "stator": {
+    "air_gap_radius": 30.25,
+    "bridge_height": 6.0,
+    "bridge_top_ratio": 0.8,
+    "coil_clearance": 0.5,
+    "coil_height": 3.5,
+    "core_type": "ui",
+    "include_coil": true,
+    "inner_stator": true,
+    "leg_width": 2.0,
+    "pole_pairs": 18,
+    "slot_height": 11.0,
+    "slot_width": 5.0,
+    "tooth_span": 0.725,
+    "trim_pole_faces": true,
+    "yoke_height": 6.0
+   }
+  },
+  "resistance_20_turns_80C": 0.09651792930709628,
+  "sheet": "\nFeature \"TFM stator v2\"\n-----------------------\n  Core structure                                        U-core with I-bridge\n  Arrangement                                           Rotary ring\n  Air-gap radius                                        30.250 mm\n  Pole pairs                                            18\n  Inner stator (outer rotor)                            on\n  Trim pole faces to air-gap cylinder                   on\n  Number of phases                                      1\n  Pole shift angle                                      0.0000 deg\n  Tooth span / pole pitch                               0.7250\n  Leg width                                             2.000 mm\n  Slot width                                            5.000 mm\n  Slot height                                           11.000 mm\n  Yoke height                                           6.000 mm\n  I-bridge height                                       6.000 mm\n  I-bridge top width / slot width                       0.8000\n  Include coil                                          on\n  Coil height                                           3.500 mm\n  Coil clearance                                        0.500 mm\n\nFeature \"TFM rotor v2\"\n----------------------\n  Configuration                                         Outrunner (rotor around the stator)\n  Rotor type                                            Halbach array\n  Inner diameter (air gap)                              61.500 mm\n  Outer diameter                                        80.000 mm\n  Stack length                                          9.000 mm\n  Number of phases                                      1\n  Number of poles                                       36\n  Magnet thickness                                      3.250 mm\n  Segments per pole                                     2\n  Axial magnet rows                                     2\n  Gap between rows                                      5.000 mm\n  Alternate polarity between rows                       on\n\nChecks on the finished model\n----------------------------\n  Air gap                                               0.500 mm\n  Overall outer diameter (rotor)                        80.000 mm\n  Innermost diameter (inner end of the stator cores)    26.500 mm\n  Axial width of one stator ring                        9.000 mm\n  Thickness of one stator core along the circumference  3.828 mm\n  Total axial length                                    9.000 mm",
+  "thermal_coupled": {
+   "converged": true,
+   "copper_loss_W": 1.193875850785295,
+   "core_C": 122.82611462885447,
+   "heat_to_ambient_W": 7.193875850785293,
+   "iterations": 5,
+   "magnet_C": 81.73499721398068,
+   "winding_C": 128.7501373080346
+  },
+  "thermal_response": {
+   "core": [
+    14.642110588044865,
+    14.642110588044865,
+    7.134699453035694
+   ],
+   "rotor": [
+    7.134699453035694,
+    7.134699453035694,
+    12.543554569211835
+   ],
+   "winding": [
+    19.60411955680278,
+    14.642110588044865,
+    7.134699453035694
+   ]
+  },
+  "turns": {
+   "below_minimum_bus": true,
+   "conductor": "strip",
+   "current_density_rms_A_mm2": 5.5,
+   "feasible": true,
+   "layer_cap": 9,
+   "peak_current_A": 10.284475295257675,
+   "required_bus_voltage_V": 1.2296640190857733,
+   "resistance_ohm": 0.019544880684687,
+   "rms_current_A": 7.272222222222222,
+   "strip_thickness_mm": 0.33055555555555555,
+   "strip_width_mm": 4.0,
+   "turns": 9,
+   "turns_max": 9,
+   "turns_min": 7,
+   "violation": 0.0,
+   "volts_per_turn_peak": 0.07888298360355203,
+   "wire_area_mm2": 1.3222222222222222
+  },
+  "values": {
+   "bridge_height_mm": 6.0,
+   "current_density_A_mm2": 5.5,
+   "leg_width_mm": 2.0,
+   "magnet_thickness_mm": 3.25,
+   "pole_pairs": 18,
+   "rotor_iron_mm": 6.0,
+   "slot_height_mm": 11.0,
+   "tooth_span": 0.725,
+   "yoke_height_mm": 6.0
+  },
+  "variables": [
+   {
+    "high": 32.0,
+    "kind": "int",
+    "low": 4.0,
+    "name": "pole_pairs"
+   },
+   {
+    "high": 0.95,
+    "kind": "real",
+    "low": 0.5,
+    "name": "tooth_span"
+   },
+   {
+    "high": 2.0,
+    "kind": "real",
+    "low": 2.0,
+    "name": "leg_width_mm"
+   },
+   {
+    "high": 18.0,
+    "kind": "real",
+    "low": 4.0,
+    "name": "slot_height_mm"
+   },
+   {
+    "high": 10.0,
+    "kind": "real",
+    "low": 2.0,
+    "name": "yoke_height_mm"
+   },
+   {
+    "high": 5.0,
+    "kind": "real",
+    "low": 1.5,
+    "name": "magnet_thickness_mm"
+   },
+   {
+    "high": 10.0,
+    "kind": "real",
+    "low": 1.0,
+    "name": "current_density_A_mm2"
+   },
+   {
+    "high": 10.0,
+    "kind": "real",
+    "low": 2.0,
+    "name": "rotor_iron_mm"
+   },
+   {
+    "high": 10.0,
+    "kind": "real",
+    "low": 2.0,
+    "name": "bridge_height_mm"
+   }
+  ],
+  "vector": [
+   18,
+   0.725,
+   2.0,
+   11.0,
+   6.0,
+   3.25,
+   5.5,
+   6.0,
+   6.0
+  ]
+ },
+ "three_phase_ui_24": {
+  "checks": [
+   {
+    "limit": 4,
+    "name": "pole_pairs_min",
+    "sense": ">=",
+    "value": 18,
+    "violation": 0.0
+   },
+   {
+    "limit": 32,
+    "name": "pole_pairs_max",
+    "sense": "<=",
+    "value": 18,
+    "violation": 0.0
+   },
+   {
+    "limit": 2.0,
+    "name": "iron_leg_min",
+    "sense": ">=",
+    "value": 2.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 10.0,
+    "name": "iron_leg_max",
+    "sense": "<=",
+    "value": 2.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 2.0,
+    "name": "iron_yoke_min",
+    "sense": ">=",
+    "value": 6.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 10.0,
+    "name": "iron_yoke_max",
+    "sense": "<=",
+    "value": 6.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 2.0,
+    "name": "iron_core_thickness_min",
+    "sense": ">=",
+    "value": 3.827725215780064,
+    "violation": 0.0
+   },
+   {
+    "limit": 10.0,
+    "name": "iron_core_thickness_max",
+    "sense": "<=",
+    "value": 3.827725215780064,
+    "violation": 0.0
+   },
+   {
+    "limit": 2.0,
+    "name": "iron_bridge_min",
+    "sense": ">=",
+    "value": 6.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 10.0,
+    "name": "iron_bridge_max",
+    "sense": "<=",
+    "value": 6.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 2.0,
+    "name": "iron_rotor_min",
+    "sense": ">=",
+    "value": 6.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 10.0,
+    "name": "iron_rotor_max",
+    "sense": "<=",
+    "value": 6.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 3.0,
+    "name": "slot_width",
+    "sense": ">=",
+    "value": 5.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 2.0,
+    "name": "coil_height",
+    "sense": ">=",
+    "value": 3.5,
+    "violation": 0.0
+   },
+   {
+    "limit": 0.5,
+    "name": "coil_width",
+    "sense": ">=",
+    "value": 4.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 4.0,
+    "name": "stator_radius",
+    "sense": ">=",
+    "value": 30.25,
+    "violation": 0.0
+   },
+   {
+    "limit": 10.0,
+    "name": "bore_clearance",
+    "sense": ">=",
+    "value": 13.25,
+    "violation": 0.0
+   },
+   {
+    "limit": 0.5,
+    "name": "core_overlap",
+    "sense": ">=",
+    "value": 0.7739514923935893,
+    "violation": 0.0
+   },
+   {
+    "limit": 0.5,
+    "name": "bridge_overlap",
+    "sense": ">=",
+    "value": 0.3993283074813574,
+    "violation": 0.02630065818298987
+   }
+  ],
+  "copper_loss_60C": 0.9678934269547325,
+  "derived": {
+   "ampere_turns_peak": 92.56027765731908,
+   "ampere_turns_rms": 65.45,
+   "bore_radius": 10.0,
+   "bridge_height": 6.0,
+   "claw_root_height": 0.0,
+   "claw_tip_gap": 0.0,
+   "claw_tip_height": 0.0,
+   "coil_area_mm2": 14.0,
+   "coil_height": 3.5,
+   "coil_mean_radius": 21.5,
+   "coil_r0": 19.75,
+   "coil_r1": 23.25,
+   "coil_width": 4.0,
+   "core_coverage": 0.3625,
+   "core_thickness": 3.827725215780064,
+   "cores_per_pole_pair": 2,
+   "electrical_frequency_Hz": 90.0,
+   "inner_diameter": 26.5,
+   "leg_width": 2.0,
+   "magnet": 3.25,
+   "outer_radius": 40.0,
+   "outrunner": true,
+   "phase_width": 9.0,
+   "pole_face_area_mm2": 895.687700492535,
+   "pole_pairs": 18,
+   "pole_pitch": 5.279620987282847,
+   "pole_shift_deg": 0.0,
+   "ring_tip_height": 0.0,
+   "ring_tip_overhang": 0.0,
+   "ring_tooth_height": 0.0,
+   "rotor_gap_radius": 30.75,
+   "rotor_iron": 6.0,
+   "slot_height": 11.0,
+   "slot_width": 5.0,
+   "stator_far_radius": 13.25,
+   "stator_height": 17.0,
+   "stator_radius": 30.25,
+   "turn_length_mm": 135.0884841043611,
+   "window_top": 11.0,
+   "yoke_height": 6.0
+  },
+  "from_parameters": {
+   "bridge_height_mm": 6.0,
+   "current_density_A_mm2": 5.5,
+   "leg_width_mm": 2.0,
+   "magnet_thickness_mm": 3.25,
+   "pole_pairs": 18,
+   "rotor_iron_mm": 6.0,
+   "slot_height_mm": 11.0,
+   "tooth_span": 0.725,
+   "yoke_height_mm": 6.0
+  },
+  "parameters": {
+   "analysis": {
+    "coil_current_A": 92.56027765731908,
+    "coil_turns": 1,
+    "magnet_mu_r": 1.05,
+    "magnet_remanence_T": 1.3,
+    "rotor_housing_mu_r": 1.0,
+    "rotor_iron_bh_curve": null,
+    "rotor_iron_mu_r": 1000.0,
+    "rotor_iron_saturation_T": 2.1,
+    "stator_core_bh_curve": null,
+    "stator_core_mu_r": 500.0,
+    "stator_core_saturation_T": 1.9
+   },
+   "design": {
+    "bridge_height_mm": 6.0,
+    "current_density_A_mm2": 5.5,
+    "leg_width_mm": 2.0,
+    "magnet_thickness_mm": 3.25,
+    "pole_pairs": 18,
+    "rotor_iron_mm": 6.0,
+    "slot_height_mm": 11.0,
+    "tooth_span": 0.725,
+    "yoke_height_mm": 6.0
+   },
+   "mesh": {
+    "gap_cell": 0.5,
+    "size_max": 4.0
+   },
+   "rotor": {
+    "alternate_rows": true,
+    "configuration": "outrunner",
+    "inner_diameter": 61.5,
+    "magnet_rows": 2,
+    "magnet_thickness": 3.25,
+    "outer_diameter": 80.0,
+    "poles": 36,
+    "row_gap": 5.0,
+    "segments_per_pole": 2,
+    "stack_length": 9.0,
+    "type": "halbach"
+   },
+   "stator": {
+    "air_gap_radius": 30.25,
+    "bridge_height": 6.0,
+    "bridge_top_ratio": 0.8,
+    "coil_clearance": 0.5,
+    "coil_height": 3.5,
+    "core_type": "ui",
+    "include_coil": true,
+    "inner_stator": true,
+    "leg_width": 2.0,
+    "pole_pairs": 18,
+    "slot_height": 11.0,
+    "slot_width": 5.0,
+    "tooth_span": 0.725,
+    "trim_pole_faces": true,
+    "yoke_height": 6.0
+   }
+  },
+  "resistance_20_turns_80C": 0.09651792930709628,
+  "sheet": "\nFeature \"TFM stator v2\"\n-----------------------\n  Core structure                                        U-core with I-bridge\n  Arrangement                                           Rotary ring\n  Air-gap radius                                        30.250 mm\n  Pole pairs                                            18\n  Inner stator (outer rotor)                            on\n  Trim pole faces to air-gap cylinder                   on\n  Number of phases                                      1\n  Pole shift angle                                      0.0000 deg\n  Tooth span / pole pitch                               0.7250\n  Leg width                                             2.000 mm\n  Slot width                                            5.000 mm\n  Slot height                                           11.000 mm\n  Yoke height                                           6.000 mm\n  I-bridge height                                       6.000 mm\n  I-bridge top width / slot width                       0.8000\n  Include coil                                          on\n  Coil height                                           3.500 mm\n  Coil clearance                                        0.500 mm\n\nFeature \"TFM rotor v2\"\n----------------------\n  Configuration                                         Outrunner (rotor around the stator)\n  Rotor type                                            Halbach array\n  Inner diameter (air gap)                              61.500 mm\n  Outer diameter                                        80.000 mm\n  Stack length                                          9.000 mm\n  Number of phases                                      1\n  Number of poles                                       36\n  Magnet thickness                                      3.250 mm\n  Segments per pole                                     2\n  Axial magnet rows                                     2\n  Gap between rows                                      5.000 mm\n  Alternate polarity between rows                       on\n\nChecks on the finished model\n----------------------------\n  Air gap                                               0.500 mm\n  Overall outer diameter (rotor)                        80.000 mm\n  Innermost diameter (inner end of the stator cores)    26.500 mm\n  Axial width of one stator ring                        9.000 mm\n  Thickness of one stator core along the circumference  3.828 mm\n  Total axial length                                    9.000 mm",
+  "thermal_coupled": {
+   "converged": true,
+   "copper_loss_W": 1.193875850785295,
+   "core_C": 122.82611462885447,
+   "heat_to_ambient_W": 7.193875850785293,
+   "iterations": 5,
+   "magnet_C": 81.73499721398068,
+   "winding_C": 128.7501373080346
+  },
+  "thermal_response": {
+   "core": [
+    14.642110588044865,
+    14.642110588044865,
+    7.134699453035694
+   ],
+   "rotor": [
+    7.134699453035694,
+    7.134699453035694,
+    12.543554569211835
+   ],
+   "winding": [
+    19.60411955680278,
+    14.642110588044865,
+    7.134699453035694
+   ]
+  },
+  "turns": {
+   "below_minimum_bus": true,
+   "conductor": "strip",
+   "current_density_rms_A_mm2": 5.5,
+   "feasible": true,
+   "layer_cap": 9,
+   "peak_current_A": 10.284475295257675,
+   "required_bus_voltage_V": 1.2296640190857733,
+   "resistance_ohm": 0.019544880684687,
+   "rms_current_A": 7.272222222222222,
+   "strip_thickness_mm": 0.33055555555555555,
+   "strip_width_mm": 4.0,
+   "turns": 9,
+   "turns_max": 9,
+   "turns_min": 7,
+   "violation": 0.0,
+   "volts_per_turn_peak": 0.07888298360355203,
+   "wire_area_mm2": 1.3222222222222222
+  },
+  "values": {
+   "bridge_height_mm": 6.0,
+   "current_density_A_mm2": 5.5,
+   "leg_width_mm": 2.0,
+   "magnet_thickness_mm": 3.25,
+   "pole_pairs": 18,
+   "rotor_iron_mm": 6.0,
+   "slot_height_mm": 11.0,
+   "tooth_span": 0.725,
+   "yoke_height_mm": 6.0
+  },
+  "variables": [
+   {
+    "high": 32.0,
+    "kind": "int",
+    "low": 4.0,
+    "name": "pole_pairs"
+   },
+   {
+    "high": 0.95,
+    "kind": "real",
+    "low": 0.5,
+    "name": "tooth_span"
+   },
+   {
+    "high": 2.0,
+    "kind": "real",
+    "low": 2.0,
+    "name": "leg_width_mm"
+   },
+   {
+    "high": 18.0,
+    "kind": "real",
+    "low": 4.0,
+    "name": "slot_height_mm"
+   },
+   {
+    "high": 10.0,
+    "kind": "real",
+    "low": 2.0,
+    "name": "yoke_height_mm"
+   },
+   {
+    "high": 5.0,
+    "kind": "real",
+    "low": 1.5,
+    "name": "magnet_thickness_mm"
+   },
+   {
+    "high": 10.0,
+    "kind": "real",
+    "low": 1.0,
+    "name": "current_density_A_mm2"
+   },
+   {
+    "high": 10.0,
+    "kind": "real",
+    "low": 2.0,
+    "name": "rotor_iron_mm"
+   },
+   {
+    "high": 10.0,
+    "kind": "real",
+    "low": 2.0,
+    "name": "bridge_height_mm"
+   }
+  ],
+  "vector": [
+   18,
+   0.725,
+   2.0,
+   11.0,
+   6.0,
+   3.25,
+   5.5,
+   6.0,
+   6.0
+  ]
+ },
+ "user_tr48": {
+  "checks": [
+   {
+    "limit": 4,
+    "name": "pole_pairs_min",
+    "sense": ">=",
+    "value": 24,
+    "violation": 0.0
+   },
+   {
+    "limit": 32,
+    "name": "pole_pairs_max",
+    "sense": "<=",
+    "value": 24,
+    "violation": 0.0
+   },
+   {
+    "limit": 2.0,
+    "name": "iron_leg_min",
+    "sense": ">=",
+    "value": 2.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 10.0,
+    "name": "iron_leg_max",
+    "sense": "<=",
+    "value": 2.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 2.0,
+    "name": "iron_yoke_min",
+    "sense": ">=",
+    "value": 5.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 10.0,
+    "name": "iron_yoke_max",
+    "sense": "<=",
+    "value": 5.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 2.0,
+    "name": "iron_core_thickness_min",
+    "sense": ">=",
+    "value": 3.6651914291880923,
+    "violation": 0.0
+   },
+   {
+    "limit": 10.0,
+    "name": "iron_core_thickness_max",
+    "sense": "<=",
+    "value": 3.6651914291880923,
+    "violation": 0.0
+   },
+   {
+    "limit": 8.0,
+    "name": "ring_tooth_height",
+    "sense": "<=",
+    "value": 8.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 2.0,
+    "name": "iron_rotor_min",
+    "sense": ">=",
+    "value": 2.7,
+    "violation": 0.0
+   },
+   {
+    "limit": 10.0,
+    "name": "iron_rotor_max",
+    "sense": "<=",
+    "value": 2.7,
+    "violation": 0.0
+   },
+   {
+    "limit": 3.0,
+    "name": "slot_width",
+    "sense": ">=",
+    "value": 5.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 2.0,
+    "name": "coil_height",
+    "sense": ">=",
+    "value": 8.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 0.5,
+    "name": "coil_width",
+    "sense": ">=",
+    "value": 3.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 4.0,
+    "name": "stator_radius",
+    "sense": ">=",
+    "value": 35.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 15.0,
+    "name": "bore_clearance",
+    "sense": ">=",
+    "value": 20.0,
+    "violation": 0.0
+   },
+   {
+    "limit": 0.5,
+    "name": "tooth_gap",
+    "sense": ">=",
+    "value": 5.471642026215519,
+    "violation": 0.0
+   }
+  ],
+  "copper_loss_60C": 7.653642320720545,
+  "derived": {
+   "ampere_turns_peak": 288.4995667241114,
+   "ampere_turns_rms": 204.0,
+   "bore_radius": 15.0,
+   "bridge_height": 0.0,
+   "claw_root_height": 0.0,
+   "claw_tip_gap": 0.0,
+   "claw_tip_height": 0.0,
+   "coil_area_mm2": 24.0,
+   "coil_height": 8.0,
+   "coil_mean_radius": 30.0,
+   "coil_r0": 26.0,
+   "coil_r1": 34.0,
+   "coil_width": 3.0,
+   "core_coverage": 0.4,
+   "core_thickness": 3.6651914291880923,
+   "cores_per_pole_pair": 1,
+   "electrical_frequency_Hz": 120.0,
+   "inner_diameter": 40.0,
+   "leg_width": 2.0,
+   "magnet": 2.0,
+   "outer_radius": 40.0,
+   "outrunner": true,
+   "phase_width": 9.0,
+   "pole_face_area_mm2": 351.8583772020569,
+   "pole_pairs": 24,
+   "pole_pitch": 4.581489286485115,
+   "pole_shift_deg": 0.0,
+   "ring_tip_height": 0.0,
+   "ring_tip_overhang": 0.0,
+   "ring_tooth_height": 8.0,
+   "rotor_gap_radius": 35.3,
+   "rotor_iron": 2.7,
+   "slot_height": 10.0,
+   "slot_width": 5.0,
+   "stator_far_radius": 20.0,
+   "stator_height": 15.0,
+   "stator_radius": 35.0,
+   "turn_length_mm": 188.49555921538757,
+   "window_top": 10.0,
+   "yoke_height": 5.0
+  },
+  "from_parameters": {
+   "current_density_A_mm2": 10.0,
+   "leg_width_mm": 2.0,
+   "magnet_thickness_mm": 2.0,
+   "pole_pairs": 24,
+   "ring_tooth_height_mm": 8.0,
+   "rotor_iron_mm": 2.700000000000003,
+   "slot_height_mm": 10.0,
+   "tooth_span": 0.8,
+   "yoke_height_mm": 5.0
+  },
+  "parameters": {
+   "analysis": {
+    "coil_current_A": 288.4995667241114,
+    "coil_turns": 1,
+    "magnet_mu_r": 1.05,
+    "magnet_remanence_T": 1.3,
+    "rotor_housing_mu_r": 1.0,
+    "rotor_iron_bh_curve": null,
+    "rotor_iron_mu_r": 1000.0,
+    "rotor_iron_saturation_T": 2.1,
+    "stator_core_bh_curve": null,
+    "stator_core_mu_r": 500.0,
+    "stator_core_saturation_T": 1.9
+   },
+   "design": {
+    "current_density_A_mm2": 10.0,
+    "leg_width_mm": 2.0,
+    "magnet_thickness_mm": 2.0,
+    "pole_pairs": 24,
+    "ring_tooth_height_mm": 8.0,
+    "rotor_iron_mm": 2.7,
+    "slot_height_mm": 10.0,
+    "tooth_span": 0.8,
+    "yoke_height_mm": 5.0
+   },
+   "mesh": {
+    "gap_cell": 0.3,
+    "size_max": 4.0
+   },
+   "rotor": {
+    "alternate_rows": false,
+    "configuration": "outrunner",
+    "inner_diameter": 70.6,
+    "magnet_rows": 1,
+    "magnet_thickness": 2.0,
+    "outer_diameter": 80.0,
+    "poles": 48,
+    "row_gap": 0.0,
+    "segments_per_pole": 2,
+    "stack_length": 9.0,
+    "type": "halbach"
+   },
+   "stator": {
+    "air_gap_radius": 35.0,
+    "bridge_height": 1.0,
+    "bridge_top_ratio": 0.8,
+    "coil_clearance": 1.0,
+    "coil_height": 8.0,
+    "core_type": "tr",
+    "include_coil": true,
+    "inner_stator": true,
+    "leg_width": 2.0,
+    "pole_pairs": 24,
+    "ring_arched_valleys": true,
+    "ring_staggered_teeth": true,
+    "ring_tooth_height": 8.0,
+    "slot_height": 10.0,
+    "slot_width": 5.0,
+    "tooth_span": 0.8,
+    "trim_pole_faces": true,
+    "yoke_height": 5.0
+   }
+  },
+  "resistance_20_turns_80C": 0.07856110524996208,
+  "sheet": "\nFeature \"TFM stator v2\"\n-----------------------\n  Core structure                                        Toothed ring (Fig. 17)\n  Arrangement                                           Rotary ring\n  Air-gap radius                                        35.000 mm\n  Pole pairs                                            24\n  Inner stator (outer rotor)                            on\n  Trim pole faces to air-gap cylinder                   on\n  Number of phases                                      1\n  Pole shift angle                                      0.0000 deg\n  Tooth span / pole pitch                               0.8000\n  Leg width                                             2.000 mm\n  Slot width                                            5.000 mm\n  Slot height                                           10.000 mm\n  Yoke height                                           5.000 mm\n  Ring tooth height                                     8.000 mm\n  Arched valleys between teeth                          on\n  Staggered teeth (back wall one pole pitch later)      on\n  Include coil                                          on\n  Coil height                                           8.000 mm\n  Coil clearance                                        1.000 mm\n\nFeature \"TFM rotor v2\"\n----------------------\n  Configuration                                         Outrunner (rotor around the stator)\n  Rotor type                                            Halbach array\n  Inner diameter (air gap)                              70.600 mm\n  Outer diameter                                        80.000 mm\n  Stack length                                          9.000 mm\n  Number of phases                                      1\n  Number of poles                                       48\n  Magnet thickness                                      2.000 mm\n  Segments per pole                                     2\n  Axial magnet rows                                     1\n  Gap between rows                                      0.000 mm\n  Alternate polarity between rows                       off\n\nChecks on the finished model\n----------------------------\n  Air gap                                               0.300 mm\n  Overall outer diameter (rotor)                        80.000 mm\n  Innermost diameter (inner end of the stator cores)    40.000 mm\n  Axial width of one stator ring                        9.000 mm\n  Thickness of one stator core along the circumference  3.665 mm\n  Total axial length                                    9.000 mm",
+  "thermal_coupled": {
+   "converged": true,
+   "copper_loss_W": 13.058067670867123,
+   "core_C": 245.2297741532817,
+   "heat_to_ambient_W": 19.05806767086712,
+   "iterations": 11,
+   "magnet_C": 97.74490163810047,
+   "winding_C": 267.9257824039627
+  },
+  "thermal_response": {
+   "core": [
+    12.014775094155098,
+    12.014775094155098,
+    3.2661524527800267
+   ],
+   "rotor": [
+    3.2661524527800267,
+    3.2661524527800267,
+    13.764499622430115
+   ],
+   "winding": [
+    13.75285831004441,
+    12.014775094155098,
+    3.2661524527800267
+   ]
+  },
+  "turns": {
+   "below_minimum_bus": true,
+   "conductor": "strip",
+   "current_density_rms_A_mm2": 9.999999999999998,
+   "feasible": true,
+   "layer_cap": 22,
+   "peak_current_A": 13.113616669277791,
+   "required_bus_voltage_V": 5.032174646081535,
+   "resistance_ohm": 0.09505893735245412,
+   "rms_current_A": 9.272727272727272,
+   "strip_thickness_mm": 0.3090909090909091,
+   "strip_width_mm": 3.0,
+   "turns": 22,
+   "turns_max": 22,
+   "turns_min": 20,
+   "violation": 0.0,
+   "volts_per_turn_peak": 0.13206033575110837,
+   "wire_area_mm2": 0.9272727272727272
+  },
+  "values": {
+   "current_density_A_mm2": 10.0,
+   "leg_width_mm": 2.0,
+   "magnet_thickness_mm": 2.0,
+   "pole_pairs": 24,
+   "ring_tooth_height_mm": 8.0,
+   "rotor_iron_mm": 2.7,
+   "slot_height_mm": 10.0,
+   "tooth_span": 0.8,
+   "yoke_height_mm": 5.0
+  },
+  "variables": [
+   {
+    "high": 24.0,
+    "kind": "int",
+    "low": 24.0,
+    "name": "pole_pairs"
+   },
+   {
+    "high": 0.8,
+    "kind": "real",
+    "low": 0.8,
+    "name": "tooth_span"
+   },
+   {
+    "high": 2.0,
+    "kind": "real",
+    "low": 2.0,
+    "name": "leg_width_mm"
+   },
+   {
+    "high": 10.0,
+    "kind": "real",
+    "low": 10.0,
+    "name": "slot_height_mm"
+   },
+   {
+    "high": 5.0,
+    "kind": "real",
+    "low": 5.0,
+    "name": "yoke_height_mm"
+   },
+   {
+    "high": 2.0,
+    "kind": "real",
+    "low": 2.0,
+    "name": "magnet_thickness_mm"
+   },
+   {
+    "high": 10.0,
+    "kind": "real",
+    "low": 1.0,
+    "name": "current_density_A_mm2"
+   },
+   {
+    "high": 2.7,
+    "kind": "real",
+    "low": 2.7,
+    "name": "rotor_iron_mm"
+   },
+   {
+    "high": 8.0,
+    "kind": "real",
+    "low": 8.0,
+    "name": "ring_tooth_height_mm"
+   }
+  ],
+  "vector": [
+   24,
+   0.8,
+   2.0,
+   10.0,
+   5.0,
+   2.0,
+   10.0,
+   2.7,
+   8.0
+  ]
+ }
+}

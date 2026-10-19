@@ -1,0 +1,5 @@
+{"pole_pairs": 10, "rotor_iron_mm": 19.0, "magnet_thickness_mm": 5.0, "magnet_arc_el_deg": 147.6,
+ "radial_tooth_height_mm": 25.0, "radial_tooth_length_mm": 28.0, "yoke_width_mm": 30.0,
+ "axial_tooth_height_mm": 20.0, "disc_iron_mm": 10.0, "axial_magnet_thickness_mm": 5.0,
+ "axial_magnet_arc_el_deg": 135.54, "slot_width_mm": 16.0, "slot_opening_mm": 4.0,
+ "tooth_tip_height_mm": 2.0, "coil_thickness_mm": 17.0, "current_density_A_mm2": 6.68}

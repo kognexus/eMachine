@@ -1,0 +1,32 @@
+{
+  "stator": {
+    "core_type": "ui",
+    "air_gap_radius": 35.0,
+    "pole_pairs": 18,
+    "inner_stator": true,
+    "trim_pole_faces": true,
+    "tooth_span": 0.8,
+    "leg_width": 5.0,
+    "slot_width": 13.0,
+    "slot_height": 17.0,
+    "yoke_height": 5.0,
+    "bridge_height": 5.0,
+    "bridge_top_ratio": 0.8,
+    "include_coil": true,
+    "coil_height": 10.0,
+    "coil_clearance": 1.0
+  },
+  "rotor": {
+    "configuration": "outrunner",
+    "type": "halbach",
+    "inner_diameter": 70.6,
+    "outer_diameter": 80.0,
+    "stack_length": 23.0,
+    "poles": 32,
+    "magnet_thickness": 2.0,
+    "segments_per_pole": 2,
+    "magnet_rows": 1,
+    "row_gap": 20.0,
+    "alternate_rows": true
+  }
+}
