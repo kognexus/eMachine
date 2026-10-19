@@ -12,6 +12,8 @@ Changes to the code and the progress of the restructuring tickets. Newest first.
 - T76: in the ParaView GUI every view gets its own tab (the tab is created before the view), the material views
   use a categorical colour map with a legend, and the charts plot over the electrical angle. The README shows
   the five views as example output.
+- ParaView 6.2 as an optional pixi environment: `pixi run install-paraview`, then `pixi run paraview` (GUI) and
+  `pixi run pvpython`. `emachine.io.pvpython.find_pvpython` finds it (then `$PVPYTHON`, the `PATH`, `/Applications`).
 
 ## 2026-10-18 (cleanup for publication)
 

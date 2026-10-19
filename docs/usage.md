@@ -27,6 +27,7 @@ git clone <this repository> emachine && cd emachine
 pixi install                 # Python 3.13, numpy, gmsh; emachine installed in editable mode
 pixi run install-elmer       # clones Elmer 26.2.1 and builds it into .pixi/envs/default (~10-15 min, once)
 pixi run check-elmer         # prints the ElmerSolver that emachine will use
+pixi run install-paraview    # optional: ParaView 6.2 in the environment `paraview` (~1.8 GB)
 pixi run test                # fast tests, about 30 s
 ```
 
@@ -43,8 +44,13 @@ emachine looks for Elmer in this order: `$ELMER_HOME`, the active environment, `
 the `PATH`, and `.elmer/install` in the project. An existing Elmer installation can be used by
 setting `ELMER_HOME` to its prefix (the folder that contains `bin/ElmerSolver`).
 
-Optional: [ParaView](https://www.paraview.org) 5.9 or later (tested with 6.2) to view the field
-exports. Its own `pvpython` runs the view scripts. ParaView is not needed for optimization.
+**ParaView** (optional, to look at the field exports; not needed for optimization). `pixi run
+install-paraview` installs ParaView 6.2 from conda-forge into a pixi environment of its own
+(`.pixi/envs/paraview`), so its Python and Qt stay out of the solver's environment. Then
+`pixi run paraview` opens the GUI and `pixi run pvpython ...` renders the view scripts as pictures. On
+macOS this needs macOS 14 or later. emachine looks for `pvpython` in this order: `$PVPYTHON`, that
+environment, the `PATH`, and a ParaView app in `/Applications`; any ParaView from 5.9 on works (tested
+with 6.2).
 
 **Without pixi**, `pip install -e .` installs emachine with NumPy and Gmsh from PyPI. You then
 build Elmer yourself (`PREFIX=$HOME/elmer bash scripts/install_elmer.sh`, which needs CMake, a
@@ -365,14 +371,14 @@ a multiple of the current-density limit, default 2), `--max-speed`, `--levels`.
 
 ```bash
 emachine export --run runs/opt1 --sectors 3 --map runs/opt1/post/best_compromise/map
-pvpython --force-offscreen-rendering runs/opt1/post/best_compromise/paraview/paraview_views.py \
+pixi run pvpython --force-offscreen-rendering runs/opt1/post/best_compromise/paraview/paraview_views.py \
     --export runs/opt1/post/best_compromise/paraview --out runs/opt1/views
 ```
 
 Solves one electrical period with the fields kept. It writes `machine.pvd` (solid parts over
 time), `air.pvd`, `airgap.pvd`, `core_loss.vtu`, `full_motor.vtu`, `waveforms.csv` (torque,
 cogging, flux, voltages), `harmonics.csv`, and `summary.md`, which explains each array and the
-ParaView steps. In the ParaView GUI, *View → Python Shell → Run Script →
+ParaView steps. In the ParaView GUI (`pixi run paraview`), *View → Python Shell → Run Script →
 `open_in_paraview.py`* opens five standard views as tabs: full motor, sector |B|, mesh, torque
 waveform, and efficiency map. `--refresh` rewrites the view files of an existing export without
 solving again.

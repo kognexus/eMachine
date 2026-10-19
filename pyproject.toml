@@ -21,6 +21,7 @@ packages = ["emachine"]
 #
 #     pixi install                 # Python environment with emachine (editable)
 #     pixi run install-elmer       # builds Elmer 26.2.1 from source into .pixi/envs/default (once, ~10 min)
+#     pixi run install-paraview    # optional: ParaView 6.2 (GUI and pvpython) in its own environment
 #     pixi run emachine --help
 # ----------------------------------------------------------------------------------------------
 
@@ -56,8 +57,22 @@ xorg-libxrender = "*"
 fontconfig = "*"
 
 
+# ParaView for the views of the exports: an environment of its own (its Python and Qt stay out of the
+# solver's environment). `pixi run paraview` opens the GUI, `pixi run pvpython ...` renders pictures.
+[tool.pixi.feature.paraview.dependencies]
+paraview = "6.2.*"
+
+[tool.pixi.feature.paraview.system-requirements]
+macos = "14.0"          # ParaView's Qt 6 needs macOS 14 or later
+
+[tool.pixi.environments]
+paraview = { features = ["paraview"], no-default-feature = true }
+
 [tool.pixi.tasks]
 install-elmer = { cmd = "bash scripts/install_elmer.sh", description = "Build Elmer FEM from source into this environment" }
+install-paraview = { cmd = "pixi install --environment paraview", description = "Install ParaView 6.2 (GUI and pvpython) into .pixi/envs/paraview" }
+paraview = { cmd = "pixi run --environment paraview paraview", description = "Open the ParaView GUI of the paraview environment" }
+pvpython = { cmd = "pixi run --environment paraview pvpython", description = "ParaView's Python, e.g. pixi run pvpython --force-offscreen-rendering <export>/section_views.py --export <export>" }
 check-elmer = { cmd = "python -c 'import os, sys; from emachine.solvers.elmer import ELMER_SOLVER; print(ELMER_SOLVER); sys.exit(not os.path.isfile(ELMER_SOLVER))'", description = "Print the ElmerSolver that emachine will use" }
 test = { cmd = "python -m unittest discover tests", description = "Fast tests (about 30 s)" }
 test-slow = { cmd = "python -m unittest discover tests", env = { EMACHINE_SLOW = "1" }, description = "All tests including Gmsh/Elmer runs (about 20 min)" }

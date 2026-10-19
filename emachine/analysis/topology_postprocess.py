@@ -5,7 +5,7 @@ After the study (T65, T64): ParaView export and pictures of every verified pick,
         [--skip-export] [--skip-views]
 
 Exports go to <study>/paraview/<topology>_<pick>/ (pictures in views/); picks that are the same design are
-exported once. The pictures are rendered by ParaView's pvpython (PVPYTHON or the ParaView 6.2 app).
+exported once. The pictures are rendered by ParaView's pvpython (emachine.io.pvpython.find_pvpython).
 """
 
 import argparse
@@ -14,11 +14,12 @@ import json
 import os
 import subprocess
 
+from emachine.io.pvpython import find_pvpython
+
 from .topology_export import export
 from .topology_report import build
 from .topology_study import load_config
 
-PVPYTHON = os.environ.get("PVPYTHON", "/Applications/ParaView-6.2.0.app/Contents/bin/pvpython")
 VIEWS = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "io", "topology_views.py")
 
 
@@ -52,7 +53,11 @@ def export_one(args):
 
 
 def render(target, title):
-    subprocess.run([PVPYTHON, "--force-offscreen-rendering", VIEWS, "--export", target, "--out", os.path.join(target, "views"),
+    pvpython = find_pvpython()
+    if pvpython is None:
+        print("no pvpython (pixi install -e paraview, or set PVPYTHON): pictures left out")
+        return
+    subprocess.run([pvpython, "--force-offscreen-rendering", VIEWS, "--export", target, "--out", os.path.join(target, "views"),
                     "--title", title], check=False, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
 
 

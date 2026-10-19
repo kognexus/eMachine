@@ -212,8 +212,7 @@ class ReferenceExportTest(unittest.TestCase):
 @slow
 class RenderTest(unittest.TestCase):
     def test_t42_6_views_with_paraview(self):
-        sys.path.insert(0, os.path.join(ROOT, "tests", "tickets"))
-        from test_t29_paraview_files import find_pvpython
+        from emachine.io.pvpython import find_pvpython
         pvpython = find_pvpython()
         export = os.path.join(ROOT, "runs", "rfm_spm_12s10p", "paraview")
         if not pvpython or not os.path.isfile(os.path.join(export, "efficiency_map.vtu")):

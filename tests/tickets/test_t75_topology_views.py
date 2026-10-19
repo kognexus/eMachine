@@ -193,9 +193,10 @@ print("PROBE" + json.dumps({"tabs": tabs, "charts": charts, "categorical": lut.I
 
 
 def pvpython_or_skip(test):
-    pvpython = shutil.which("pvpython") or "/Applications/ParaView-6.2.0.app/Contents/bin/pvpython"
-    if not os.path.isfile(pvpython):
-        test.skipTest("pvpython not found")
+    from emachine.io.pvpython import find_pvpython
+    pvpython = find_pvpython()
+    if pvpython is None:
+        test.skipTest("pvpython not found (pixi install -e paraview)")
     return pvpython
 
 

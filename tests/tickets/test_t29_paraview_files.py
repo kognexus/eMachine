@@ -8,13 +8,13 @@ import sys
 import tempfile
 import unittest
 
-import glob
 
 import numpy as np
 from helpers import ROOT, slow
 
 from emachine.io import paraview_files as paraviewfiles
 from emachine.io import vtk as vtkio
+from emachine.io.pvpython import find_pvpython
 
 USER_EXPORT = os.path.join(ROOT, "runs", "user_tr48", "paraview")
 
@@ -137,15 +137,6 @@ class ExportFolderTest(unittest.TestCase):
         from emachine.io import paraview_views as views
         self.assertEqual(views.check_inputs(USER_EXPORT, USER_EXPORT), [])
         self.assertIn("phase", views.vtu_arrays(os.path.join(USER_EXPORT, "full_motor.vtu")))
-
-
-def find_pvpython():
-    """pvpython from TFM_PVPYTHON, or the newest ParaView in /Applications."""
-    found = os.environ.get("TFM_PVPYTHON")
-    if found:
-        return found
-    candidates = sorted(glob.glob("/Applications/ParaView-*.app/Contents/bin/pvpython"))
-    return candidates[-1] if candidates else None
 
 
 @slow

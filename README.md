@@ -44,6 +44,7 @@ Elmer FEM from source into the project environment. Elmer is not packaged on con
 git clone <this repository> emachine && cd emachine
 pixi install                 # environment with emachine (editable), numpy, gmsh
 pixi run install-elmer       # builds Elmer FEM 26.2.1 into the environment, once (~10-15 min)
+pixi run install-paraview    # optional: ParaView 6.2 (GUI and pvpython) to look at the results, ~1.8 GB
 pixi run test                # fast tests (~30 s)
 ```
 
@@ -71,7 +72,7 @@ command options, the output files, recipes and run-time tips.
 The optimal design of a radial flux Halbach PM inrunner from a multi-topology study: 85 mm outer diameter,
 30 mm stack, 30 slots / 28 poles with a concentrated winding, 3.44 N m at rated current with 8.3 % torque
 ripple and 89.6 % efficiency. These are the five standard views of its ParaView export, as they open in the
-ParaView GUI (*View → Python Shell → Run Script → `open_in_paraview.py`*):
+ParaView GUI (`pixi run paraview`, then *View → Python Shell → Run Script → `open_in_paraview.py`*):
 
 | 1 · 3D material geometry | 2 · Gmsh section mesh |
 |---|---|
@@ -84,7 +85,7 @@ ParaView GUI (*View → Python Shell → Run Script → `open_in_paraview.py`*):
 ```bash
 python -m emachine.analysis.topology_export --run <study>/runs/rfm_halbach_in --pick optimal \
     --out <study>/paraview/rfm_halbach_in_optimal --config <study>/study.json
-pvpython --force-offscreen-rendering <export>/section_views.py --export <export> --out <export>/views   # as pictures
+pixi run pvpython --force-offscreen-rendering <export>/section_views.py --export <export> --out <export>/views   # pictures
 ```
 
 `emachine export` writes the corresponding views for the transverse and radial flux machines of
