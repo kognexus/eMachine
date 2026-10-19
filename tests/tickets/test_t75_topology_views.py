@@ -1,4 +1,5 @@
-"""T75: standard ParaView views of a topology export (machine_3d.vtu, torque.csv, back_emf.csv, open_in_paraview.py)."""
+"""T75, T76: standard ParaView views of a topology export (machine_3d.vtu, torque.csv, back_emf.csv,
+open_in_paraview.py) and their tabs, colours and chart axes in the GUI."""
 
 import csv
 import json
@@ -156,9 +157,7 @@ class RefreshTest(unittest.TestCase):
 @slow
 class PictureTest(unittest.TestCase):
     def test_t75_6_pictures_with_pvpython(self):
-        pvpython = shutil.which("pvpython") or "/Applications/ParaView-6.2.0.app/Contents/bin/pvpython"
-        if not os.path.isfile(pvpython):
-            self.skipTest("pvpython not found")
+        pvpython = pvpython_or_skip(self)
         with tempfile.TemporaryDirectory() as tmp:
             rec = synthetic_export(tmp)
             X.write_view_files(tmp, rec, STACK)
@@ -169,6 +168,61 @@ class PictureTest(unittest.TestCase):
             for name in ("1_geometry_3d.png", "2_section_mesh.png", "3_em_field.png", "4_torque.png", "5_back_emf.png"):
                 path = os.path.join(pictures, name)
                 self.assertTrue(os.path.isfile(path) and os.path.getsize(path) > 10000, name)
+
+
+GUI_PROBE = r"""
+import json, sys
+sys.path.insert(0, sys.argv[1])
+import section_views as views
+views.main(["--export", sys.argv[1], "--interactive"])
+from paraview.simple import GetLayouts, GetViewsInLayout, GetColorTransferFunction
+tabs = {}
+for (name, _), layout in GetLayouts().items():
+    tabs[name] = [v.GetXMLName() for v in GetViewsInLayout(layout)]
+charts = []
+for (name, _), layout in GetLayouts().items():
+    for v in GetViewsInLayout(layout):
+        if v.GetXMLName() == "XYChartView":
+            for d in v.Representations:          # the displays the views made (asking for others would create them)
+                if d.Visibility and d.GetXMLName() == "XYChartRepresentation":
+                    charts.append([name, int(d.UseIndexForXAxis), [str(x) for x in d.XArrayName]])
+lut = GetColorTransferFunction("material")
+print("PROBE" + json.dumps({"tabs": tabs, "charts": charts, "categorical": lut.InterpretValuesAsCategories,
+                            "annotations": list(lut.Annotations)}))
+"""
+
+
+def pvpython_or_skip(test):
+    pvpython = shutil.which("pvpython") or "/Applications/ParaView-6.2.0.app/Contents/bin/pvpython"
+    if not os.path.isfile(pvpython):
+        test.skipTest("pvpython not found")
+    return pvpython
+
+
+@slow
+class GuiLayoutTest(unittest.TestCase):
+    def test_t76_tabs_colours_and_chart_axes(self):
+        pvpython = pvpython_or_skip(self)
+        with tempfile.TemporaryDirectory() as tmp:
+            rec = synthetic_export(tmp)
+            X.write_view_files(tmp, rec, STACK)
+            probe = os.path.join(tmp, "probe.py")
+            with open(probe, "w") as f:
+                f.write(GUI_PROBE)
+            result = subprocess.run([pvpython, "--force-offscreen-rendering", probe, tmp], capture_output=True,
+                                    text=True, timeout=600)
+            line = [l for l in result.stdout.splitlines() if l.startswith("PROBE")]
+            self.assertTrue(line, result.stdout[-2000:] + result.stderr[-2000:])
+            found = json.loads(line[0][len("PROBE"):])
+        expected = {"1 Geometry 3D": ["RenderView"], "2 Section mesh": ["RenderView"], "3 EM field": ["RenderView"],
+                    "4 Torque and ripple": ["XYChartView"], "5 Back-EMF": ["XYChartView"]}
+        for name, views in expected.items():
+            self.assertEqual(found["tabs"].get(name), views, found["tabs"])
+        self.assertEqual(sorted(c[0] for c in found["charts"]), ["4 Torque and ripple", "5 Back-EMF"])
+        for _, use_index, x in found["charts"]:
+            self.assertEqual((use_index, x), (0, ["angle_el_deg"]))
+        self.assertEqual(found["categorical"], 1)
+        self.assertIn("Stator core", found["annotations"])
 
 
 if __name__ == "__main__":

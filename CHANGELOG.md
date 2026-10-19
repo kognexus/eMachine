@@ -9,6 +9,9 @@ Changes to the code and the progress of the restructuring tickets. Newest first.
   length), `torque.csv`, `back_emf.csv`, `section_views.py` and `open_in_paraview.py`; `--refresh` adds them to
   an existing export without solving. `emachine/io/section_views.py` builds the five views (3D geometry,
   section mesh, EM field with flux lines, torque and ripple, back-EMF) as GUI tabs or pictures.
+- T76: in the ParaView GUI every view gets its own tab (the tab is created before the view), the material views
+  use a categorical colour map with a legend, and the charts plot over the electrical angle. The README shows
+  the five views as example output.
 
 ## 2026-10-18 (cleanup for publication)
 

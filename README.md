@@ -66,6 +66,30 @@ emachine onshape --run runs/opt1b                      # values for the Onshape 
 **→ [docs/usage.md](docs/usage.md) is the full guide:** every input of the specification, the
 command options, the output files, recipes and run-time tips.
 
+## Example output
+
+The optimal design of a radial flux Halbach PM inrunner from a multi-topology study: 85 mm outer diameter,
+30 mm stack, 30 slots / 28 poles with a concentrated winding, 3.44 N m at rated current with 8.3 % torque
+ripple and 89.6 % efficiency. These are the five standard views of its ParaView export, as they open in the
+ParaView GUI (*View → Python Shell → Run Script → `open_in_paraview.py`*):
+
+| 1 · 3D material geometry | 2 · Gmsh section mesh |
+|---|---|
+| ![3D material geometry](docs/images/topology_views/1_geometry_3d.png) | ![Gmsh section mesh](docs/images/topology_views/2_section_mesh.png) |
+| **3 · Elmer EM result: \|B\| and flux lines** | **4 · Torque and torque ripple** |
+| ![Elmer field](docs/images/topology_views/3_em_field.png) | ![Torque and ripple](docs/images/topology_views/4_torque.png) |
+| **5 · Back-EMF of the three phases** | |
+| ![Back-EMF](docs/images/topology_views/5_back_emf.png) | |
+
+```bash
+python -m emachine.analysis.topology_export --run <study>/runs/rfm_halbach_in --pick optimal \
+    --out <study>/paraview/rfm_halbach_in_optimal --config <study>/study.json
+pvpython --force-offscreen-rendering <export>/section_views.py --export <export> --out <export>/views   # as pictures
+```
+
+`emachine export` writes the corresponding views for the transverse and radial flux machines of
+`emachine optimize` ([docs/usage.md](docs/usage.md#6-after-the-optimization)).
+
 ## Commands
 
 | Command | Purpose |

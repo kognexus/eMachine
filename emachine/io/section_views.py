@@ -29,8 +29,8 @@ INTERACTIVE = False         # --interactive: views go into tabs of the GUI, no p
 MATERIALS = {
     1: ("Stator core", (0.60, 0.63, 0.67)),
     2: ("Rotor core", (0.33, 0.34, 0.37)),
-    3: ("Magnet (towards the gap / counter-clockwise)", (0.80, 0.16, 0.20)),
-    7: ("Magnet (away from the gap / clockwise)", (0.16, 0.36, 0.78)),
+    3: ("Magnet N", (0.80, 0.16, 0.20)),          # magnetised towards the gap or counter-clockwise
+    7: ("Magnet S", (0.16, 0.36, 0.78)),          # away from the gap or clockwise
     4: ("Coil phase A", (0.93, 0.55, 0.13)),
     5: ("Coil phase B", (0.20, 0.62, 0.30)),
     6: ("Coil phase C", (0.55, 0.30, 0.65)),
@@ -77,20 +77,31 @@ def check_inputs(export):
 
 # ----------------------------------------------------------------------------- ParaView helpers
 
-def in_tab(view, title):
-    if not INTERACTIVE:
-        return
-    try:
-        from paraview.simple import AssignViewToLayout, CreateLayout
-        AssignViewToLayout(view=view, layout=CreateLayout(title), hint=0)
-    except Exception as error:          # older ParaView: the view stays in the current layout
-        print("No tab for", title, ":", error)
+def new_view(kind, title):
+    """A view of `kind` in a tab of its own (interactive mode). The tab is created first: the GUI puts a new
+    view into the active tab, and a view that is already in a tab is not moved (T76). pvpython puts a new
+    view into no tab, so it is assigned here."""
+    from paraview.simple import CreateView
+    layout = None
+    if INTERACTIVE:
+        try:
+            from paraview.simple import CreateLayout
+            layout = CreateLayout(title)
+        except Exception as error:      # older ParaView: the view goes into the current tab
+            print("No tab for", title, ":", error)
+    view = CreateView(kind)
+    if layout is not None:
+        try:
+            from paraview.simple import AssignViewToLayout, GetLayout
+            if GetLayout(view) is None:
+                AssignViewToLayout(view=view, layout=layout, hint=0)
+        except Exception as error:
+            print("No tab for", title, ":", error)
+    return view
 
 
 def new_render_view(title):
-    from paraview.simple import CreateView
-    view = CreateView("RenderView")
-    in_tab(view, title)
+    view = new_view("RenderView", title)
     if not INTERACTIVE:
         view.ViewSize = RESOLUTION
     view.Background = [1.0, 1.0, 1.0]
@@ -103,9 +114,7 @@ def new_render_view(title):
 
 
 def new_chart(title):
-    from paraview.simple import CreateView
-    chart = CreateView("XYChartView")
-    in_tab(chart, title)
+    chart = new_view("XYChartView", title)
     if not INTERACTIVE:
         chart.ViewSize = RESOLUTION
     return chart
@@ -133,18 +142,48 @@ def threshold(source, material):
     return th
 
 
-def material_parts(source):
-    """(material code, threshold) of every solid material present (air left out)."""
-    from paraview.simple import Delete
-    parts = []
-    for material in MATERIALS:
-        part = threshold(source, material)
-        part.UpdatePipeline()
-        if part.GetDataInformation().GetNumberOfCells() > 0:
-            parts.append((material, part))
-        else:
-            Delete(part)
-    return parts
+def solid_parts(source):
+    """The cells of every material but air (codes 1 to 7)."""
+    th = threshold(source, 4.0)
+    try:
+        th.LowerThreshold, th.UpperThreshold = 0.5, 7.5
+    except AttributeError:
+        th.ThresholdRange = [0.5, 7.5]
+    return th
+
+
+def materials_present(source):
+    source.UpdatePipeline()
+    low, high = source.CellData["material"].GetRange()
+    return [m for m in [0] + list(MATERIALS) if low - 0.5 <= m <= high + 0.5]
+
+
+AIR = ("Air", (0.97, 0.97, 0.97))
+
+
+def colour_by_material(display, view, present):
+    """Colours by the cell array `material` with a categorical map: fixed colour and name per material,
+    the names in the legend. Works the same in the GUI and in pvpython (solid colours per part did not, T76)."""
+    from paraview.simple import ColorBy, GetColorTransferFunction, GetScalarBar
+    ColorBy(display, ("CELLS", "material"))
+    lut = GetColorTransferFunction("material")
+    lut.InterpretValuesAsCategories = 1
+    annotations, colours = [], []
+    for m in present:
+        label, rgb = AIR if m == 0 else MATERIALS[m]
+        annotations += [str(m), label]
+        colours += list(rgb)
+    lut.Annotations = annotations
+    lut.IndexedColors = colours
+    display.SetScalarBarVisibility(view, True)
+    bar = GetScalarBar(lut, view)
+    bar.Title = "Material"
+    bar.ComponentTitle = ""
+    bar.TitleColor = bar.LabelColor = [0.1, 0.1, 0.1]
+    try:
+        bar.TitleFontSize, bar.LabelFontSize = 15, 14
+    except Exception:
+        pass
 
 
 def solid_colour(display, rgb):
@@ -189,21 +228,12 @@ def text_label(view, text, position="Upper Left Corner"):
         pass
 
 
-COLOUR_NAMES = {1: "light grey", 2: "dark grey", 3: "red", 7: "blue", 4: "orange", 5: "green", 6: "purple"}
-
-
-def legend(present):
-    """One line naming the colour of each material shown, e.g. "Stator core: light grey"."""
-    names = {3: "Magnet N", 7: "Magnet S"}
-    return "   ".join("%s: %s" % (names.get(m, MATERIALS[m][0]), COLOUR_NAMES[m]) for m in MATERIALS if m in present)
-
-
 def top_camera(view, radius):
     view.CameraParallelProjection = 1
     view.CameraFocalPoint = [0.0, 0.0, 0.0]
     view.CameraPosition = [0.0, 0.0, 20.0 * radius]
     view.CameraViewUp = [0.0, 1.0, 0.0]
-    view.CameraParallelScale = 1.08 * radius
+    view.CameraParallelScale = 1.16 * radius          # room for the title above the drawing
 
 
 def bounds_radius(source):
@@ -219,7 +249,7 @@ def title_of(summary):
 # ----------------------------------------------------------------------------- the five views
 
 def view_geometry_3d(export, summary, out):
-    """1: the section extruded to the stack length, solid colours per material, a quarter cut away."""
+    """1: the section extruded to the stack length, coloured by material, a quarter cut away."""
     from paraview.simple import Clip, Show, XMLUnstructuredGridReader
     path = os.path.join(export, "machine_3d.vtu")
     if not os.path.isfile(path):
@@ -228,25 +258,22 @@ def view_geometry_3d(export, summary, out):
     reader = XMLUnstructuredGridReader(FileName=[path])
     view = new_render_view("1 Geometry 3D")
     radius, b = bounds_radius(reader)
-    present = []
-    for material, part in material_parts(reader):
-        cut = Clip(Input=part)                       # remove the quarter x > 0, y < 0 that faces the camera
-        cut.ClipType = "Box"
-        size = 10.0 * radius
-        cut.ClipType.Position = [0.0, -size, -size]
-        cut.ClipType.Length = [size, size, 2 * size]
-        try:
-            cut.Invert = 0
-        except Exception:
-            pass
-        solid_colour(Show(cut, view), MATERIALS[material][1])
-        present.append(material)
+    cut = Clip(Input=solid_parts(reader))           # remove the quarter x > 0, y < 0 that faces the camera
+    cut.ClipType = "Box"
+    size = 10.0 * radius
+    cut.ClipType.Position = [0.0, -size, -size]
+    cut.ClipType.Length = [size, size, 2 * size]
+    try:
+        cut.Invert = 0
+    except Exception:
+        pass
+    colour_by_material(Show(cut, view), view, [m for m in materials_present(reader) if m != 0])
     distance = 2.6 * radius
     view.CameraFocalPoint = [0.0, 0.0, 0.0]
     view.CameraPosition = [distance, -1.2 * distance, 1.1 * distance]
     view.CameraViewUp = [0.0, 0.0, 1.0]
-    text_label(view, "%s: material geometry, stack %.1f mm (section extruded), quarter cut away\n%s"
-               % (title_of(summary), b[5] - b[4], legend(present)))
+    text_label(view, "%s: material geometry, stack %.1f mm (section extruded), quarter cut away"
+               % (title_of(summary), b[5] - b[4]))
     save(view, out, "1_geometry_3d.png")
 
 
@@ -261,23 +288,15 @@ def view_section_mesh(export, summary, out):
     reader = XMLUnstructuredGridReader(FileName=[first_rated_file(export)])
     view = new_render_view("2 Section mesh")
     radius, _ = bounds_radius(reader)
-    present = []
-    air = threshold(reader, 0)
-    display = Show(air, view)
+    display = Show(reader, view)
     display.SetRepresentationType("Surface With Edges")
-    solid_colour(display, (0.97, 0.97, 0.97))
-    display.EdgeColor = [0.55, 0.55, 0.55]
-    for material, part in material_parts(reader):
-        display = Show(part, view)
-        display.SetRepresentationType("Surface With Edges")
-        solid_colour(display, MATERIALS[material][1])
-        display.EdgeColor = [0.1, 0.1, 0.1]
-        present.append(material)
+    colour_by_material(display, view, materials_present(reader))
+    display.EdgeColor = [0.2, 0.2, 0.2]
     top_camera(view, radius)
     reader.UpdatePipeline()
     cells = reader.GetDataInformation().GetNumberOfCells()
-    text_label(view, "%s: Gmsh section mesh, %d triangles (zoom into the air gap for its layers)\n%s"
-               % (title_of(summary), cells, legend(present)))
+    text_label(view, "%s: Gmsh section mesh, %d triangles (zoom into the air gap for its layers)"
+               % (title_of(summary), cells))
     save(view, out, "2_section_mesh.png")
 
 
@@ -332,6 +351,7 @@ def line_chart(path, x, series, title, left, bottom, tab, picture, out, colours=
                x_range=None):
     from paraview.simple import CSVReader, Show
     table = CSVReader(FileName=[path])
+    table.UpdatePipeline()                  # the series exist before the display is set up (T76)
     chart = new_chart(tab)
     display = Show(table, chart)
     display.UseIndexForXAxis = 0
@@ -372,8 +392,7 @@ def view_torque(export, summary, out):
     mean = data["mean_Nm"][0]
     ripple = 100.0 * (max(torque) - min(torque)) / mean if mean else float("nan")
     line_chart(path, "angle_el_deg", ["torque_Nm", "mean_Nm"],
-                       "%s: torque at the rated current, mean %.3f N m, ripple %.1f %% (max %.3f, min %.3f N m)"
-                       % (title_of(summary), mean, ripple, max(torque), min(torque)),
+                       "Torque at rated current: mean %.3f N m, ripple %.1f %%" % (mean, ripple),
                        "Torque (N m)", "Electrical angle (deg)", "4 Torque and ripple", "4_torque.png", out,
                        colours={"torque_Nm": (0.1, 0.2, 0.6), "mean_Nm": (0.5, 0.5, 0.5)},
                        labels={"torque_Nm": "Torque", "mean_Nm": "Mean"},
@@ -387,8 +406,7 @@ def view_back_emf(export, summary, out):
     peak = max(abs(v) for k in PHASE_COLOURS for v in data[k])
     rms = math.sqrt(sum(v * v for v in data["emf_a_V"]) / len(data["emf_a_V"]))
     line_chart(path, "angle_el_deg", list(PHASE_COLOURS),
-                       "%s: back-EMF at the rated speed (no load), phase peak %.2f V, rms %.2f V"
-                       % (title_of(summary), peak, rms),
+                       "Back-EMF at rated speed: phase peak %.2f V, rms %.2f V" % (peak, rms),
                        "Phase EMF (V)", "Electrical angle (deg)", "5 Back-EMF", "5_back_emf.png", out,
                        colours=PHASE_COLOURS, labels={"emf_a_V": "Phase A", "emf_b_V": "Phase B", "emf_c_V": "Phase C"},
                        widths={k: 3 for k in PHASE_COLOURS}, x_range=(0.0, 360.0))
