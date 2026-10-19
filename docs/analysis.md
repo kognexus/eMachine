@@ -16,7 +16,7 @@ and where the model stops. Names of machines follow [naming.md](naming.md); desi
 
 The other machines (interior PM, SynRM, SRM, axial flux, vernier) are known to the system with
 their variables, checks and estimates. Their geometry is added ticket by ticket (backlog B06 to
-B16 in [tickets/](../tickets/README.md)).
+B16 in the [issues labelled backlog](https://github.com/kognexus/eMachine/issues?q=is%3Aissue+label%3Abacklog)).
 
 ### Transverse flux machine (TFM)
 

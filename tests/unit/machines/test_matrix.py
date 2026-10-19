@@ -20,9 +20,8 @@ class MatrixTest(unittest.TestCase):
                 self.assertIn(cell.status, ("solvable", "specified", "planned", "not meaningful"))
                 if cell.status in ("specified", "planned"):
                     self.assertTrue(cell.tickets and all(t.startswith(("B", "T")) for t in cell.tickets), cell.tickets)
-                    for ticket in cell.tickets:
-                        self.assertTrue(any(f.startswith(ticket + "-") for f in os.listdir(os.path.join(ROOT, "tickets"))),
-                                        f"no ticket file for {ticket}")
+                    for ticket in cell.tickets:          # the ID of a GitHub issue title, e.g. "B07: ..."
+                        self.assertRegex(ticket, r"^[TB]\d{2}$")
                 if cell.status == "not meaningful":
                     self.assertTrue(cell.reason)
         self.assertEqual(cells["tfm/pmsm"].status, "solvable")

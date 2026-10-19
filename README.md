@@ -92,7 +92,7 @@ command options, the output files, recipes and run-time tips.
 | [docs/naming.md](docs/naming.md), [docs/machines.md](docs/machines.md) | machine names and the machine matrix |
 | [docs/architecture.md](docs/architecture.md), [docs/extending.md](docs/extending.md) | code structure; adding a machine, solver or optimizer |
 | [docs/design_principles.md](docs/design_principles.md) | variable ranges and ripple methods of the topology catalogue |
-| [tickets/](tickets/README.md), [CHANGELOG.md](CHANGELOG.md) | design decisions and history |
+| [Issues](https://github.com/kognexus/eMachine/issues?q=is%3Aissue), [CHANGELOG.md](CHANGELOG.md) | design decisions and history: one issue per ticket, titled by its ID ("T31: …"); ticket IDs in the code and docs refer to them |
 
 ## Repository layout
 
@@ -102,7 +102,7 @@ command options, the output files, recipes and run-time tips.
 | `examples/` | ready-to-run specifications and designs, low-level parameter files, a scripted study, and the validation against published prototypes (`examples/validation/`), each with its command in [examples/README.md](examples/README.md) |
 | `tests/` | `unit/`, `tickets/` (acceptance tests), `regression/` (recorded results every change must reproduce) |
 | `scripts/install_elmer.sh` | Elmer FEM source build (used by `pixi run install-elmer`) |
-| `docs/`, `tickets/` | documentation and design records |
+| `docs/` | documentation |
 
 Results are written to `runs/`, which is not tracked by git.
 

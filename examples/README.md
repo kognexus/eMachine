@@ -88,7 +88,7 @@ emachine validate examples/validation/guo2006/case.json --variant tooth_6mm   # 
 
 The field solutions (`raw/`, ~50 MB per case) are not tracked; `--losses-only` recomputes the losses
 from them once a full run has written them. Results and conclusions: ticket
-[T30](../tickets/T30-validation-against-prototypes.md).
+[T30](https://github.com/kognexus/eMachine/issues/30).
 
 ## Scripting: the mesh fidelity study
 

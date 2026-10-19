@@ -1,10 +1,12 @@
 # Changelog
 
-Changes to the code and the progress of the restructuring tickets. Newest first. Ticket details:
-`tickets/`; architecture: `docs/architecture.md`.
+Changes to the code and the progress of the restructuring tickets. Newest first. Ticket details: the
+[GitHub issues](https://github.com/kognexus/eMachine/issues?q=is%3Aissue), titled by ticket ID; architecture: `docs/architecture.md`.
 
 ## 2026-10-18 (cleanup for publication)
 
+- The tickets moved from `tickets/` to the GitHub issues of the repository (one issue per ticket,
+  titled by its ID; backlog tickets labelled `backlog`). Links in the docs point to the issues.
 - Installation with pixi (`pyproject.toml`): `pixi install` sets up Python, NumPy, Gmsh and the
   compilers; `pixi run install-elmer` builds Elmer FEM 26.2.1 from source into the environment
   (`scripts/install_elmer.sh`). emachine is a package with the console command `emachine`.
@@ -40,16 +42,16 @@ Changes to the code and the progress of the restructuring tickets. Newest first.
 
 | Ticket | Title | Status |
 |---|---|---|
-| [T32](tickets/T32-architecture-and-interfaces.md) | Architecture, interfaces and characterization tests | done |
-| [T33](tickets/T33-physics-module.md) | Machine-independent physics in `emachine/physics` | done |
-| [T34](tickets/T34-tfm-machine-plugin.md) | TFM as a machine plugin | done |
-| [T35](tickets/T35-field-solvers.md) | Field solvers behind `FieldSolver` | done |
-| [T36](tickets/T36-pipeline-module.md) | Pipeline: stages, sweeps, load levels, run store | done |
-| [T37](tickets/T37-optimization-module.md) | Optimization: interface, NSGA-II, random search | done |
-| [T38](tickets/T38-analysis-and-io.md) | Analysis and I/O modules | done |
-| [T39](tickets/T39-cli-compatibility-docs.md) | Command line, compatibility, tests layout, README | done |
-| [T40](tickets/T40-topology-skeletons.md) | Skeletons of the other machines | done |
-| [T41](tickets/T41-rfm-surface-pmsm.md) | Radial-flux surface PMSM end to end | done |
+| [T32](https://github.com/kognexus/eMachine/issues/32) | Architecture, interfaces and characterization tests | done |
+| [T33](https://github.com/kognexus/eMachine/issues/33) | Machine-independent physics in `emachine/physics` | done |
+| [T34](https://github.com/kognexus/eMachine/issues/34) | TFM as a machine plugin | done |
+| [T35](https://github.com/kognexus/eMachine/issues/35) | Field solvers behind `FieldSolver` | done |
+| [T36](https://github.com/kognexus/eMachine/issues/36) | Pipeline: stages, sweeps, load levels, run store | done |
+| [T37](https://github.com/kognexus/eMachine/issues/37) | Optimization: interface, NSGA-II, random search | done |
+| [T38](https://github.com/kognexus/eMachine/issues/38) | Analysis and I/O modules | done |
+| [T39](https://github.com/kognexus/eMachine/issues/39) | Command line, compatibility, tests layout, README | done |
+| [T40](https://github.com/kognexus/eMachine/issues/40) | Skeletons of the other machines | done |
+| [T41](https://github.com/kognexus/eMachine/issues/41) | Radial-flux surface PMSM end to end | done |
 
 ## 2026-10-18 (gear TFM at 85 mm and 150 rpm, T70 to T74)
 
