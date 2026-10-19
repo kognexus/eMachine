@@ -25,17 +25,17 @@ Status values: `todo`, `in progress`, `done`, `backlog` (specified, not schedule
 | [T12](T12-nsga2-optimizer.md) | Multi-objective optimizer (NSGA-II) | T01 | done |
 | [T13](T13-optimization-cli-and-report.md) | Optimization command and report | T11, T12 | done |
 | [T14](T14-bore-diameter-macro-input.md) | Bore diameter as a macro input | T02, T03, T04, T13 | done |
-| [T15](T15-seeded-optimization.md) | Seeded optimization | T12, T13 | in progress |
+| [T15](T15-seeded-optimization.md) | Seeded optimization | T12, T13 | done |
 | [T16](T16-onshape-parameter-sheet.md) | Parameter sheet for the Onshape model | T03, T13 | done |
-| [T17](T17-efficiency-map.md) | Torque, speed and efficiency map | T06, T07, T09, T10, B01 | in progress |
-| [T18](T18-paraview-export.md) | ParaView export of a design | T07, T09, B01 | in progress |
+| [T17](T17-efficiency-map.md) | Torque, speed and efficiency map | T06, T07, T09, T10, B01 | done |
+| [T18](T18-paraview-export.md) | ParaView export of a design | T07, T09, B01 | done |
 | [T19](T19-torque-ripple-limit.md) | Torque ripple limit, and a field cache independent of the limits | T05, T11, T13 | done |
 | [T20](T20-staged-rotor-positions.md) | Rotor positions in two stages | T07, T11, T19 | done |
 | [T21](T21-load-level-reuse.md) | Reuse of field solutions across current density | T17, T20 | done |
-| [T22](T22-paper-geometry-and-stator-comparison.md) | Geometry options of the review paper, and a comparison of stator types | T19 to T21, B02 | in progress |
+| [T22](T22-paper-geometry-and-stator-comparison.md) | Geometry options of the review paper, and a comparison of stator types | T19 to T21, B02 | done |
 | [T23](T23-strip-ring-coil.md) | Coil of stacked flat copper rings (strip winding) | T11, T17 | done |
 | [T24](T24-toothed-ring-stator.md) | Toothed-ring stator of Fig. 17, inner and outer stator | T22 | done |
-| [T25](T25-onshape-feature-warnings.md) | Onshape warnings in the v2 features and the UI32 studio | T22, T24 | in progress |
+| [T25](T25-onshape-feature-warnings.md) | Onshape warnings in the v2 features and the UI32 studio | T22, T24 | done |
 | [T26](T26-arched-valleys.md) | Arched valleys between the teeth of the toothed ring | T24, T25 | done |
 | [T27](T27-staggered-teeth.md) | Staggered teeth on the toothed ring | T24, T26 | done |
 | [T28](T28-user-machine-analysis.md) | Full analysis and ParaView views of the user's 48-pole toothed-ring outrunner | T17, T18, T23, T24, T26, T27 | done |

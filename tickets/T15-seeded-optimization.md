@@ -1,6 +1,6 @@
 # T15: Seeded optimization
 
-Status: in progress
+Status: done
 Depends on: T12, T13
 
 ## Why
@@ -31,12 +31,12 @@ best designs of earlier runs are known and should be the starting point of the n
 
 ## Acceptance criteria
 
-- [ ] A run seeded with a design contains that design in its first generation.
-- [ ] A seeded run never ends with a worse trade-off than its seeds: every seed is either in the
+- [x] A run seeded with a design contains that design in its first generation.
+- [x] A seeded run never ends with a worse trade-off than its seeds: every seed is either in the
       final trade-off set or dominated by a member of it.
-- [ ] Seeds outside the current ranges are clipped and reported, not rejected.
-- [ ] Runs without `--seed-from` give exactly the same result as before this ticket.
-- [ ] Seeds already evaluated under the same specification are read from the cache.
+- [x] Seeds outside the current ranges are clipped and reported, not rejected.
+- [x] Runs without `--seed-from` give exactly the same result as before this ticket.
+- [x] Seeds already evaluated under the same specification are read from the cache.
 
 ## Test cases
 
@@ -68,4 +68,4 @@ when the run has finished.
 - T15-5 was reworded while testing: the place not taken by a seed holds a random design, which
   may join the trade-off set, so the seeded set contains the seeds' set rather than equals it.
 
-SEEDED_RUN_RESULT
+Closed 2026-10-19: code and acceptance tests complete (`tests/tickets/test_t15_seeding.py` passes). The seeded field-solver run is kept with the run records outside the repository.

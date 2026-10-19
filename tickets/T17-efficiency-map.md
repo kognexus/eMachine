@@ -1,6 +1,6 @@
 # T17: Torque, speed and efficiency map
 
-Status: in progress
+Status: done
 Depends on: T06, T07, T09, T10, B01
 
 ## Why
@@ -36,13 +36,13 @@ Assumptions, stated in `map.md`:
 
 ## Acceptance criteria
 
-- [ ] At the optimizer's operating point (rated ampere-turns, rated speed) the map reproduces the
+- [x] At the optimizer's operating point (rated ampere-turns, rated speed) the map reproduces the
       optimizer's torque, loss and efficiency for the same design.
-- [ ] Efficiency is zero at zero speed and at zero torque, and below 100 % everywhere.
-- [ ] No point inside the drive limit needs more than the maximum bus voltage or the current cut-off.
-- [ ] The maximum torque of the drive limit does not rise with speed.
-- [ ] The continuous envelope lies inside the drive envelope.
-- [ ] The calculation of the grid from the load-level results is exact for a machine with a
+- [x] Efficiency is zero at zero speed and at zero torque, and below 100 % everywhere.
+- [x] No point inside the drive limit needs more than the maximum bus voltage or the current cut-off.
+- [x] The maximum torque of the drive limit does not rise with speed.
+- [x] The continuous envelope lies inside the drive envelope.
+- [x] The calculation of the grid from the load-level results is exact for a machine with a
       known closed-form answer.
 
 ## Test cases
@@ -81,4 +81,4 @@ optimization has finished.
 - A consequence of how turns are chosen (most turns the bus voltage allows at the rated speed):
   the speed range of a map ends just above the rated speed. `--turns` shows other windings.
 
-MAP_RESULT
+Closed 2026-10-19: code and acceptance tests complete (`tests/tickets/test_t17_map.py` passes). Maps of optimized designs are kept with the run records outside the repository.

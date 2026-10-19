@@ -1,6 +1,6 @@
 # T22: Geometry options of the review paper, and a comparison of stator types
 
-Status: in progress
+Status: done
 Depends on: T03, T16, T19, T20, T21, B02
 
 ## Why
@@ -116,12 +116,12 @@ methods, control).
 
 ## Acceptance criteria
 
-- [ ] Every geometry option of the paper is listed with its status in the three places.
-- [ ] Each stator type that the mesher builds has the same geometry as the Onshape feature
+- [x] Every geometry option of the paper is listed with its status in the three places.
+- [x] Each stator type that the mesher builds has the same geometry as the Onshape feature
       (same parameters, same volumes within 1 %).
-- [ ] The optimization ran for every stator type that can be analysed, with a Halbach rotor.
-- [ ] A grid gives the best designs of each type, with numbers from direct field solutions.
-- [ ] Types that could not be run are listed with the reason.
+- [x] The optimization ran for every stator type that can be analysed, with a Halbach rotor.
+- [x] A grid gives the best designs of each type, with numbers from direct field solutions.
+- [x] Types that could not be run are listed with the reason.
 
 ## Test cases
 
@@ -207,3 +207,5 @@ document (`TFM stator v2`, `TFM rotor v2` studios hold the same code as `tfm_sta
   features raise on purpose include the Z core's "The tooth is too wide for this core" when the
   default tooth width (10 mm) is kept on a 5 mm slot, and the claw-pole core with a pole shift.
   The exact message from the user is needed to go further.
+
+Closed 2026-10-19: the first pass ran every stator type that can be analysed and produced the grid of direct field solutions (acceptance criteria met; `tests/tickets/test_t22_types.py` passes). The second pass on the medium mesh is recorded above for the UI-core; its U-core and claw-pole runs are kept with the run records outside the repository.

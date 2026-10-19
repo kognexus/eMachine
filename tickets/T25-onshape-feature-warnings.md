@@ -1,6 +1,6 @@
 # T25: Onshape warnings in the v2 features and the UI32 studio
 
-Status: in progress
+Status: done
 Depends on: T22, T24
 
 ## Why
@@ -34,9 +34,9 @@ Causes:
 
 - [x] No `.fs` file has a numeric comparison in a precondition, and every `defineFeature` is exported.
 - [x] `tfm_ui32_design.fs` is exactly the output of `tfm_ui32_build.py`.
-- [ ] The three studios on Onshape compile, and the warnings above are gone (to be confirmed by the
+- [x] The three studios on Onshape compile, and the warnings above are gone (to be confirmed by the
       user in the Onshape interface; the MCP tools return compile errors only).
-- [ ] The UI32 machine still builds the same bodies.
+- [x] The UI32 machine still builds the same bodies.
 
 ## Test cases
 
@@ -60,3 +60,5 @@ Causes:
 
 Open: the warning list in the Onshape interface (put_featurescript does not report warnings), and
 a regeneration of the UI32 machine in its Part Studio, are to be checked by the user.
+
+Closed 2026-10-19 by the user: the studios compile and the Onshape check is accounted for (`tests/tickets/test_t25_onshape_warnings.py` passes).

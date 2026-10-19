@@ -1,6 +1,6 @@
 # T18: ParaView export of a design
 
-Status: in progress
+Status: done
 Depends on: T07, T09, B01
 
 ## Why
@@ -62,16 +62,16 @@ are not a physical force density), end effects outside one phase, and eddy curre
 
 ## Acceptance criteria
 
-- [ ] Every `.vtu` file is valid VTK XML: point, cell and array counts agree with the headers.
-- [ ] `.pvd` files list one existing file per rotor position with a rising time value.
-- [ ] `machine.pvd` contains no air; `air.pvd` contains only air.
-- [ ] The torque in `waveforms.csv` equals the torque of an evaluation of the same design.
-- [ ] Magnetisation vectors have the magnitude Br / (mu0 * mu_r) and, for a Halbach rotor,
+- [x] Every `.vtu` file is valid VTK XML: point, cell and array counts agree with the headers.
+- [x] `.pvd` files list one existing file per rotor position with a rising time value.
+- [x] `machine.pvd` contains no air; `air.pvd` contains only air.
+- [x] The torque in `waveforms.csv` equals the torque of an evaluation of the same design.
+- [x] Magnetisation vectors have the magnitude Br / (mu0 * mu_r) and, for a Halbach rotor,
       alternate between radial and tangential from segment to segment.
-- [ ] `mu_r` equals the initial permeability where the core is unloaded and falls where the flux
+- [x] `mu_r` equals the initial permeability where the core is unloaded and falls where the flux
       density is high; with linear materials it is constant.
-- [ ] Repeating the sector N times multiplies cells and volume by N and rotates the vectors.
-- [ ] The mean of the radial air-gap flux density around the gap is zero within 2 % of its peak.
+- [x] Repeating the sector N times multiplies cells and volume by N and rotates the vectors.
+- [x] The mean of the radial air-gap flux density around the gap is zero within 2 % of its peak.
 
 ## Test cases
 
@@ -116,4 +116,4 @@ the optimization has finished.
 - For three phases the files show one phase (one sector of one ring). The waveform table holds
   the phase torque and the machine torque of all three phases.
 
-EXPORT_RESULT
+Closed 2026-10-19: code and acceptance tests complete (`tests/tickets/test_t18_paraview.py` passes, slow tests included). Exports of optimized designs are kept with the run records outside the repository.
